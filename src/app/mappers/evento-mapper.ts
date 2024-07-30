@@ -9,6 +9,6 @@ export function convertEventosToEventosSF(eventos: Evento[]): EventoSF[] {
       EndTime: new Date(evento.fechaFin),
       EventType: "maintenance",
       City: "Quito",
-      CategoryColor: '#1aaa55'
+      CategoryColor: evento.codigoDeColoresAyuno
     }));
   }

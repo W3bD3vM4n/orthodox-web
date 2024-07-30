@@ -9,6 +9,7 @@ export interface Evento {
     descripcionDia: string;
     tonoCantico: number;
     guiaAyuno: string;
+    codigoDeColoresAyuno: string;
     fiestasLiturgicas: string;
     santosCelebrados: string;
     guiaLiturgia: string;

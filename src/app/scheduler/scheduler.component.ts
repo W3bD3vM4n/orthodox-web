@@ -56,7 +56,7 @@ export class SchedulerComponent implements OnInit {
 
             // Obtiene el Id de la celda
             this.eventoSF = args.data as EventoSF;
-            console.log(this.eventoSF);
+            // console.log(this.eventoSF);
 
             // Envia el Id de la celda
             this.dialogComponent?.getId(this.eventoSF.Id);
