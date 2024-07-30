@@ -4,8 +4,11 @@ import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { AppRoutingModule } from './app-routing.module';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
+import { HttpLoaderFactory } from './translate-loader';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { DialogComponent } from './dialog/dialog.component';
@@ -26,6 +29,13 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     AppRoutingModule,
     CalendarModule,
     ScheduleModule,
