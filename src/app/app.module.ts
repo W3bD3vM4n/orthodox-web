@@ -19,12 +19,14 @@ import { TabViewModule } from 'primeng/tabview';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { QuillModule } from 'ngx-quill'
 import {FormsModule} from "@angular/forms";
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SchedulerComponent,
-    DialogComponent
+    DialogComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

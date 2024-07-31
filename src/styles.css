@@ -34,6 +34,18 @@ body,
     width: 100%;
 }
 
+/* Custom CSS for Minimum Width */
+html,
+body {
+    min-width: 320px; /* Minimum width for the entire viewport */
+}
+
+@media (min-width: 640px) {
+    .container {
+      min-width: 640px; /* Minimum width for larger screens */
+    }
+}
+
 /* Color del marco del icono */
 .icon-border-ambar {
     background: linear-gradient(to right, #FFD700, #FFC000, #FFB700, #FFAC00, #FFD700);
