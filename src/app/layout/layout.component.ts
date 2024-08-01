@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LayoutComponent {
 
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Desplaza la ventana hasta arriba
+
+    document.querySelector('.main-container')?.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

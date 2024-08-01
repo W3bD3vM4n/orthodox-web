@@ -34,29 +34,39 @@ body,
     width: 100%;
 }
 
-/* Custom CSS for Minimum Width */
+/* CSS para ancho mínimo en celular */
 html,
 body {
-    min-width: 320px; /* Minimum width for the entire viewport */
+    min-width: 320px; /* Ancho mínimo para todo el viewport */
 }
 
 @media (min-width: 640px) {
     .container {
-      min-width: 640px; /* Minimum width for larger screens */
+      min-width: 640px; /* Ancho mínimo para pantallas más grandes */
     }
+}
+
+/* Estilo del botón flotante */
+.floating-button {
+    @apply fixed bottom-0 right-0 mb-4 mr-4 bg-blue-500 bg-opacity-70 hover:bg-blue-700 hover:bg-opacity-70 text-white font-bold py-2 px-4 rounded;
+    display: none; /* Ocultar el botón por defecto */
+}
+
+.main-container:hover .floating-button {
+    display: block; /* Mostrar el botón al pasar el mouse */
 }
 
 /* Color del marco del icono */
 .icon-border-ambar {
     background: linear-gradient(to right, #FFD700, #FFC000, #FFB700, #FFAC00, #FFD700);
     animation: gradient-animation 3s ease infinite;
-  }
+}
 
-  @keyframes gradient-animation {
+@keyframes gradient-animation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-  }
+}
 
 
 /* Colores resaltados de los textbox */
