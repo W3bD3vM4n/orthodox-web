@@ -20,13 +20,15 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { QuillModule } from 'ngx-quill'
 import {FormsModule} from "@angular/forms";
 import { LayoutComponent } from './layout/layout.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SchedulerComponent,
     DialogComponent,
-    LayoutComponent
+    LayoutComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserModule,
