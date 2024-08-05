@@ -1,30 +1,36 @@
-<header class="bg-blue-900 opacity-85 text-white p-4 flex flex-wrap sm:flex-nowrap gap-4">
-    <!-- Left: (20%) -->
-    <div class="w-full sm:w-1/5 flex items-center">
-        <div class="text-2xl font-bold">Logo</div>
-    </div>
+<header class="bg-blue-900 opacity-85 text-white p-4">
+    <div class="grid grid-cols-1 grid-rows-[auto_auto_auto] sm:grid-cols-[20%_60%_20%] sm:grid-rows-2">
+        <!-- Left div spanning two rows -->
+        <div class="col-start-1 row-start-1 row-end-2 sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 flex items-center justify-center">
+            <div class="text-2xl font-bold">Logo</div>
+        </div>
 
-    <!-- Center: (60%) -->
-    <div class="w-full sm:w-3/5 flex items-center">
-        <nav class="w-full flex justify-evenly items-center">
-            <a href="#" class="text-slate-400 hover:underline hover:text-white">Home</a>
-            <a href="#" class="text-slate-400 hover:underline hover:text-white">About</a>
-            <a href="#" class="text-slate-400 hover:underline hover:text-white">Services</a>
-            <a href="#" class="text-slate-400 hover:underline hover:text-white">Contact</a>
-            <a href="#" class="text-slate-400 hover:underline hover:text-white">Blog</a>
-        </nav>
-    </div>
+        <!-- Center div -->
+        <div class="col-start-1 row-start-2 row-end-3 text-center sm:col-start-2 sm:row-start-2 sm:row-end-4">
+            <nav class="w-full flex justify-evenly items-center">
+                <a href="#" class="text-slate-400 hover:underline hover:text-white">Home</a>
+                <a href="#" class="text-slate-400 hover:underline hover:text-white">About</a>
+                <a href="#" class="text-slate-400 hover:underline hover:text-white">Services</a>
+                <a href="#" class="text-slate-400 hover:underline hover:text-white">Contact</a>
+                <a href="#" class="text-slate-400 hover:underline hover:text-white">Blog</a>
+            </nav>
+        </div>
 
-    <!-- Right: (20%) -->
-    <div class="w-full sm:w-1/5 flex items-center justify-end">
-        <div class="flex items-center w-full">
-            <input type="text" placeholder="Search..." class="flex-1 min-w-[50px] px-4 py-2 border rounded-lg">
+        <!-- Right div with nested columns -->
+        <div class="col-start-1 row-start-3 row-end-4 text-center sm:col-start-3 sm:row-start-1 sm:row-end-3">
+            <div class="grid grid-cols-2">
+                <div>Title 1</div>
+                <div>Title 2</div>
+            </div>
+            <div class="flex items-center w-full">
+                <input type="text" placeholder="Search..." class="flex-1 min-w-[50px] px-4 py-0 border rounded-lg">
 
-            <button class="w-12 p-2 text-slate-400 hover:text-white">
-                <!-- TDesign Icons magnifying glass -->
-                <ng-icon name="tdesignSearch"></ng-icon>
-            </button>
+                <button class="w-12 p-2 text-slate-400 hover:text-white py-0">
+                    <!-- TDesign Icons magnifying glass -->
+                    <ng-icon name="tdesignSearch"></ng-icon>
+                </button>
 
+            </div>
         </div>
     </div>
 </header>
