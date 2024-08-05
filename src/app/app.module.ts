@@ -14,13 +14,16 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { TextAreaModule } from '@syncfusion/ej2-angular-inputs';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TabViewModule } from 'primeng/tabview';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { QuillModule } from 'ngx-quill'
 import {FormsModule} from "@angular/forms";
 import { LayoutComponent } from './layout/layout.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { NgIconsModule } from '@ng-icons/core';
+import { tdesignSearch } from '@ng-icons/tdesign-icons';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
     SchedulerComponent,
     DialogComponent,
     LayoutComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +51,11 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
     DialogModule,
     TextBoxModule,
     TextAreaModule,
-    FontAwesomeModule,
     TabViewModule,
     BrowserAnimationsModule,
     QuillModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NgIconsModule.withIcons({ tdesignSearch })
   ],
   providers: [
     provideClientHydration(),
