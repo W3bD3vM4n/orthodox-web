@@ -24,7 +24,7 @@
     "@fortawesome/angular-fontawesome": "^0.14.1",
     "@ng-icons/core": "^27.5.2",
     "@ng-icons/heroicons": "^27.5.2",
-    "@ng-icons/tdesign-icons": "^29.2.2",
+    "@ng-icons/huge-icons": "^29.2.2",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@syncfusion/ej2-angular-base": "^25.2.4",

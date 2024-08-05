@@ -23,7 +23,8 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgIconsModule } from '@ng-icons/core';
-import { tdesignSearch } from '@ng-icons/tdesign-icons';
+import { hugeUserCircle02 } from '@ng-icons/huge-icons';
+import { hugeSearch01 } from '@ng-icons/huge-icons';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { tdesignSearch } from '@ng-icons/tdesign-icons';
     BrowserAnimationsModule,
     QuillModule.forRoot(),
     FormsModule,
-    NgIconsModule.withIcons({ tdesignSearch })
+    NgIconsModule.withIcons({ hugeUserCircle02, hugeSearch01 })
   ],
   providers: [
     provideClientHydration(),
