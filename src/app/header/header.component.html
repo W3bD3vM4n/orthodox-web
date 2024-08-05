@@ -1,27 +1,30 @@
-<header class="bg-blue-900 opacity-85 text-white p-4 grid grid-cols-12 gap-4">
-
-    <!-- Left: Logo (20%) -->
-    <div class="col-span-3 flex items-center">
+<header class="bg-blue-900 opacity-85 text-white p-4 flex flex-wrap sm:flex-nowrap gap-4">
+    <!-- Left: (20%) -->
+    <div class="w-full sm:w-1/5 flex items-center">
         <div class="text-2xl font-bold">Logo</div>
-        <!-- Replace with an actual logo image if needed -->
     </div>
 
-    <!-- Center: Navigation Links (60%) -->
-    <nav class="col-span-6 flex items-center justify-center space-x-4">
-        <a href="#" class="text-slate-400 hover:underline hover:text-white">Home</a>
-        <a href="#" class="text-slate-400 hover:underline hover:text-white">About</a>
-        <a href="#" class="text-slate-400 hover:underline hover:text-white">Services</a>
-        <a href="#" class="text-slate-400 hover:underline hover:text-white">Contact</a>
-        <a href="#" class="text-slate-400 hover:underline hover:text-white">Blog</a>
-    </nav>
-
-    <!-- Right: Search Bar and Icon Button (20%) -->
-    <div class="col-span-3 flex items-center">
-        <input type="text" placeholder="Search..." class="w-full px-4 py-2 border rounded-lg mr-2">
-        <button class="p-2 rounded-full text-slate-400 hover:text-white">
-            <!-- TDesign Icons magnifying glass -->
-            <ng-icon name="tdesignSearch"></ng-icon>
-        </button>
+    <!-- Center: (60%) -->
+    <div class="w-full sm:w-3/5 flex items-center">
+        <nav class="w-full flex justify-evenly items-center">
+            <a href="#" class="text-slate-400 hover:underline hover:text-white">Home</a>
+            <a href="#" class="text-slate-400 hover:underline hover:text-white">About</a>
+            <a href="#" class="text-slate-400 hover:underline hover:text-white">Services</a>
+            <a href="#" class="text-slate-400 hover:underline hover:text-white">Contact</a>
+            <a href="#" class="text-slate-400 hover:underline hover:text-white">Blog</a>
+        </nav>
     </div>
 
+    <!-- Right: (20%) -->
+    <div class="w-full sm:w-1/5 flex items-center justify-end">
+        <div class="flex items-center w-full">
+            <input type="text" placeholder="Search..." class="flex-1 min-w-[50px] px-4 py-2 border rounded-lg">
+
+            <button class="w-12 p-2 text-slate-400 hover:text-white">
+                <!-- TDesign Icons magnifying glass -->
+                <ng-icon name="tdesignSearch"></ng-icon>
+            </button>
+
+        </div>
+    </div>
 </header>
