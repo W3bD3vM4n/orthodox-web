@@ -25,6 +25,11 @@ import { FooterComponent } from './footer/footer.component';
 import { NgIconsModule } from '@ng-icons/core';
 import { hugeUserCircle02 } from '@ng-icons/huge-icons';
 import { hugeSearch01 } from '@ng-icons/huge-icons';
+import { hugeGoogleMaps } from '@ng-icons/huge-icons'
+import { hugeFacebook01 } from '@ng-icons/huge-icons'
+import { hugeNewTwitterRectangle } from '@ng-icons/huge-icons'
+import { hugeYoutube } from '@ng-icons/huge-icons'
+import { hugeInstagram } from '@ng-icons/huge-icons'
 
 @NgModule({
   declarations: [
@@ -56,7 +61,7 @@ import { hugeSearch01 } from '@ng-icons/huge-icons';
     BrowserAnimationsModule,
     QuillModule.forRoot(),
     FormsModule,
-    NgIconsModule.withIcons({ hugeUserCircle02, hugeSearch01 })
+    NgIconsModule.withIcons({ hugeUserCircle02, hugeSearch01, hugeGoogleMaps, hugeFacebook01, hugeNewTwitterRectangle, hugeYoutube, hugeInstagram })
   ],
   providers: [
     provideClientHydration(),
