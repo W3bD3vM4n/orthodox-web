@@ -18,7 +18,7 @@
 @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-angular-inputs/styles/material.css';
 
-@import 'primeng/resources/themes/bootstrap4-dark-blue/theme.css';
+@import 'primeng/resources/themes/md-light-indigo/theme.css';
 
 @tailwind base;
 @tailwind components;
@@ -48,45 +48,45 @@ body {
 
 /* Colores principales de la pagina */
 /* Fondo */
-.main-color {
+.bg-yale-blue-100 {
     background-color: #023373;
 }
 
-.primary-color {
+.bg-lapis-lazuli-700 {
     background-color: #385D8D;
 }
 
-.calendar-color {
+.bg-lapis-lazuli-100 {
     background-color: #446188;
 }
 
-.secondary-color {
+.bg-glaucous-100 {
     background-color: #6E86A6;
 }
 
-.tertiary-color {
+.bg-cadet-gray-100 {
     background-color: #A4B0C0;
 }
 
 /* Texto */
-.main-text-color {
+.txt-eerie-black-300 {
+    color: #1E1E1E;
+}
+
+.txt-yale-blue-100 {
     color: #023373;
 }
 
-.primary-text-color {
-    color: #ffffff;
-}
-
-.menu-text-color {
-    color: #A4B0C0;
-}
-
-.secondary-text-color {
+.txt-gray-700 {
     color: #757575;
 }
 
-.tertiary-text-color {
-    color: #1E1E1E;
+.txt-cadet-gray-100 {
+    color: #A4B0C0;
+}
+
+.txt-white-0 {
+    color: #ffffff;
 }
 
 
@@ -117,18 +117,4 @@ body {
 .pastel-yellow {
     background-color: #ffff99;
     border-radius: 5px;
-}
-
-
-/* Colores temporales en la pagina web */
-.color-cream {
-    background-color: #fffdd0;
-}
-
-.text-color-ambar {
-    color: #C48A47;
-}
-
-.icon-color-ambar {
-    filter: invert(65%) sepia(13%) saturate(1792%) hue-rotate(352deg) brightness(87%) contrast(90%);
 }
