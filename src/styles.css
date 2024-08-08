@@ -18,7 +18,7 @@
 @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-angular-inputs/styles/material.css';
 
-@import 'primeng/resources/themes/md-light-indigo/theme.css';
+@import 'primeng/resources/themes/bootstrap4-dark-blue/theme.css';
 
 @tailwind base;
 @tailwind components;
@@ -44,6 +44,49 @@ body {
     .container {
       min-width: 640px; /* Ancho mínimo para pantallas más grandes */
     }
+}
+
+/* Colores principales de la pagina */
+/* Fondo */
+.main-color {
+    background-color: #023373;
+}
+
+.primary-color {
+    background-color: #385D8D;
+}
+
+.calendar-color {
+    background-color: #446188;
+}
+
+.secondary-color {
+    background-color: #6E86A6;
+}
+
+.tertiary-color {
+    background-color: #A4B0C0;
+}
+
+/* Texto */
+.main-text-color {
+    color: #023373;
+}
+
+.primary-text-color {
+    color: #ffffff;
+}
+
+.menu-text-color {
+    color: #A4B0C0;
+}
+
+.secondary-text-color {
+    color: #757575;
+}
+
+.tertiary-text-color {
+    color: #1E1E1E;
 }
 
 

@@ -15,9 +15,10 @@ import { DialogComponent } from './dialog/dialog.component';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { TextAreaModule } from '@syncfusion/ej2-angular-inputs';
 import { TabViewModule } from 'primeng/tabview';
+import { AccordionModule } from 'primeng/accordion';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { QuillModule } from 'ngx-quill'
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { LayoutComponent } from './layout/layout.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { HeaderComponent } from './header/header.component';
@@ -58,6 +59,7 @@ import { hugeInstagram } from '@ng-icons/huge-icons'
     TextBoxModule,
     TextAreaModule,
     TabViewModule,
+    AccordionModule,
     BrowserAnimationsModule,
     QuillModule.forRoot(),
     FormsModule,
