@@ -30,7 +30,8 @@ import { hugeGoogleMaps } from '@ng-icons/huge-icons'
 import { hugeFacebook01 } from '@ng-icons/huge-icons'
 import { hugeNewTwitterRectangle } from '@ng-icons/huge-icons'
 import { hugeYoutube } from '@ng-icons/huge-icons'
-import { hugeInstagram } from '@ng-icons/huge-icons'
+import { hugeInstagram } from '@ng-icons/huge-icons';
+import { HomeComponent } from './home/home.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { hugeInstagram } from '@ng-icons/huge-icons'
     LayoutComponent,
     ScrollToTopComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

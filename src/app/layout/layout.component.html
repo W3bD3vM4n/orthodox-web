@@ -3,42 +3,9 @@
     <app-header></app-header>
 
     <!-- Body -->
-    <main class="flex-1 p-4">
-        <!-- Grid layout -->
-        <div class="grid gap-4">
-            <!-- 1 row, 1 column -->
-            <div class="bg-gray-200 p-4">
-                Row 1 Column 1
-            </div>
-
-            <!-- 2 rows, 2 columns -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-gray-300 p-4">Row 2 Column 1</div>
-                <div class="bg-gray-300 p-4">Row 2 Column 2</div>
-                <div class="bg-gray-300 p-4">Row 3 Column 1</div>
-                <div class="bg-gray-300 p-4">Row 3 Column 2</div>
-            </div>
-
-            <!-- 1 row, 1 column -->
-            <div class="bg-gray-200 p-4">
-                Row 4 Column 1
-            </div>
-
-            <!-- 1 row, 2 columns -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-gray-300 p-4">Row 5 Column 1</div>
-                <div class="bg-gray-300 p-4">Row 5 Column 2</div>
-            </div>
-
-            <!-- 4 rows, 1 column -->
-            <div class="grid grid-rows-4 gap-4">
-                <div class="bg-gray-200 p-4">Row 6 Column 1</div>
-                <div class="bg-gray-200 p-4">Row 7 Column 1</div>
-                <div class="bg-gray-200 p-4">Row 8 Column 1</div>
-                <div class="bg-gray-200 p-4">Row 9 Column 1</div>
-            </div>
-        </div>
-    </main>
+     <main>
+        <router-outlet></router-outlet>
+     </main>
 
     <!-- Footer -->
     <app-footer></app-footer>
