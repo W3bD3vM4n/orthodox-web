@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,9 +6,27 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+
+  placeholderSearch?: string;
+
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('es');
+  }
+
+  ngOnInit() {
+    this.updatePlaceholder();
+
+    // Estar pendiente a eventos de cambio de idioma
+    this.translate.onLangChange.subscribe(() => {
+      this.updatePlaceholder();
+    });
+  }
+
+  updatePlaceholder() {
+    this.translate.get('HEADER_SEARCH').subscribe((translatedText: string) => {
+      this.placeholderSearch = translatedText;
+    });
   }
 
   switchLanguage(event: Event) {

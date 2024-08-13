@@ -118,3 +118,9 @@ body {
     background-color: #ffff99;
     border-radius: 5px;
 }
+
+
+/* Tamaño de letra del buscador */
+.placeholder-small::placeholder {
+    font-size: 0.875rem;
+}

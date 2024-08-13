@@ -31,7 +31,8 @@ import { hugeFacebook01 } from '@ng-icons/huge-icons'
 import { hugeNewTwitterRectangle } from '@ng-icons/huge-icons'
 import { hugeYoutube } from '@ng-icons/huge-icons'
 import { hugeInstagram } from '@ng-icons/huge-icons';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { CapitalizePipe } from './capitalize.pipe'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HomeComponent } from './home/home.component'
     ScrollToTopComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

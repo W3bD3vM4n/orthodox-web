@@ -6,8 +6,8 @@
   "HEADER_NEWS": "noticias",
   "HEADER_STORE": "tienda",
   "HEADER_LANGUAGE": "idioma",
-  "HEADER_THEME": "tema",
-  "HEADER_SEARCH": "buscar",
+  "HEADER_LOGIN": "ingresar",
+  "HEADER_SEARCH": "buscar...",
   "DISCOVER_TITLE": "descubre el",
   "DISCOVER_SUBTITLE": "cristianismo ortodoxo",
   "DISCOVER_BUTTON": "leer más",
@@ -52,8 +52,8 @@
   "PROJECTS_COURSES": "cursos educativos",
   "PROJECTS_SPIRITUALITY": "centro espiritual",
   "GOC_TITLE": "metrópolis ortodoxa autónoma de ecuador y latinoamérica",
-  "GOC_DESCRIPTION": "la misión de la metrópolis ortodoxa autónoma (goc) de ecuador y latinoamérica, es antes que nada creer y cumplir el mandato de cristo “id por todo el mundo haciendo discípulos en todas las naciones, bautizándolos en el nombre del padre, del hijo y del espíritu santo...",
-  "GOC_BUTTON": "aprende más sobre goc",
+  "GOC_DESCRIPTION": "La MISIÓN de la Metrópolis Ortodoxa Autónoma (GOC) de Ecuador y Latinoamérica, es antes que nada creer y cumplir el mandato de Cristo “Id por todo el mundo haciendo discípulos en todas las naciones, bautizándolos en el nombre del Padre, del Hijo y del Espíritu Santo...",
+  "GOC_BUTTON": "Aprende más sobre GOC",
   "FOOTER_PHONE": "teléfono",
   "FOOTER_EMAIL": "email"
 }

@@ -9,11 +9,11 @@
         <!-- Centro: Elementos de Navegación -->
         <div class="col-start-1 row-start-2 row-end-3 text-center lg:col-start-2 lg:row-start-2 lg:row-end-4">
             <nav class="w-full flex justify-evenly items-center">
-                <a href="#" class="txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_ABOUT' | translate }}</a>
-                <a href="#" class="txt-cadet-gray-100 hover:underline hover:text-white">Doctrina</a>
-                <a href="#" class="txt-cadet-gray-100 hover:underline hover:text-white">Iglesia</a>
-                <a href="#" class="txt-cadet-gray-100 hover:underline hover:text-white">Noticias</a>
-                <a href="#" class="txt-cadet-gray-100 hover:underline hover:text-white">Tienda</a>
+                <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_ABOUT' | translate | capitalize }}</a>
+                <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_DOCTRINE' | translate | capitalize }}</a>
+                <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_CHURCH' | translate | capitalize }}</a>
+                <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_NEWS' | translate | capitalize }}</a>
+                <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_STORE' | translate | capitalize }}</a>
             </nav>
         </div>
 
@@ -22,7 +22,7 @@
             <div class="grid grid-cols-2">
                 <div class="flex items-center justify-center">
                     <div class="flex items-center">
-                        <label for="language-dropdown" class="mr-2 txt-gray-700">Idioma:</label>
+                        <label for="language-dropdown" class="mr-2 txt-gray-700">{{ 'HEADER_LANGUAGE' | translate | capitalize }}:</label>
                         <select id="language-dropdown" class="bg-white text-slate-800 border rounded-lg py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs font-semibold" (change)="switchLanguage($event)">
                             <option value="es">ES</option>
                             <option value="en">EN</option>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
-                    <label for="login-icon" class="mr-2 txt-gray-700">Login:</label>
+                    <label for="login-icon" class="mr-2 txt-gray-700">{{ 'HEADER_LOGIN' | translate | capitalize }}:</label>
                     <button id="login-icon" class="flex items-center justify-center text-2xl w-6 h-6 bg-slate-800 rounded-full text-slate-400 hover:text-white py-0">
                         <!-- Icono de Login -->
                         <ng-icon name="hugeUserCircle02"></ng-icon>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="flex items-center w-full mt-2">
-                <input type="text" placeholder="Buscar..." class="flex-1 min-w-[50px] px-4 py-0 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" [attr.placeholder]="placeholderSearch" class="flex-1 min-w-[50px] px-4 py-0 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-small">
                 <button class="text-xl pl-1 flex items-center justify-center text-slate-400 hover:text-white py-0">
                     <!-- Icono de Lupa -->
                     <ng-icon name="hugeSearch01"></ng-icon>
