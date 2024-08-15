@@ -32,7 +32,12 @@ import { hugeNewTwitterRectangle } from '@ng-icons/huge-icons'
 import { hugeYoutube } from '@ng-icons/huge-icons'
 import { hugeInstagram } from '@ng-icons/huge-icons';
 import { HomeComponent } from './home/home.component';
-import { CapitalizePipe } from './capitalize.pipe'
+import { CapitalizePipe } from './capitalize.pipe';
+import { DiscoverComponent } from './sections/discover/discover.component';
+import { ArticlesComponent } from './sections/articles/articles.component';
+import { NewsComponent } from './sections/news/news.component';
+import { EventsComponent } from './sections/events/events.component';
+import { StoreComponent } from './sections/store/store.component'
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { CapitalizePipe } from './capitalize.pipe'
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    DiscoverComponent,
+    ArticlesComponent,
+    NewsComponent,
+    EventsComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,
