@@ -6,12 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { HttpLoaderFactory } from './translate-loader';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
-import { SchedulerComponent } from './scheduler/scheduler.component';
-import { DialogComponent } from './dialog/dialog.component';
+import { SchedulerComponent } from './sections/scheduler/scheduler.component';
+import { DialogComponent } from './sections/scheduler/components/dialog/dialog.component';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { TextAreaModule } from '@syncfusion/ej2-angular-inputs';
 import { TabViewModule } from 'primeng/tabview';
@@ -37,7 +36,8 @@ import { DiscoverComponent } from './sections/discover/discover.component';
 import { ArticlesComponent } from './sections/articles/articles.component';
 import { NewsComponent } from './sections/news/news.component';
 import { EventsComponent } from './sections/events/events.component';
-import { StoreComponent } from './sections/store/store.component'
+import { StoreComponent } from './sections/store/store.component';
+import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component'
 
 @NgModule({
   declarations: [
@@ -54,7 +54,8 @@ import { StoreComponent } from './sections/store/store.component'
     ArticlesComponent,
     NewsComponent,
     EventsComponent,
-    StoreComponent
+    StoreComponent,
+    MisionVisionComponent
   ],
   imports: [
     BrowserModule,

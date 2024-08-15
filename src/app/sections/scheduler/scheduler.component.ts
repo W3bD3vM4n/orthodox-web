@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Evento } from '../models/evento.interface';
-import { EventoService } from '../services/evento.service';
-import { EventoSF } from '../models/evento-sf.interface';
-import { convertEventosToEventosSF } from '../mappers/evento-mapper';
+import { Evento } from '../../models/evento.interface';
+import { EventoService } from '../../services/evento.service';
+import { EventoSF } from '../../models/evento-sf.interface';
+import { convertEventosToEventosSF } from '../../mappers/evento-mapper';
 import { HttpClientModule } from '@angular/common/http';
 import { AgendaService, DayService, EventRenderedArgs, MonthService, PopupOpenEventArgs, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
-import { DialogComponent } from '../dialog/dialog.component'; // Comunicacación con Componente Hijo
+import { DialogComponent } from './components/dialog/dialog.component'; // Comunicacación con Componente Hijo
 
 @Component({
     selector: 'app-scheduler',
@@ -62,7 +62,7 @@ export class SchedulerComponent implements OnInit {
             this.dialogComponent?.getId(this.eventoSF.Id);
 
             // Evita que se abra el Dialogo si se da clic afuera
-            if(this.eventoSF.Id !== undefined) {
+            if (this.eventoSF.Id !== undefined) {
                 // Abre el Dialogo
                 this.dialogComponent?.onOpenDialog();
             }
