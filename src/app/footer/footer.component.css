@@ -1,0 +1,7 @@
+.img-position {
+    position: relative;
+    top: -71px;
+    left: 50%;
+    transform: scale(2);
+    transition: transform 0.3s ease;
+}
