@@ -37,7 +37,8 @@ import { ArticlesComponent } from './sections/articles/articles.component';
 import { NewsComponent } from './sections/news/news.component';
 import { EventsComponent } from './sections/events/events.component';
 import { StoreComponent } from './sections/store/store.component';
-import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component'
+import { GodManComponent } from './sections/god-man/god-man.component'
+import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     NewsComponent,
     EventsComponent,
     StoreComponent,
-    MisionVisionComponent
+    MisionVisionComponent,
+    GodManComponent
   ],
   imports: [
     BrowserModule,

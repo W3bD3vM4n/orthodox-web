@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DiscoverComponent } from './discover.component';
+import { GodManComponent } from './god-man.component';
 
-describe('DiscoverComponent', () => {
-  let component: DiscoverComponent;
-  let fixture: ComponentFixture<DiscoverComponent>;
+describe('GodManComponent', () => {
+  let component: GodManComponent;
+  let fixture: ComponentFixture<GodManComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DiscoverComponent]
+      declarations: [GodManComponent]
     })
     .compileComponents();
-
-    fixture = TestBed.createComponent(DiscoverComponent);
+    
+    fixture = TestBed.createComponent(GodManComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
