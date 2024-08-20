@@ -39,6 +39,7 @@ import { EventsComponent } from './sections/events/events.component';
 import { StoreComponent } from './sections/store/store.component';
 import { GodManComponent } from './sections/god-man/god-man.component'
 import { ChurchComponent } from './sections/church/church.component';
+import { BibleComponent } from './sections/bible/bible.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
 @NgModule({
@@ -59,7 +60,8 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     StoreComponent,
     MisionVisionComponent,
     GodManComponent,
-    ChurchComponent
+    ChurchComponent,
+    BibleComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { DiscoverComponent } from './sections/discover/discover.component';
 import { SchedulerComponent } from './sections/scheduler/scheduler.component';
 import { GodManComponent } from './sections/god-man/god-man.component'
 import { ChurchComponent } from './sections/church/church.component';
+import { BibleComponent } from './sections/bible/bible.component';
 import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'scheduler', component: SchedulerComponent },
   { path: 'god-man', component: GodManComponent },
   { path: 'church', component: ChurchComponent },
+  { path: 'bible', component: BibleComponent },
   { path: 'mision-vision', component: MisionVisionComponent },
   // Add more routes as needed
 ];
