@@ -41,6 +41,7 @@ import { GodManComponent } from './sections/god-man/god-man.component'
 import { ChurchComponent } from './sections/church/church.component';
 import { BibleComponent } from './sections/bible/bible.component';
 import { LiturgyComponent } from './sections/liturgy/liturgy.component';
+import { SaintsComponent } from './sections/saints/saints.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
 @NgModule({
@@ -63,7 +64,8 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     GodManComponent,
     ChurchComponent,
     BibleComponent,
-    LiturgyComponent
+    LiturgyComponent,
+    SaintsComponent
   ],
   imports: [
     BrowserModule,
