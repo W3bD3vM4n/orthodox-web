@@ -11,14 +11,14 @@
           <ul class="list-none p-0 ml-6 text-sm">
             <li><a href="/god-man" class="hover:text-sky-800">{{ 'LIFE_GOD' | translate | capitalize }}</a></li>
             <li><a href="/church" class="hover:text-sky-800">{{ 'LIFE_CHURCH' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_TRADITION' | translate | capitalize }}</a></li>
             <li><a href="/bible" class="hover:text-sky-800">{{ 'LIFE_BIBLE' | translate | capitalize }}</a></li>
             <li><a href="/liturgy" class="hover:text-sky-800">{{ 'LIFE_LITURGY' | translate | capitalize }}</a></li>
             <li><a href="/saints" class="hover:text-sky-800">{{ 'LIFE_SAINTS' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_ICONS' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_FATHERS' | translate | capitalize }}</a></li>
             <li><a href="/clergy-laity" class="hover:text-sky-800">{{ 'LIFE_CLERGY' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_GOC' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_ADMIN' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_AUTONOMY' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_ECCLESIOLOGY' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_COUNCILS' | translate | capitalize }}</a></li>
             <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_NEWS' | translate | capitalize }}</a></li>
             <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_BULLETIN' | translate | capitalize }}</a></li>
           </ul>
@@ -27,13 +27,13 @@
 
       <!-- Columna #2/Primera Fila -->
       <p-accordion class="block lg:hidden">
-        <p-accordionTab [header]="'SERVICE_TITLE' | translate | capitalize ">
+        <p-accordionTab [header]="'DOCTRINE_TITLE' | translate | capitalize ">
           <ul class="list-none p-0 ml-6 text-sm">
-            <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_SCHEDULE' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_SERMONS' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_BAPTISMS' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_WEDDING' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_FUNERAL' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_CANONS' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_CREED' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_CHURCHES' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_AUTOCEPHALY' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_UNIFICATION' | translate | capitalize }}</a></li>
           </ul>
         </p-accordionTab>
       </p-accordion>
@@ -51,14 +51,15 @@
 
       <!-- Columna #3 -->
       <p-accordion class="block lg:hidden">
-        <p-accordionTab [header]="'GUESTS_TITLE' | translate | capitalize">
+        <p-accordionTab [header]="'SACRAMENTS_TITLE' | translate | capitalize">
           <ul class="list-none p-0 ml-6 text-sm">
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_INTRO' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_THEOLOGY' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_STORE' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_RELICS' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_DONATIONS' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_COMMENTS' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_BAPTISM' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_CHRISMATION' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_EUCHARIST' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_CONFESSION' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_ANOINTING' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_MARRIAGE' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_FUNERAL' | translate | capitalize }}</a></li>
           </ul>
         </p-accordionTab>
       </p-accordion>
@@ -68,9 +69,8 @@
         <p-accordionTab [header]="'PROJECTS_TITLE' | translate | capitalize">
           <ul class="list-none p-0 ml-6 text-sm">
             <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_EDITORIAL' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_CHORUS' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_COURSES' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_SPIRITUALITY' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_PSYCHIATRY' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_WORKSHOP' | translate | capitalize }}</a></li>
           </ul>
         </p-accordionTab>
       </p-accordion>
@@ -83,14 +83,14 @@
           <ul class="list-none p-0 ml-6 text-sm">
             <li><a href="/god-man" class="hover:text-sky-800">{{ 'LIFE_GOD' | translate | capitalize }}</a></li>
             <li><a href="/church" class="hover:text-sky-800">{{ 'LIFE_CHURCH' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_TRADITION' | translate | capitalize }}</a></li>
             <li><a href="/bible" class="hover:text-sky-800">{{ 'LIFE_BIBLE' | translate | capitalize }}</a></li>
             <li><a href="/liturgy" class="hover:text-sky-800">{{ 'LIFE_LITURGY' | translate | capitalize }}</a></li>
             <li><a href="/saints" class="hover:text-sky-800">{{ 'LIFE_SAINTS' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_ICONS' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_FATHERS' | translate | capitalize }}</a></li>
             <li><a href="/clergy-laity" class="hover:text-sky-800">{{ 'LIFE_CLERGY' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_GOC' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_ADMIN' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_AUTONOMY' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_ECCLESIOLOGY' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_COUNCILS' | translate | capitalize }}</a></li>
             <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_NEWS' | translate | capitalize }}</a></li>
             <li><a href="#" class="hover:text-sky-800">{{ 'LIFE_BULLETIN' | translate | capitalize }}</a></li>
           </ul>
@@ -102,13 +102,13 @@
         <!-- Primera Fila -->
         <div class="hidden lg:block">
           <div class="flex flex-col space-y-2">
-            <h3 class="font-semibold mb-2">{{ 'SERVICE_TITLE' | translate | capitalize }}</h3>
+            <h3 class="font-semibold mb-2">{{ 'DOCTRINE_TITLE' | translate | capitalize }}</h3>
             <ul class="list-none p-0 ml-6 text-sm">
-              <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_SCHEDULE' | translate | capitalize }}</a></li>
-              <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_SERMONS' | translate | capitalize }}</a></li>
-              <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_BAPTISMS' | translate | capitalize }}</a></li>
-              <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_WEDDING' | translate | capitalize }}</a></li>
-              <li><a href="#" class="hover:text-sky-800">{{ 'SERVICE_FUNERAL' | translate | capitalize }}</a></li>
+              <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_CANONS' | translate | capitalize }}</a></li>
+              <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_CREED' | translate | capitalize }}</a></li>
+              <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_CHURCHES' | translate | capitalize }}</a></li>
+              <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_AUTOCEPHALY' | translate | capitalize }}</a></li>
+              <li><a href="#" class="hover:text-sky-800">{{ 'DOCTRINE_UNIFICATION' | translate | capitalize }}</a></li>
             </ul>
           </div>
         </div>
@@ -128,14 +128,15 @@
       <!-- Columna #3 -->
       <div class="hidden lg:block">
         <div class="flex flex-col space-y-2">
-          <h3 class="font-semibold mb-2">{{ 'GUESTS_TITLE' | translate | capitalize }}</h3>
+          <h3 class="font-semibold mb-2">{{ 'SACRAMENTS_TITLE' | translate | capitalize }}</h3>
           <ul class="list-none p-0 ml-6 text-sm">
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_INTRO' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_THEOLOGY' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_STORE' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_RELICS' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_DONATIONS' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'GUESTS_COMMENTS' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_BAPTISM' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_CHRISMATION' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_EUCHARIST' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_CONFESSION' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_ANOINTING' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_MARRIAGE' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'SACRAMENTS_FUNERAL' | translate | capitalize }}</a></li>
           </ul>
         </div>
       </div>
@@ -146,9 +147,8 @@
           <h3 class="font-semibold mb-2">{{ 'PROJECTS_TITLE' | translate | capitalize }}</h3>
           <ul class="list-none p-0 ml-6 text-sm">
             <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_EDITORIAL' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_CHORUS' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_COURSES' | translate | capitalize }}</a></li>
-            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_SPIRITUALITY' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_PSYCHIATRY' | translate | capitalize }}</a></li>
+            <li><a href="#" class="hover:text-sky-800">{{ 'PROJECTS_WORKSHOP' | translate | capitalize }}</a></li>
           </ul>
         </div>
       </div>
