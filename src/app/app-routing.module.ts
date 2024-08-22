@@ -9,6 +9,7 @@ import { ChurchComponent } from './sections/church/church.component';
 import { BibleComponent } from './sections/bible/bible.component';
 import { LiturgyComponent } from './sections/liturgy/liturgy.component';
 import { SaintsComponent } from './sections/saints/saints.component';
+import { ClergyLaityComponent } from './sections/clergy-laity/clergy-laity.component';
 import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'bible', component: BibleComponent },
   { path: 'liturgy', component: LiturgyComponent },
   { path: 'saints', component: SaintsComponent },
+  { path: 'clergy-laity', component: ClergyLaityComponent },
   { path: 'mision-vision', component: MisionVisionComponent },
   // Add more routes as needed
 ];

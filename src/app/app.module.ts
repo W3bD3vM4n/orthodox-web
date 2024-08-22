@@ -42,6 +42,7 @@ import { ChurchComponent } from './sections/church/church.component';
 import { BibleComponent } from './sections/bible/bible.component';
 import { LiturgyComponent } from './sections/liturgy/liturgy.component';
 import { SaintsComponent } from './sections/saints/saints.component';
+import { ClergyLaityComponent } from './sections/clergy-laity/clergy-laity.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
 @NgModule({
@@ -60,12 +61,13 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     NewsComponent,
     EventsComponent,
     StoreComponent,
-    MisionVisionComponent,
     GodManComponent,
     ChurchComponent,
     BibleComponent,
     LiturgyComponent,
-    SaintsComponent
+    SaintsComponent,
+    ClergyLaityComponent,
+    MisionVisionComponent
   ],
   imports: [
     BrowserModule,

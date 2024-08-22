@@ -22,7 +22,7 @@
   "LIFE_BIBLE": "biblia y escrituras",
   "LIFE_LITURGY": "liturgia y adoración",
   "LIFE_SAINTS": "santos y ascetas",
-  "LIFE_CLERGY": "monacato / clero",
+  "LIFE_CLERGY": "clero / laicos",
   "LIFE_GOC": "santo sínodo jerárquico",
   "LIFE_ADMIN": "administración",
   "LIFE_AUTONOMY": "autonomía",
@@ -124,5 +124,16 @@
   "SAINTS_RECOGNITION": "Reconocimiento de los Santos",
   "SAINTS_CONTENT_P5": "Desde el principio, la Iglesia reconoció a los antepasados justos de Cristo, como hombres y mujeres llenos de gracia cuyas vidas agradaban a Dios. También los profetas que predijeron la venida de Cristo y los apóstoles y evangelistas que proclamaron el Evangelio fueron considerados santos.",
   "SAINTS_CONTENT_P6": "A continuación se reconoció también como santos a los mártires y confesores que arriesgaron su vida y derramaron su sangre en testimonio de Cristo. Con el tiempo, los ascetas que seguían a Cristo negándose a sí mismos fueron contados entre los santos.",
-  "SAINTS_CONTENT_P7": "La Iglesia reconoce como santos a los obispos y sacerdotes que lucharon contra la herejía y proclamaron la verdadera fe. Hoy en día, las personas perfectas en bondad y rectitud, en todos los ámbitos de la vida, pueden ser reconocidas como santas."
+  "SAINTS_CONTENT_P7": "La Iglesia reconoce como santos a los obispos y sacerdotes que lucharon contra la herejía y proclamaron la verdadera fe. Hoy en día, las personas perfectas en bondad y rectitud, en todos los ámbitos de la vida, pueden ser reconocidas como santas.",
+  "CLERGY_TITLE": "Clero",
+  "CLERGY_CONTENT_P1": "Es el término utilizado para describir el liderazgo religioso formal dentro de la Iglesia Cristiana Ortodoxa. Los clérigos ortodoxos se ocupan de los aspectos rituales de la vida religiosa de la Iglesia, enseñan o ayudan a difundir la doctrina y las prácticas ortodoxas. A menudo se ocupan de acontecimientos en el ciclo de vida, como el nacimiento, bautismo, matrimonio y muerte.",
+  "CLERGY_CONTENT_P2": "El término “clero”, tal como se utiliza generalmente en la Iglesia Ortodoxa, se aplica a aquellos que son miembros de las órdenes mayores y están ordenados. Los que asisten al clero en los servicios de la Iglesia y son tonsurados se denominan miembros de las órdenes menores. La condición de clérigo en la Iglesia Ortodoxa está reservada a los hombres.",
+  "CLERGY_CONTENT_P3": "Las órdenes mayores son los obispos, sacerdotes y diáconos, los mismos cargos identificados en el Nuevo Testamento (1 Timoteo 3:1-2) y que se encontraban en la Iglesia primitiva. Los obispos suelen proceder de las filas de los monjes y deben ser célibes. Los sacerdotes, diáconos y subdiáconos pueden estar casados, siempre que lo estén antes de su ordenación al subdiaconado.",
+  "CLERGY_CONTENT_P4": "Cada ordenación debe tener lugar en este orden: lector, subdiácono, diácono, sacerdote, obispo. ",
+  "CLERGY_CONTENT_P5": "Las monjas, por su parte, son miembros de la comunidad monástica y se dedican a una vida de oración, ascetismo y servicio. Aunque desempeñan un papel importante en la vida espiritual de la Iglesia y a menudo participan en diversos ministerios, no realizan tareas sacramentales como el clero.",
+  "LAITY_TITLE": "Laicos",
+  "LAITY_CONTENT_P1": "Los laicos son todas las personas que no pertenecen al clero ni a ninguna orden monástica. En la Iglesia Ortodoxa, los laicos son el pueblo de Dios y son responsables de preservar la integridad de la fe tanto como los obispos.",
+  "LAITY_CONTENT_P2": "Los laicos están llamados a vivir según las mismas normas morales cristianas que el clero. Ambos deben participar en todos los servicios de culto y guardar los diversos días y estaciones de ayuno y fiesta. El clero es el sacerdocio sagrado, mientras que los laicos forman parte del sacerdocio real. El clero no puede llevar a cabo los servicios de culto formales sin la participación de los laicos, y los laicos no pueden realizar los mismos servicios sin que el clero los dirija. Cada uno desempeña un papel muy importante en la vida litúrgica y administrativa de la Iglesia.",
+  "LAITY_CONTENT_IMPORTANT": "La organización de la Iglesia Ortodoxa es tanto jerárquica como conciliar (o sinodal). ",
+  "LAITY_CONTENT_P3": "Es jerárquica en el sentido de que se espera que los sacerdotes, diáconos y laicos sigan a su obispo y no hagan nada sin su obispo, ya que Jesucristo es la cabeza de cada obispo. Es conciliar o sinodal en el sentido de que no hay una única posición superior a la que sigan todos los obispos, sino que los obispos se reúnen en sínodos o concilios y llegan a acuerdos vinculantes por consenso. Un obispo, incluso el patriarca, está obligado a obedecer las decisiones de su sínodo. Un concilio con representantes de todas las iglesias es un concilio ecuménico."
 }

@@ -22,7 +22,7 @@
   "LIFE_BIBLE": "bible and scriptures",
   "LIFE_LITURGY": "liturgy and worship",
   "LIFE_SAINTS": "saints and ascetics",
-  "LIFE_CLERGY": "monasticism / clergy",
+  "LIFE_CLERGY": "clergy / laity",
   "LIFE_GOC": "holy hierarchical synod",
   "LIFE_ADMIN": "administration",
   "LIFE_AUTONOMY": "autonomy",
@@ -124,5 +124,16 @@
   "SAINTS_RECOGNITION": "Recognition of Saints",
   "SAINTS_CONTENT_P5": "From the beginning, the Church recognized the righteous ancestors of Christ, as grace-filled men and women whose lives were pleasing to God. Also the prophets who predicted Christ's coming and the apostles and evangelists who proclaimed the Gospel were assumed to be saints.",
   "SAINTS_CONTENT_P6": "Next the martyrs and confessors who risked their lives and shed their blood in witness to Christ were also recognized as saints. In time, ascetics who followed Christ through self denial, were numbered among the saints.",
-  "SAINTS_CONTENT_P7": "Bishops and priests who fought against heresy and proclaimed the true faith are recognized by the Church as saints. Today, people perfect in goodness and righteousness, in all walks of life, can be recognized as saints."
+  "SAINTS_CONTENT_P7": "Bishops and priests who fought against heresy and proclaimed the true faith are recognized by the Church as saints. Today, people perfect in goodness and righteousness, in all walks of life, can be recognized as saints.",
+  "CLERGY_TITLE": "Clergy",
+  "CLERGY_CONTENT_P1": "It's the term used to describe the formal religious leadership within the Orthodox Christian Church. Orthodox clergy take care of the ritual aspects of the religious life of the Church, teach, or otherwise help in spreading Orthodox doctrine and practices. They often deal with life-cycle events such as child birth, baptism, marriage, and death.",
+  "CLERGY_CONTENT_P2": "The term “clergy” as generally used in the Orthodox Church applies to those who are members of the major orders and are ordained. Those who assist the clergy in the services of the church and are tonsured are referred to as members of the minor orders. The clergy status in the Orthodox Church is reserved for males.",
+  "CLERGY_CONTENT_P3": "Those of the major orders are the bishops, priests, and deacons, the same offices identified in the New Testament (1 Timothy 3:1-2) and found in the early church. Bishops are usually drawn from the ranks of the monks and are required to be celibate. Priests, deacons, and subdeacons may be married, provided that they are married before their ordination to the subdiaconate.",
+  "CLERGY_CONTENT_P4": "Each ordination must take place in this order: reader, subdeacon, deacon, priest, bishop.",
+  "CLERGY_CONTENT_P5": "Nuns, on the other hand, are members of the monastic community and are dedicated to a life of prayer, asceticism, and service. While they play an important role in the spiritual life of the church and often engage in various ministries, they do not perform sacramental duties like the clergy.",
+  "LAITY_TITLE": "Laity",
+  "LAITY_CONTENT_P1": "The laity comprises any person who is not a member of the clergy or of any monastic order. In the Orthodox Church, the laity are the people of God and are responsible for preserving the integrity of the faith as much as the bishops.",
+  "LAITY_CONTENT_P2": "The laity are called to live by the same Christian moral standards as the clergy. They both are expected to participate in all the worship services and keep the various days and seasons of fasting and feasting. The clergy are the sacred priesthood, where the laity are among the royal priesthood. The clergy cannot conduct formal worship services without the participation of the laity, and the laity can not perform the same services without the clergy to lead them. Each play a very important role in the liturgical and administrative life of the Church.",
+  "LAITY_CONTENT_IMPORTANT": "The organization of the Orthodox Church is both hierarchical and conciliar (or synodal). ",
+  "LAITY_CONTENT_P3": "It is hierarchical in that priests, deacons, and laymen are expected to follow their bishop and to do nothing without their bishop, in that Jesus Christ is the head of every bishop. It is conciliar or synodal in that there is no single superior position whom all the bishops follow, but rather the bishops meet together in synods or councils and reach binding agreements through consensus. A bishop, even the patriarch, is bound to obey the decisions of his synod. A council with representatives from all the churches is an ecumenical council."
 }
