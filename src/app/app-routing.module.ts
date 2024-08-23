@@ -6,6 +6,7 @@ import { DiscoverComponent } from './sections/discover/discover.component';
 import { SchedulerComponent } from './sections/scheduler/scheduler.component';
 import { GodComponent } from './sections/god/god.component';
 import { ChurchComponent } from './sections/church/church.component';
+import { TraditionComponent } from './sections/tradition/tradition.component';
 import { BibleComponent } from './sections/bible/bible.component';
 import { LiturgyComponent } from './sections/liturgy/liturgy.component';
 import { SaintsComponent } from './sections/saints/saints.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'scheduler', component: SchedulerComponent },
   { path: 'god', component: GodComponent },
   { path: 'church', component: ChurchComponent },
+  { path: 'tradition', component: TraditionComponent },
   { path: 'bible', component: BibleComponent },
   { path: 'liturgy', component: LiturgyComponent },
   { path: 'saints', component: SaintsComponent },

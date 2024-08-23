@@ -39,6 +39,7 @@ import { EventsComponent } from './sections/events/events.component';
 import { StoreComponent } from './sections/store/store.component';
 import { GodComponent } from './sections/god/god.component';
 import { ChurchComponent } from './sections/church/church.component';
+import { TraditionComponent } from './sections/tradition/tradition.component';
 import { BibleComponent } from './sections/bible/bible.component';
 import { LiturgyComponent } from './sections/liturgy/liturgy.component';
 import { SaintsComponent } from './sections/saints/saints.component';
@@ -64,12 +65,13 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     StoreComponent,
     GodComponent,
     ChurchComponent,
+    TraditionComponent,
     BibleComponent,
     LiturgyComponent,
     SaintsComponent,
     FathersComponent,
     ClergyLaityComponent,
-    MisionVisionComponent
+    MisionVisionComponent,
   ],
   imports: [
     BrowserModule,
