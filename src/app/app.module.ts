@@ -37,11 +37,12 @@ import { ArticlesComponent } from './sections/articles/articles.component';
 import { NewsComponent } from './sections/news/news.component';
 import { EventsComponent } from './sections/events/events.component';
 import { StoreComponent } from './sections/store/store.component';
-import { GodManComponent } from './sections/god-man/god-man.component'
+import { GodComponent } from './sections/god/god.component';
 import { ChurchComponent } from './sections/church/church.component';
 import { BibleComponent } from './sections/bible/bible.component';
 import { LiturgyComponent } from './sections/liturgy/liturgy.component';
 import { SaintsComponent } from './sections/saints/saints.component';
+import { FathersComponent } from './sections/fathers/fathers.component';
 import { ClergyLaityComponent } from './sections/clergy-laity/clergy-laity.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
@@ -61,11 +62,12 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     NewsComponent,
     EventsComponent,
     StoreComponent,
-    GodManComponent,
+    GodComponent,
     ChurchComponent,
     BibleComponent,
     LiturgyComponent,
     SaintsComponent,
+    FathersComponent,
     ClergyLaityComponent,
     MisionVisionComponent
   ],

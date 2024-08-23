@@ -4,11 +4,12 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
 import { SchedulerComponent } from './sections/scheduler/scheduler.component';
-import { GodManComponent } from './sections/god-man/god-man.component'
+import { GodComponent } from './sections/god/god.component';
 import { ChurchComponent } from './sections/church/church.component';
 import { BibleComponent } from './sections/bible/bible.component';
 import { LiturgyComponent } from './sections/liturgy/liturgy.component';
 import { SaintsComponent } from './sections/saints/saints.component';
+import { FathersComponent } from './sections/fathers/fathers.component';
 import { ClergyLaityComponent } from './sections/clergy-laity/clergy-laity.component';
 import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
 
@@ -16,11 +17,12 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'discover', component: DiscoverComponent },
   { path: 'scheduler', component: SchedulerComponent },
-  { path: 'god-man', component: GodManComponent },
+  { path: 'god', component: GodComponent },
   { path: 'church', component: ChurchComponent },
   { path: 'bible', component: BibleComponent },
   { path: 'liturgy', component: LiturgyComponent },
   { path: 'saints', component: SaintsComponent },
+  { path: 'fathers', component: FathersComponent },
   { path: 'clergy-laity', component: ClergyLaityComponent },
   { path: 'mision-vision', component: MisionVisionComponent },
   // Add more routes as needed

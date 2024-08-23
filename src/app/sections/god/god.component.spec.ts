@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GodManComponent } from './god-man.component';
+import { GodComponent } from './god.component';
 
-describe('GodManComponent', () => {
-  let component: GodManComponent;
-  let fixture: ComponentFixture<GodManComponent>;
+describe('GodComponent', () => {
+  let component: GodComponent;
+  let fixture: ComponentFixture<GodComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [GodManComponent]
+      declarations: [GodComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(GodManComponent);
+    fixture = TestBed.createComponent(GodComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
