@@ -9,6 +9,7 @@ import { ChurchComponent } from './sections/church/church.component';
 import { TraditionComponent } from './sections/tradition/tradition.component';
 import { BibleComponent } from './sections/bible/bible.component';
 import { LiturgyComponent } from './sections/liturgy/liturgy.component';
+import { VirginMaryComponent } from './sections/virgin-mary/virgin-mary.component';
 import { SaintsComponent } from './sections/saints/saints.component';
 import { FathersComponent } from './sections/fathers/fathers.component';
 import { ClergyLaityComponent } from './sections/clergy-laity/clergy-laity.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'tradition', component: TraditionComponent },
   { path: 'bible', component: BibleComponent },
   { path: 'liturgy', component: LiturgyComponent },
+  { path: 'virgin-mary', component: VirginMaryComponent },
   { path: 'saints', component: SaintsComponent },
   { path: 'fathers', component: FathersComponent },
   { path: 'clergy-laity', component: ClergyLaityComponent },
