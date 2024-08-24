@@ -47,6 +47,7 @@ import { SaintsComponent } from './sections/saints/saints.component';
 import { FathersComponent } from './sections/fathers/fathers.component';
 import { ClergyLaityComponent } from './sections/clergy-laity/clergy-laity.component';
 import { CouncilsComponent } from './sections/councils/councils.component';
+import { CanonsComponent } from './sections/canons/canons.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
 @NgModule({
@@ -75,6 +76,7 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     FathersComponent,
     ClergyLaityComponent,
     CouncilsComponent,
+    CanonsComponent,
     MisionVisionComponent
   ],
   imports: [

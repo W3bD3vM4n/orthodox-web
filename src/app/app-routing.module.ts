@@ -14,6 +14,7 @@ import { SaintsComponent } from './sections/saints/saints.component';
 import { FathersComponent } from './sections/fathers/fathers.component';
 import { ClergyLaityComponent } from './sections/clergy-laity/clergy-laity.component';
 import { CouncilsComponent } from './sections/councils/councils.component';
+import { CanonsComponent } from './sections/canons/canons.component';
 import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'fathers', component: FathersComponent },
   { path: 'clergy-laity', component: ClergyLaityComponent },
   { path: 'councils', component: CouncilsComponent },
+  { path: 'canons', component: CanonsComponent },
   { path: 'mision-vision', component: MisionVisionComponent },
   // Add more routes as needed
 ];
