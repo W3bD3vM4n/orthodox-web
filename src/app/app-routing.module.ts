@@ -13,6 +13,7 @@ import { VirginMaryComponent } from './sections/virgin-mary/virgin-mary.componen
 import { SaintsComponent } from './sections/saints/saints.component';
 import { FathersComponent } from './sections/fathers/fathers.component';
 import { ClergyLaityComponent } from './sections/clergy-laity/clergy-laity.component';
+import { CouncilsComponent } from './sections/councils/councils.component';
 import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'saints', component: SaintsComponent },
   { path: 'fathers', component: FathersComponent },
   { path: 'clergy-laity', component: ClergyLaityComponent },
+  { path: 'councils', component: CouncilsComponent },
   { path: 'mision-vision', component: MisionVisionComponent },
   // Add more routes as needed
 ];
