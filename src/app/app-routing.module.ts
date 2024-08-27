@@ -18,6 +18,7 @@ import { CanonsComponent } from './sections/canons/canons.component';
 import { CreedComponent } from './sections/creed/creed.component';
 import { OrthodoxyComponent } from './sections/orthodoxy/orthodoxy.component';
 import { AutocephalyComponent } from './sections/autocephaly/autocephaly.component';
+import { UnificationComponent } from './sections/unification/unification.component';
 import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'creed', component: CreedComponent },
   { path: 'orthodoxy', component: OrthodoxyComponent },
   { path: 'autocephaly', component: AutocephalyComponent },
+  { path: 'unification', component: UnificationComponent },
   { path: 'mision-vision', component: MisionVisionComponent },
   // Add more routes as needed
 ];
