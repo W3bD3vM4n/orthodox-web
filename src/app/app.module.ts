@@ -50,6 +50,7 @@ import { CouncilsComponent } from './sections/councils/councils.component';
 import { CanonsComponent } from './sections/canons/canons.component';
 import { CreedComponent } from './sections/creed/creed.component';
 import { OrthodoxyComponent } from './sections/orthodoxy/orthodoxy.component';
+import { AutocephalyComponent } from './sections/autocephaly/autocephaly.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
 @NgModule({
@@ -81,6 +82,7 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     CanonsComponent,
     CreedComponent,
     OrthodoxyComponent,
+    AutocephalyComponent,
     MisionVisionComponent
   ],
   imports: [
