@@ -54,6 +54,7 @@ import { OrthodoxyComponent } from './sections/orthodoxy/orthodoxy.component';
 import { AutocephalyComponent } from './sections/autocephaly/autocephaly.component';
 import { UnificationComponent } from './sections/unification/unification.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
+import { VirginVenerationComponent } from './sections/virgin-veneration/virgin-veneration.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     OrthodoxyComponent,
     AutocephalyComponent,
     UnificationComponent,
-    MisionVisionComponent
+    MisionVisionComponent,
+    VirginVenerationComponent
   ],
   imports: [
     BrowserModule,
