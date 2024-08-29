@@ -52,9 +52,9 @@ import { CanonsComponent } from './sections/canons/canons.component';
 import { CreedComponent } from './sections/creed/creed.component';
 import { OrthodoxyComponent } from './sections/orthodoxy/orthodoxy.component';
 import { AutocephalyComponent } from './sections/autocephaly/autocephaly.component';
-import { UnificationComponent } from './sections/unification/unification.component';
-import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
+import { UnityComponent } from './sections/unity/unity.component';
 import { VirginVenerationComponent } from './sections/virgin-veneration/virgin-veneration.component';
+import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
 @NgModule({
   declarations: [
@@ -87,9 +87,9 @@ import { VirginVenerationComponent } from './sections/virgin-veneration/virgin-v
     CreedComponent,
     OrthodoxyComponent,
     AutocephalyComponent,
-    UnificationComponent,
-    MisionVisionComponent,
-    VirginVenerationComponent
+    UnityComponent,
+    VirginVenerationComponent,
+    MisionVisionComponent
   ],
   imports: [
     BrowserModule,

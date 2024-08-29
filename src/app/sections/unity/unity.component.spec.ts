@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UnificationComponent } from './unification.component';
+import { UnityComponent } from './unity.component';
 
-describe('UnificationComponent', () => {
-  let component: UnificationComponent;
-  let fixture: ComponentFixture<UnificationComponent>;
+describe('UnityComponent', () => {
+  let component: UnityComponent;
+  let fixture: ComponentFixture<UnityComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UnificationComponent]
+      declarations: [UnityComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(UnificationComponent);
+    fixture = TestBed.createComponent(UnityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
