@@ -53,7 +53,6 @@ import { CreedComponent } from './sections/creed/creed.component';
 import { OrthodoxyComponent } from './sections/orthodoxy/orthodoxy.component';
 import { AutocephalyComponent } from './sections/autocephaly/autocephaly.component';
 import { UnityComponent } from './sections/unity/unity.component';
-import { VirginVenerationComponent } from './sections/virgin-veneration/virgin-veneration.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 
 @NgModule({
@@ -88,7 +87,6 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     OrthodoxyComponent,
     AutocephalyComponent,
     UnityComponent,
-    VirginVenerationComponent,
     MisionVisionComponent
   ],
   imports: [
