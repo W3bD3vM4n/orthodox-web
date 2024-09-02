@@ -29,13 +29,19 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  switchLanguage(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    const selectedLanguage = target?.value;
+  // Dropdownlist Idiomas
+  // switchLanguage(event: Event) {
+  //   const target = event.target as HTMLSelectElement;
+  //   const selectedLanguage = target?.value;
 
-    if (selectedLanguage) {
-      this.translate.use(selectedLanguage);
-      console.log('Selected language:', selectedLanguage);
-    }
+  //   if (selectedLanguage) {
+  //     this.translate.use(selectedLanguage);
+  //     console.log('Selected language:', selectedLanguage);
+  //   }
+  // }
+
+  // Botones Idiomas
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 }
