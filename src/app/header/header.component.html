@@ -14,8 +14,28 @@
         <!-- Centro: Elementos de Navegación -->
         <div class="col-start-1 row-start-2 row-end-3 text-center lg:col-start-2 lg:row-start-2 lg:row-end-4">
             <nav class="w-full flex justify-evenly items-center">
-                <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_ABOUT' | translate | capitalize }}</a>
-                <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_AUTONOMY' | translate | capitalize }}</a>
+
+                <!-- <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_ABOUT' | translate | capitalize }}</a> -->
+
+                <div class="dropdown">
+                    <button class="dropbtn py-2 px-4">{{ 'HEADER_ABOUT' | translate | capitalize }}</button>
+                    <div class="dropdown-content">
+                      <a href="#">Presidente / Miembros</a>
+                      <a href="#">Sucesión Apostólica</a>
+                      <a href="#">Elevación Metropolitana</a>
+                    </div>
+                </div>
+
+                <!-- <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_AUTONOMY' | translate | capitalize }}</a> -->
+
+                <div class="dropdown">
+                    <button class="dropbtn py-2 px-4">{{ 'HEADER_AUTONOMY' | translate | capitalize }}</button>
+                    <div class="dropdown-content">
+                      <a href="#">Tomos Sinodal</a>
+                      <a href="#">Documento Original</a>
+                    </div>
+                </div>
+
                 <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_BELIEF' | translate | capitalize }}</a>
                 <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_STORE' | translate | capitalize }}</a>
                 <a href="#" class="font-semibold bg-slate-900 text-white rounded-lg py-2 px-4 hover:bg-slate-400 hover:text-slate-900 transition-colors">{{ 'HEADER_DONATE' | translate | capitalize }}</a>
