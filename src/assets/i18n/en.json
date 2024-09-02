@@ -1,7 +1,12 @@
 {
   "HEADER_TITLE": "orthodox church",
   "HEADER_ABOUT": "about",
+  "ABOUT_MEMBERS": "president / members",
+  "ABOUT_SUCCESSION": "apostolic succession",
+  "ABOUT_ELEVATION": "metropolitan elevation",
   "HEADER_AUTONOMY": "autonomy",
+  "AUTONOMY_VOLUMES": "synodal volumes",
+  "AUTONOMY_DOCUMENT": "original document",
   "HEADER_BELIEF": "belief",
   "HEADER_STORE": "store",
   "HEADER_DONATE": "donate",

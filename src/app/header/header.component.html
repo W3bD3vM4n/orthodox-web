@@ -15,24 +15,20 @@
         <div class="col-start-1 row-start-2 row-end-3 text-center lg:col-start-2 lg:row-start-2 lg:row-end-4">
             <nav class="w-full flex justify-evenly items-center">
 
-                <!-- <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_ABOUT' | translate | capitalize }}</a> -->
-
                 <div class="dropdown">
                     <button class="dropbtn py-2 px-4">{{ 'HEADER_ABOUT' | translate | capitalize }}</button>
                     <div class="dropdown-content">
-                      <a href="#">Presidente / Miembros</a>
-                      <a href="#">Sucesión Apostólica</a>
-                      <a href="#">Elevación Metropolitana</a>
+                      <a href="#">{{ 'ABOUT_MEMBERS' | translate | capitalize }}</a>
+                      <a href="#">{{ 'ABOUT_SUCCESSION' | translate | capitalize }}</a>
+                      <a href="#">{{ 'ABOUT_ELEVATION' | translate | capitalize }}</a>
                     </div>
                 </div>
-
-                <!-- <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_AUTONOMY' | translate | capitalize }}</a> -->
 
                 <div class="dropdown">
                     <button class="dropbtn py-2 px-4">{{ 'HEADER_AUTONOMY' | translate | capitalize }}</button>
                     <div class="dropdown-content">
-                      <a href="#">Tomos Sinodal</a>
-                      <a href="#">Documento Original</a>
+                      <a href="#">{{ 'AUTONOMY_VOLUMES' | translate | capitalize }}</a>
+                      <a href="#">{{ 'AUTONOMY_DOCUMENT' | translate | capitalize }}</a>
                     </div>
                 </div>
 
@@ -47,13 +43,6 @@
             <div class="grid grid-cols-2">
                 <div class="flex items-center justify-start">
                     <div class="flex items-center">
-                        <!-- <label for="language-dropdown" class="mr-2 txt-gray-700">{{ 'HEADER_LANGUAGE' | translate | capitalize }}:</label> -->
-
-                        <!-- Dropdownlist Idiomas -->
-                        <!-- <select id="language-dropdown" class="bg-white text-slate-800 border rounded-lg py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs font-semibold" (change)="switchLanguage($event)">
-                            <option value="es">ES</option>
-                            <option value="en">EN</option>
-                        </select> -->
 
                         <!-- Botones Idiomas -->
                         <!-- Habilitados -->

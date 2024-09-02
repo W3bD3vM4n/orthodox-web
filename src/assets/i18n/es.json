@@ -1,7 +1,12 @@
 {
   "HEADER_TITLE": "iglesia ortodoxa",
   "HEADER_ABOUT": "nosotros",
+  "ABOUT_MEMBERS": "presidente / miembros",
+  "ABOUT_SUCCESSION": "sucesión apostólica",
+  "ABOUT_ELEVATION": "elevación metropolitana",
   "HEADER_AUTONOMY": "autonomía",
+  "AUTONOMY_VOLUMES": "tomos sinodal",
+  "AUTONOMY_DOCUMENT": "documento original",
   "HEADER_BELIEF": "creencia",
   "HEADER_STORE": "tienda",
   "HEADER_DONATE": "donar",
