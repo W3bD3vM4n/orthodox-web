@@ -15,6 +15,7 @@ import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { TextAreaModule } from '@syncfusion/ej2-angular-inputs';
 import { TabViewModule } from 'primeng/tabview';
 import { AccordionModule } from 'primeng/accordion';
+import { CardModule } from 'primeng/card';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { QuillModule } from 'ngx-quill'
 import { FormsModule } from "@angular/forms";
@@ -109,6 +110,7 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     TextAreaModule,
     TabViewModule,
     AccordionModule,
+    CardModule,
     BrowserAnimationsModule,
     QuillModule.forRoot(),
     FormsModule,
