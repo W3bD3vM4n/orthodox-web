@@ -32,6 +32,7 @@ import { hugeYoutube } from '@ng-icons/huge-icons'
 import { hugeInstagram } from '@ng-icons/huge-icons';
 import { HomeComponent } from './home/home.component';
 import { CapitalizePipe } from './capitalize.pipe';
+import { PresidentMembersComponent } from './sections/president-members/president-members.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
 import { ArticlesComponent } from './sections/articles/articles.component';
 import { NewsComponent } from './sections/news/news.component';
@@ -66,6 +67,7 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     FooterComponent,
     HomeComponent,
     CapitalizePipe,
+    PresidentMembersComponent,
     DiscoverComponent,
     ArticlesComponent,
     NewsComponent,
