@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { PresidentMembersComponent } from './sections/president-members/president-members.component';
 import { AdministrationComponent } from './sections/administration/administration.component';
+import { AutonomyComponent } from './sections/autonomy/autonomy.component';
 import { ProclamationComponent } from './sections/proclamation/proclamation.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
 import { SchedulerComponent } from './sections/scheduler/scheduler.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'president-members', component: PresidentMembersComponent },
   { path: 'administration', component: AdministrationComponent },
+  { path: 'autonomy', component: AutonomyComponent },
   { path: 'proclamation', component: ProclamationComponent },
   { path: 'discover', component: DiscoverComponent },
   { path: 'scheduler', component: SchedulerComponent },
