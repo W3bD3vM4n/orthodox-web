@@ -15,7 +15,7 @@ import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { TextAreaModule } from '@syncfusion/ej2-angular-inputs';
 import { TabViewModule } from 'primeng/tabview';
 import { AccordionModule } from 'primeng/accordion';
-import { CardModule } from 'primeng/card';
+import { TimelineModule } from 'primeng/timeline';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { QuillModule } from 'ngx-quill'
 import { FormsModule } from "@angular/forms";
@@ -34,6 +34,7 @@ import { hugeInstagram } from '@ng-icons/huge-icons';
 import { HomeComponent } from './home/home.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { PresidentMembersComponent } from './sections/president-members/president-members.component';
+import { AdministrationComponent } from './sections/administration/administration.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
 import { ArticlesComponent } from './sections/articles/articles.component';
 import { NewsComponent } from './sections/news/news.component';
@@ -69,6 +70,7 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     HomeComponent,
     CapitalizePipe,
     PresidentMembersComponent,
+    AdministrationComponent,
     DiscoverComponent,
     ArticlesComponent,
     NewsComponent,
@@ -110,7 +112,7 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     TextAreaModule,
     TabViewModule,
     AccordionModule,
-    CardModule,
+    TimelineModule,
     BrowserAnimationsModule,
     QuillModule.forRoot(),
     FormsModule,
