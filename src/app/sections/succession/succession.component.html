@@ -8,11 +8,241 @@
 
                 <!-- Fila 1 -->
                 <div>
-                    <h2 class="text-2-5xl font-normal font-serif txt-lapis-lazuli-700">{{ 'BIBLE_TITLE' | translate }}
+                    <h2 class="text-2-5xl font-normal font-serif txt-lapis-lazuli-700">{{ 'SUCCESSION_TITLE' | translate
+                        }}
                     </h2>
                     <div class="border-t-2 border-gray-300 mt-1 mb-4"></div>
 
                     <!-- Linea de tiempo -->
+                    <div class="flex justify-center mt-10">
+                        <ol>
+
+                            <div class="grid md:grid-cols-2">
+                                <!-- Fila 1 (a la derecha) -->
+                                <div class="hidden md:block"></div> <!-- 1ra columna vacia -->
+                                <li class="border-l-2 border-sky-900">
+                                    <div class="flex flex-start">
+                                        <!-- Icono -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/1.st-tikhon.png" alt="San Tikhon">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T1' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P1' | translate }}
+                                                </p>
+                                                <p class="text-xs font-medium text-center">{{ 'SUCCESSION_BISHOP_C1' | translate }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Fila 2 (a la izquierda) -->
+                                <li class="md:border-r-2 md:border-l-0 border-l-2 border-sky-900">
+                                    <div class="flex flex-start">
+                                        <!-- Icono, oculto en pantallas medianas y grandes -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5 md:hidden">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 md:mr-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/2.bp-sergiy.png" alt="Ob. Sergiy">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T2' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P2' | translate }}
+                                                </p>
+                                                <p class="text-xs font-medium text-center">{{ 'SUCCESSION_BISHOP_C1' | translate }}</p>
+                                            </div>
+                                        </div>
+                                        <!-- Icono, oculto en pantallas pequeñas -->
+                                        <div class="bg-sky-900 w-6 h-6 items-center justify-center rounded-full -mr-3.5 hidden md:flex">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="hidden md:block"></div> <!-- 2da columna vacia -->
+
+                                <!-- Fila 3 (a la derecha) -->
+                                <div class="hidden md:block"></div> <!-- 1ra columna vacia -->
+                                <li class="border-l-2 border-sky-900">
+                                    <div class="flex flex-start">
+                                        <!-- Icono -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/3.bp-aleksiy.png" alt="Ob. Aleksiy">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T3' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P3' | translate }}
+                                                </p>
+                                                <p class="text-xs font-medium text-center">{{ 'SUCCESSION_BISHOP_C1' | translate }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Fila 4 (a la izquierda) -->
+                                <li class="md:border-r-2 md:border-l-0 border-l-2 border-sky-900">
+                                    <div class="flex flex-start">
+                                        <!-- Icono, oculto en pantallas medianas y grandes -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5 md:hidden">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 md:mr-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/4.bp-pimen.png" alt="Ob. Pimen">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T4' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P4' | translate }}
+                                                </p>
+                                                <p class="text-xs font-medium text-center">{{ 'SUCCESSION_BISHOP_C1' | translate }}</p>
+                                            </div>
+                                        </div>
+                                        <!-- Icono, oculto en pantallas pequeñas -->
+                                        <div class="bg-sky-900 w-6 h-6 items-center justify-center rounded-full -mr-3.5 hidden md:flex">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="hidden md:block"></div> <!-- 2da columna vacia -->
+
+                                <!-- Fila 5 (a la derecha) -->
+                                <div class="hidden md:block"></div> <!-- 1ra columna vacia -->
+                                <li class="border-l-2 border-sky-900">
+                                    <div class="flex flex-start">
+                                        <!-- Icono -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/5.bp-filaret.png" alt="Ob. Filaret">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T5' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P5' | translate }}
+                                                </p>
+                                                <p class="text-xs font-medium text-center">{{ 'SUCCESSION_BISHOP_C5' | translate }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Fila 6 (a la izquierda) -->
+                                <li class="md:border-r-2 md:border-l-0 border-l-2 border-sky-900">
+                                    <div class="flex flex-start">
+                                        <!-- Icono, oculto en pantallas medianas y grandes -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5 md:hidden">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 md:mr-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/6.bp-spyridon.png" alt="Ob. Spyridon">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T6' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P6' | translate }}
+                                                </p>
+                                                <p class="text-xs font-medium text-center">{{ 'SUCCESSION_BISHOP_C1' | translate }}</p>
+                                            </div>
+                                        </div>
+                                        <!-- Icono, oculto en pantallas pequeñas -->
+                                        <div class="bg-sky-900 w-6 h-6 items-center justify-center rounded-full -mr-3.5 hidden md:flex">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="hidden md:block"></div> <!-- 2da columna vacia -->
+
+                                <!-- Fila 7 (a la derecha) -->
+                                <div class="hidden md:block"></div> <!-- 1ra columna vacia -->
+                                <li class="border-l-2 border-sky-900">
+                                    <div class="flex flex-start">
+                                        <!-- Icono -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/7.bp-ioan.png" alt="Ob. Ioan">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T7' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P7' | translate }}
+                                                </p>
+                                                <p class="text-xs font-medium text-center">{{ 'SUCCESSION_BISHOP_C7' | translate }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Fila 8 (a la izquierda) -->
+                                <li class="md:border-r-2 md:border-l-0 border-l-2 border-sky-900">
+                                    <div class="flex flex-start">
+                                        <!-- Icono, oculto en pantallas medianas y grandes -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5 md:hidden">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 md:mr-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/8.bp-chrysostomos.png" alt="Ob. Chrysostomos">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T8' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P8' | translate }}
+                                                </p>
+                                                <p class="text-xs font-medium text-center">{{ 'SUCCESSION_BISHOP_C1' | translate }}</p>
+                                            </div>
+                                        </div>
+                                        <!-- Icono, oculto en pantallas pequeñas -->
+                                        <div class="bg-sky-900 w-6 h-6 items-center justify-center rounded-full -mr-3.5 hidden md:flex">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="hidden md:block"></div> <!-- 2da columna vacia -->
+
+                                <!-- Fila 9 (a la derecha) -->
+                                <div class="hidden md:block"></div> <!-- 1ra columna vacia -->
+                                <li>
+                                    <div class="flex flex-start">
+                                        <!-- Icono -->
+                                        <div class="bg-sky-900 w-6 h-6 flex items-center justify-center rounded-full -ml-3.5">
+                                            <img src="assets/icons/orthodox-cross-24px.svg" alt="Orthodox Cross" class="w-4 h-4" />
+                                        </div>
+                                        <!-- Tarjeta -->
+                                        <div class="max-w-60 rounded-lg border ml-6 mb-10 border-gray-300 shadow-lg">
+                                            <img class="w-60 h-60 object-cover object-top rounded-t-lg"
+                                                src="assets/images/succession/9.bp-angelos.png" alt="Ob. Ioan">
+                                            <div class="p-4">
+                                                <p class="text-xs font-medium text-center txt-lapis-lazuli-700 mb-2">{{
+                                                    'SUCCESSION_BISHOP_T9' | translate }}</p>
+                                                <p class="text-xs font-extralight text-center">{{ 'SUCCESSION_BISHOP_P9' | translate }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+
+                        </ol>
+                    </div>
 
                 </div>
 
