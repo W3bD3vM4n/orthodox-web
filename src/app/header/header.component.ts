@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
 
   placeholderSearch?: string;
+  isMenuOpen:boolean = false;
 
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('es');
@@ -32,5 +33,10 @@ export class HeaderComponent implements OnInit {
   // Botones Idiomas
   switchLanguage(language: string) {
     this.translate.use(language);
+  }
+
+  // Abre y cierra el menu para celulares
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

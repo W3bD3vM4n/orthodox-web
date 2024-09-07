@@ -6,70 +6,87 @@
             <!-- Logo -->
             <a href="/" class="flex items-center">
               <img src="assets/images/escudo-900x900.png" alt="Logo" class="h-16 sm:h-12 mr-2">
-              <!-- Titulo -->
-              <span class="text-xl font-serif font-bold uppercase text-white leading-none">{{ 'HEADER_TITLE' | translate }}</span>
+                <!-- Titulo -->
+                <span class="text-xl font-serif font-bold uppercase text-white leading-none mr-2">{{ 'HEADER_TITLE' | translate }}</span>
             </a>
+
+            <!-- Menu Hamburger para Celulares -->
+            <button class="block lg:hidden rounded-md hover:bg-[#385D8D] hover:shadow-lg transition duration-300 ease-in-out">
+                <!-- Icono de Hamburger -->
+                <img class="w-8 h-8 m-4" src="assets/icons/menu-w-500px.svg" alt="Hamburger">
+            </button>
         </div>
 
         <!-- Centro: Elementos de Navegación -->
         <div class="col-start-1 row-start-2 row-end-3 text-center lg:col-start-2 lg:row-start-2 lg:row-end-4">
-            <nav class="w-full flex justify-evenly items-center">
+            <div class="hidden lg:block">
+                <nav class="w-full flex justify-evenly items-center">
 
-                <div class="dropdown">
-                    <button class="dropbtn py-2 px-4">{{ 'HEADER_ABOUT' | translate | capitalize }}</button>
-                    <div class="dropdown-content">
-                      <a href="/president-members">{{ 'ABOUT_MEMBERS' | translate | capitalize }}</a>
-                      <a href="/administration">{{ 'ABOUT_ADMINISTRATION' | translate | capitalize }}</a>
-                      <a href="/succession">{{ 'ABOUT_SUCCESSION' | translate | capitalize }}</a>
-                      <a href="#">{{ 'ABOUT_ELEVATION' | translate | capitalize }}</a>
+                    <div class="dropdown">
+                        <button class="dropbtn py-2 px-4">{{ 'HEADER_ABOUT' | translate | capitalize }}</button>
+                        <div class="dropdown-content">
+                            <a href="/president-members">{{ 'ABOUT_MEMBERS' | translate | capitalize }}</a>
+                            <a href="/administration">{{ 'ABOUT_ADMINISTRATION' | translate | capitalize }}</a>
+                            <a href="/succession">{{ 'ABOUT_SUCCESSION' | translate | capitalize }}</a>
+                            <a href="#">{{ 'ABOUT_ELEVATION' | translate | capitalize }}</a>
+                        </div>
                     </div>
-                </div>
 
-                <a href="/autonomy" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_AUTONOMY' | translate | capitalize }}</a>
-                <a href="/proclamation" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_PROCLAMATION' | translate | capitalize }}</a>
-                <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_STORE' | translate | capitalize }}</a>
-                <a href="#" class="font-semibold bg-slate-900 text-white rounded-lg py-2 px-4 hover:bg-slate-400 hover:text-slate-900 transition-colors">{{ 'HEADER_DONATE' | translate | capitalize }}</a>
-            </nav>
+                    <a href="/autonomy" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{
+                        'HEADER_AUTONOMY' | translate | capitalize }}</a>
+                    <a href="/proclamation" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{
+                        'HEADER_PROCLAMATION' | translate | capitalize }}</a>
+                    <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_STORE' |
+                        translate | capitalize }}</a>
+                    <a href="#"
+                        class="font-semibold bg-slate-900 text-white rounded-lg py-2 px-4 hover:bg-slate-400 hover:text-slate-900 transition-colors">{{
+                        'HEADER_DONATE' | translate | capitalize }}</a>
+                </nav>
+            </div>
         </div>
 
         <!-- Derecha: Idioma, Login, Busqueda -->
         <div class="col-start-1 row-start-3 row-end-4 text-center lg:col-start-3 lg:row-start-1 lg:row-end-3">
-            <div class="grid grid-cols-2">
-                <div class="flex items-center justify-start">
-                    <div class="flex items-center">
+            <div class="hidden lg:block">
+                <div class="grid grid-cols-2">
+                    <div class="flex items-center justify-start">
+                        <div class="flex items-center">
 
-                        <!-- Botones Idiomas -->
-                        <!-- Habilitados -->
-                        <button (click)="switchLanguage('es')" class="mr-2">
-                            <img src="assets/images/flags/spanish.png" alt="Spanish" class="w-5 h-5">
-                        </button>
-                        <button (click)="switchLanguage('en')" class="mr-2">
-                            <img src="assets/images/flags/english.png" alt="English" class="w-5 h-5">
-                        </button>
-                        <!-- Deshabilitados -->
-                        <button class="mr-2">
-                            <img src="assets/images/flags/greek-disabled.png" alt="Greek" class="w-5 h-5">
-                        </button>
-                        <button>
-                            <img src="assets/images/flags/russian-disabled.png" alt="Russian" class="w-5 h-5">
+                            <!-- Botones Idiomas -->
+                            <!-- Habilitados -->
+                            <button (click)="switchLanguage('es')" class="mr-2">
+                                <img src="assets/images/flags/spanish.png" alt="Spanish" class="w-5 h-5">
+                            </button>
+                            <button (click)="switchLanguage('en')" class="mr-2">
+                                <img src="assets/images/flags/english.png" alt="English" class="w-5 h-5">
+                            </button>
+                            <!-- Deshabilitados -->
+                            <button class="mr-2">
+                                <img src="assets/images/flags/greek-disabled.png" alt="Greek" class="w-5 h-5">
+                            </button>
+                            <button>
+                                <img src="assets/images/flags/russian-disabled.png" alt="Russian" class="w-5 h-5">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end">
+                        <label for="login-icon" class="mr-2 txt-gray-700">{{ 'HEADER_LOGIN' | translate | capitalize }}:</label>
+                        <button id="login-icon"
+                            class="flex items-center justify-center text-2xl w-6 h-6 bg-slate-800 rounded-full text-slate-400 hover:text-white py-0">
+                            <!-- Icono de Login -->
+                            <ng-icon name="hugeUserCircle02"></ng-icon>
                         </button>
                     </div>
                 </div>
-                <div class="flex items-center justify-end">
-                    <label for="login-icon" class="mr-2 txt-gray-700">{{ 'HEADER_LOGIN' | translate | capitalize }}:</label>
-                    <button id="login-icon" class="flex items-center justify-center text-2xl w-6 h-6 bg-slate-800 rounded-full text-slate-400 hover:text-white py-0">
-                        <!-- Icono de Login -->
-                        <ng-icon name="hugeUserCircle02"></ng-icon>
+
+                <div class="flex items-center w-full mt-2">
+                    <input type="text" [attr.placeholder]="placeholderSearch"
+                        class="flex-1 min-w-[50px] px-4 py-0 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-small">
+                    <button class="text-xl pl-1 flex items-center justify-center text-slate-400 hover:text-white py-0">
+                        <!-- Icono de Lupa -->
+                        <ng-icon name="hugeSearch01"></ng-icon>
                     </button>
                 </div>
-            </div>
-
-            <div class="flex items-center w-full mt-2">
-                <input type="text" [attr.placeholder]="placeholderSearch" class="flex-1 min-w-[50px] px-4 py-0 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-small">
-                <button class="text-xl pl-1 flex items-center justify-center text-slate-400 hover:text-white py-0">
-                    <!-- Icono de Lupa -->
-                    <ng-icon name="hugeSearch01"></ng-icon>
-                </button>
             </div>
         </div>
 
