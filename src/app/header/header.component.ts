@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
   placeholderSearch?: string;
   isMenuOpen:boolean = false;
+  isOpen:boolean = false;
 
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('es');
@@ -38,5 +39,10 @@ export class HeaderComponent implements OnInit {
   // Abre y cierra el menu para celulares
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  // Abre el acordion dentro del menu
+  toggleAccordion() {
+    this.isOpen = !this.isOpen;
   }
 }

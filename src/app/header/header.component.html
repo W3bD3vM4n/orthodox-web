@@ -71,7 +71,24 @@
                     </div>
                 </div>
                 <div class="my-8">
-                    <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_ABOUT' | translate | capitalize }}</a>
+                    <button
+                        class="accordion cursor-pointer duration-300 ease-in-out font-semibold txt-cadet-gray-100 hover:underline hover:text-white"
+                        (click)="toggleAccordion()">{{ 'HEADER_ABOUT' | translate | capitalize }}</button>
+                    <div class="overflow-hidden transition-max-height duration-300 ease-in-out"
+                        [ngClass]="{'max-h-0': !isOpen, 'max-h-40': isOpen}">
+                        <div class="my-4 ml-6 font-medium txt-cadet-gray-100 hover:text-white">
+                            <a href="/president-members">{{ 'ABOUT_MEMBERS' | translate | capitalize }}</a>
+                        </div>
+                        <div class="my-4 ml-6 font-medium txt-cadet-gray-100 hover:text-white">
+                            <a href="/administration">{{ 'ABOUT_ADMINISTRATION' | translate | capitalize }}</a>
+                        </div>
+                        <div class="my-4 ml-6 font-medium txt-cadet-gray-100 hover:text-white">
+                            <a href="/succession">{{ 'ABOUT_SUCCESSION' | translate | capitalize }}</a>
+                        </div>
+                        <div class="my-4 ml-6 font-medium txt-cadet-gray-100 hover:text-white">
+                            <a href="#">{{ 'ABOUT_ELEVATION' | translate | capitalize }}</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="my-8">
                     <a href="/autonomy" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{
