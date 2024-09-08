@@ -11,10 +11,98 @@
             </a>
 
             <!-- Menu Hamburger para Celulares -->
-            <button class="block lg:hidden rounded-md hover:bg-[#385D8D] hover:shadow-lg transition duration-300 ease-in-out">
+            <button class="block lg:hidden rounded-md hover:bg-[#385D8D] hover:shadow-lg transition duration-300 ease-in-out" (click)="toggleMenu()">
                 <!-- Icono de Hamburger -->
                 <img class="w-8 h-8 m-4" src="assets/icons/menu-w-500px.svg" alt="Hamburger">
             </button>
+        </div>
+
+        <!-- Contenido del Menu para Celulares -->
+        <div [class.hidden]="!isMenuOpen" class="navbar-menu relative z-50">
+            <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+            <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-yale-blue-100 border-r overflow-y-auto">
+
+            <div class="m-4">
+                <!-- Fila #1, con 2 columnas -->
+                <div class="grid grid-cols-[85%_10%] gap-4">
+                    <a href="/" class="flex items-center">
+                        <img src="assets/images/escudo-900x900.png" alt="Logo" class="h-16 sm:h-12 mr-2">
+                        <!-- Titulo -->
+                        <span class="text-xl font-serif font-bold uppercase text-white leading-none">{{ 'HEADER_TITLE' |
+                            translate }}</span>
+                    </a>
+                    <button (click)="toggleMenu()" class="navbar-close flex justify-end">
+                        <!-- Boton de cerrar -->
+                        <img class="w-4 h-4" src="assets/icons/close-lg-500px.svg" alt="Cerrar">
+                    </button>
+                </div>
+
+                <!-- Fila #2-8 -->
+                <div class="my-4">
+                    <div class="flex items-center justify-start">
+                        <div class="flex items-center">
+
+                            <!-- Botones Idiomas -->
+                            <!-- Habilitados -->
+                            <button (click)="switchLanguage('es')" class="mr-2">
+                                <img src="assets/images/flags/spanish.png" alt="Spanish" class="w-5 h-5">
+                            </button>
+                            <button (click)="switchLanguage('en')" class="mr-2">
+                                <img src="assets/images/flags/english.png" alt="English" class="w-5 h-5">
+                            </button>
+                            <!-- Deshabilitados -->
+                            <button class="mr-2">
+                                <img src="assets/images/flags/greek-disabled.png" alt="Greek" class="w-5 h-5">
+                            </button>
+                            <button>
+                                <img src="assets/images/flags/russian-disabled.png" alt="Russian" class="w-5 h-5">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="flex items-center w-full mt-2">
+                        <input type="text" [attr.placeholder]="placeholderSearch"
+                            class="flex-1 min-w-[50px] px-4 py-0 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-small">
+                        <button class="text-xl pl-1 flex items-center justify-center text-slate-400 hover:text-white py-0">
+                            <!-- Icono de Lupa -->
+                            <ng-icon name="hugeSearch01"></ng-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="my-8">
+                    <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_ABOUT' | translate | capitalize }}</a>
+                </div>
+                <div class="my-8">
+                    <a href="/autonomy" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{
+                        'HEADER_AUTONOMY' | translate | capitalize }}</a>
+                </div>
+                <div class="my-8">
+                    <a href="/proclamation" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{
+                        'HEADER_PROCLAMATION' | translate | capitalize }}</a>
+                </div>
+                <div class="my-8">
+                    <a href="#" class="font-semibold txt-cadet-gray-100 hover:underline hover:text-white">{{ 'HEADER_STORE' |
+                        translate | capitalize }}</a>
+                </div>
+
+                <!-- Fila #8 -->
+                <div class="my-8">
+                    <a [routerLink]="['#']">
+                        <button class="w-full bg-slate-900 text-white px-4 py-2 rounded hover:bg-slate-400 hover:text-slate-900 transition-colors text-sm font-semibold">{{
+                        'HEADER_DONATE' | translate | capitalize }}</button>
+                    </a>
+                </div>
+
+                <!-- Fila #9 -->
+                <div class="mt-8">
+                    <a [routerLink]="['#']">
+                        <button class="w-full bg-stone-900 text-white px-4 py-2 rounded hover:bg-white hover:text-stone-900 text-sm font-semibold">{{ 'HEADER_LOGIN' | translate | capitalize }}</button>
+                    </a>
+                </div>
+
+              </div>
+            </nav>
         </div>
 
         <!-- Centro: Elementos de Navegación -->
