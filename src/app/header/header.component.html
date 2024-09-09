@@ -75,7 +75,7 @@
                         <button
                             class="accordion cursor-pointer duration-300 ease-in-out font-semibold text-left txt-cadet-gray-100 hover:underline hover:text-white flex items-center justify-between w-full"
                             (click)="toggleAccordion()">{{ 'HEADER_ABOUT' | translate | capitalize }}
-                            <img class="w-4 h-4 transition-opacity duration-300 ease-in-out" [src]="isOpen ? 'assets/icons/up-arrow.svg' : 'assets/icons/down-arrow-gray.svg'" alt="Arrow">
+                            <img class="w-4 h-4 transition-opacity duration-300 ease-in-out" [src]="isOpen ? 'assets/icons/up-arrow-gray.svg' : 'assets/icons/down-arrow-gray.svg'" alt="Arrow">
                         </button>
                     </div>
                     <div class="overflow-hidden transition-max-height duration-300 ease-in-out"
@@ -90,7 +90,7 @@
                             <a href="/succession">{{ 'ABOUT_SUCCESSION' | translate | capitalize }}</a>
                         </div>
                         <div class="my-4 ml-6 font-medium txt-cadet-gray-100 hover:text-white">
-                            <a href="#">{{ 'ABOUT_ELEVATION' | translate | capitalize }}</a>
+                            <a href="/elevation">{{ 'ABOUT_ELEVATION' | translate | capitalize }}</a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                             <a href="/president-members">{{ 'ABOUT_MEMBERS' | translate | capitalize }}</a>
                             <a href="/administration">{{ 'ABOUT_ADMINISTRATION' | translate | capitalize }}</a>
                             <a href="/succession">{{ 'ABOUT_SUCCESSION' | translate | capitalize }}</a>
-                            <a href="#">{{ 'ABOUT_ELEVATION' | translate | capitalize }}</a>
+                            <a href="/elevation">{{ 'ABOUT_ELEVATION' | translate | capitalize }}</a>
                         </div>
                     </div>
 

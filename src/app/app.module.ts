@@ -36,6 +36,7 @@ import { CapitalizePipe } from './capitalize.pipe';
 import { PresidentMembersComponent } from './sections/president-members/president-members.component';
 import { AdministrationComponent } from './sections/administration/administration.component';
 import { SuccessionComponent } from './sections/succession/succession.component';
+import { ElevationComponent } from './sections/elevation/elevation.component';
 import { AutonomyComponent } from './sections/autonomy/autonomy.component';
 import { ProclamationComponent } from './sections/proclamation/proclamation.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
@@ -75,6 +76,7 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     PresidentMembersComponent,
     AdministrationComponent,
     SuccessionComponent,
+    ElevationComponent,
     AutonomyComponent,
     ProclamationComponent,
     DiscoverComponent,

@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { PresidentMembersComponent } from './sections/president-members/president-members.component';
 import { AdministrationComponent } from './sections/administration/administration.component';
 import { SuccessionComponent } from './sections/succession/succession.component';
+import { ElevationComponent } from './sections/elevation/elevation.component';
 import { AutonomyComponent } from './sections/autonomy/autonomy.component';
 import { ProclamationComponent } from './sections/proclamation/proclamation.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'president-members', component: PresidentMembersComponent },
   { path: 'administration', component: AdministrationComponent },
   { path: 'succession', component: SuccessionComponent },
+  { path: 'elevation', component: ElevationComponent },
   { path: 'autonomy', component: AutonomyComponent },
   { path: 'proclamation', component: ProclamationComponent },
   { path: 'discover', component: DiscoverComponent },
