@@ -61,6 +61,8 @@ import { OrthodoxyComponent } from './sections/orthodoxy/orthodoxy.component';
 import { AutocephalyComponent } from './sections/autocephaly/autocephaly.component';
 import { UnityComponent } from './sections/unity/unity.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
+import { GalleryModule } from 'ng-gallery';
+import { LightboxModule, LIGHTBOX_CONFIG } from 'ng-gallery/lightbox';
 
 @NgModule({
   declarations: [
@@ -124,11 +126,19 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
     BrowserAnimationsModule,
     QuillModule.forRoot(),
     FormsModule,
-    NgIconsModule.withIcons({ hugeUserCircle02, hugeSearch01, hugeGoogleMaps, hugeFacebook01, hugeNewTwitterRectangle, hugeYoutube, hugeInstagram })
+    NgIconsModule.withIcons({ hugeUserCircle02, hugeSearch01, hugeGoogleMaps, hugeFacebook01, hugeNewTwitterRectangle, hugeYoutube, hugeInstagram }),
+    GalleryModule,
+    LightboxModule
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    {
+      provide: LIGHTBOX_CONFIG,
+      useValue: {
+        panelClass: 'fullscreen' // Configuración por defecto de lightbox
+      }
+    }
   ],
   bootstrap: [AppComponent]
 })
