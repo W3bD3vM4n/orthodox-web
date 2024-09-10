@@ -12,25 +12,32 @@ export class ElevationComponent implements OnInit {
 
   public items: GalleryItem[] = [];
 
-  constructor(public gallery: Gallery) {
-  }
+  constructor(public gallery: Gallery) {}
 
   ngOnInit() {
-    // Crear la galleria de items
+    // Crea la galeria de items #1
     this.items = this.data.map(item =>
       new ImageItem({ src: item.srcUrl, thumb: item.previewUrl })
     );
 
-    // Cargar los items en lightbox
-    this.basicLightboxExample();
-  }
-
-  basicLightboxExample() {
+    // Carga los items del lightbox #1
     this.gallery.ref().load(this.items);
   }
 
-  // Datos de imagenes
+  // Datos de imagenes #1
   private data = [
+    {
+      srcUrl: 'assets/images/elevation/doc-001.png',
+      previewUrl: 'assets/images/elevation/doc-001.png'
+    },
+    {
+      srcUrl: 'assets/images/elevation/doc-002.png',
+      previewUrl: 'assets/images/elevation/doc-002.png'
+    },
+    {
+      srcUrl: 'assets/images/elevation/doc-003.png',
+      previewUrl: 'assets/images/elevation/doc-003.png'
+    },
     {
       srcUrl: 'assets/images/elevation/doc-004.png',
       previewUrl: 'assets/images/elevation/doc-004.png'

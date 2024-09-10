@@ -17,20 +17,18 @@
                     <p class="mt-2 text-base font-extralight text-justify mb-4">{{ 'ELEVATION_CONTENT_P5' | translate }}<span
                         class="font-bold">{{ 'ELEVATION_IMPORTANT_3' | translate }}</span>{{ 'ELEVATION_CONTENT_P6' | translate }}</p>
 
-                    <!-- 2 imagenes aqui -->
-                    <div class="m-8">
+                    <p class="mt-2 text-base font-extralight text-justify mb-4">{{ 'ELEVATION_CONTENT_P7' | translate }}</p>
+                    <p class="mt-2 text-base font-extralight text-justify">{{ 'ELEVATION_CONTENT_P8' | translate }}</p>
+
+                    <!-- galeria de imagenes -->
+                    <div class="mt-8">
                         <div class="flex flex-wrap items-center justify-center">
-                            <img class="w-40 h-32 object-cover m-2.5"
+                            <img class="w-36 h-28 object-cover m-2.5"
                                 *ngFor="let item of items; index as i"
                                 [lightbox]="i"
                                 [src]="item.data?.thumb || 'assets/images/default_image.png'">
                         </div>
                     </div>
-
-                    <p class="mt-2 text-base font-extralight text-justify mb-4">{{ 'ELEVATION_CONTENT_P7' | translate }}</p>
-                    <p class="mt-2 text-base font-extralight text-justify">{{ 'ELEVATION_CONTENT_P8' | translate }}</p>
-
-                    <!-- 3 imagenes aqui -->
                 </div>
 
             </div>
