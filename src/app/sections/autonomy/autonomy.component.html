@@ -1,1 +1,94 @@
-<p>autonomy works!</p>
+<div class="flex-1 p-4">
+    <!-- Grid layout -->
+    <div class="grid gap-4">
+
+        <div class="bg-white p-4">
+            <!-- Margenes responsive -->
+            <div class="space-y-4 my-8 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
+
+                <p-tabView [(activeIndex)]="indiceDeTabActiva">
+                    <p-tabPanel header="{{ 'AUTONOMY_TAB_1' | translate }}" headerStyleClass="txt-lapis-lazuli-700">
+
+                        <!-- Fila 1 -->
+                        <div>
+                            <h2 class="text-xl font-semibold txt-lion-500 text-center my-8">{{ 'AUTONOMY_TITLE_1' |
+                                translate }}</h2>
+                            <p class="mt-2 text-base font-extralight text-center mb-4">{{ 'AUTONOMY_CONTENT_P1' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center mb-4">{{ 'AUTONOMY_CONTENT_P2' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center mb-6">{{ 'AUTONOMY_CONTENT_P3' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center txt-eerie-black-300 mb-6"><span
+                                    class="font-bold">{{ 'AUTONOMY_IMPORTANT_1' | translate }}</span></p>
+                            <p class="mt-2 text-base font-extralight text-center mb-4">{{ 'AUTONOMY_CONTENT_P4' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center mb-8">{{ 'AUTONOMY_CONTENT_P5' |
+                                translate }}</p>
+                        </div>
+
+                        <!-- Fila 2 -->
+                        <div>
+                            <p class="mt-2 text-base font-extralight text-justify txt-eerie-black-300 mb-4"><span
+                                    class="font-bold">{{ 'AUTONOMY_IMPORTANT_2' | translate }}</span></p>
+                            <ul class="list-none space-y-2">
+                                <li
+                                    class="before:content-['A)'] before:mr-2 before:font-medium before:text-[#1E1E1E] flex items-start">
+                                    <div>
+                                        <p class="text-justify">{{ 'AUTONOMY_CONTENT_P6' | translate }}</p>
+                                    </div>
+                                </li>
+                                <li
+                                    class="before:content-['B)'] before:mr-2 before:font-medium before:text-[#1E1E1E] flex items-start">
+                                    <div>
+                                        <p class="text-justify">{{ 'AUTONOMY_CONTENT_P7' | translate }}</p>
+                                    </div>
+                                </li>
+                                <li
+                                    class="before:content-['C)'] before:mr-2 before:font-medium before:text-[#1E1E1E] flex items-start">
+                                    <div>
+                                        <p class="text-justify">{{ 'AUTONOMY_CONTENT_P8' | translate }}</p>
+                                    </div>
+                                </li>
+                                <li
+                                    class="before:content-['D)'] before:mr-2 before:font-medium before:text-[#1E1E1E] flex items-start">
+                                    <div>
+                                        <p class="text-justify">{{ 'AUTONOMY_CONTENT_P9' | translate }}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div><br>
+
+                        <!-- Fila 3 -->
+                        <div>
+                            <h2 class="text-xl font-semibold txt-lion-500 text-center mb-4">{{ 'AUTONOMY_TITLE_2' |
+                                translate }}</h2>
+                            <p class="mt-2 text-base font-extralight text-center mb-4">{{ 'AUTONOMY_CONTENT_P10' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center mb-4">{{ 'AUTONOMY_CONTENT_P11' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center mb-4">{{ 'AUTONOMY_CONTENT_P12' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center mb-4">{{ 'AUTONOMY_CONTENT_P13' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center mb-4">{{ 'AUTONOMY_CONTENT_P14' |
+                                translate }}</p>
+                            <p class="mt-2 text-base font-extralight text-center">{{ 'AUTONOMY_CONTENT_P15' |
+                                translate
+                                }}</p>
+                        </div>
+
+                    </p-tabPanel>
+                    <p-tabPanel header="{{ 'AUTONOMY_TAB_2' | translate }}" headerStyleClass="txt-gray-700">
+                        <div>
+                            <img src="assets/images/autonomy/tomos-sinodal_documento-original.jpg"
+                                alt="Tomos Sinodal Documento Original" class="w-auto h-auto mx-auto mt-8">
+                        </div>
+                    </p-tabPanel>
+                </p-tabView>
+
+            </div>
+        </div>
+
+    </div>
+</div>

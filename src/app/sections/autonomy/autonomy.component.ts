@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './autonomy.component.css'
 })
 export class AutonomyComponent {
-
+  public indiceDeTabActiva: number = 0;
 }
