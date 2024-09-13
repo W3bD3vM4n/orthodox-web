@@ -63,6 +63,7 @@ import { UnityComponent } from './sections/unity/unity.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 import { GalleryModule } from 'ng-gallery';
 import { LightboxModule, LIGHTBOX_CONFIG } from 'ng-gallery/lightbox';
+import { EditorialComponent } from './sections/editorial/editorial.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import { LightboxModule, LIGHTBOX_CONFIG } from 'ng-gallery/lightbox';
     OrthodoxyComponent,
     AutocephalyComponent,
     UnityComponent,
-    MisionVisionComponent
+    MisionVisionComponent,
+    EditorialComponent
   ],
   imports: [
     BrowserModule,
