@@ -2,26 +2,48 @@
     <!-- Grid layout -->
     <div class="grid gap-4">
 
-        <div class="bg-white p-4">
+        <div class="bg-white">
             <!-- Margenes responsive -->
             <div class="space-y-4 my-8 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
 
                 <!-- Fila 1 -->
-                <div class="container">
-                    <div class="book">
-                        <div class="front">
-                            <div class="cover">
-                                <img src="assets/images/books/book_camino_ortodoxo.png" alt="Cover"/>
+                <div class="flex flex-col md:flex-row md:space-x-4 my-20">
+                    <!-- Primera Columna (70%) -->
+                    <div class="md:w-3/5 w-full">
+                        <!-- Animación de Libro -->
+                        <div class="container flex justify-center md:justify-start">
+                            <div class="book">
+                                <div class="front">
+                                    <div class="cover">
+                                        <img src="assets/images/books/book_camino_ortodoxo.png" alt="Cover" />
+                                    </div>
+                                </div>
+                                <div class="left-side">
+                                    <h2>
+                                        <span>Vladyka Chrysóstomos</span>
+                                        <span>CAMINO ORTODOXO</span>
+                                    </h2>
+                                </div>
                             </div>
                         </div>
-                        <div class="left-side">
-                            <h2>
-                                <span>Vladyka Chrysóstomos</span>
-                                <span>CAMINO ORTODOXO</span>
-                            </h2>
-                        </div>
                     </div>
-                </div>
+
+                    <!-- Segunda Columna (30%) -->
+                    <div class="md:w-2/5 w-full mt-16 md:mt-0 flex flex-col">
+                      <!-- First Row (Circular Image) -->
+                      <div class="flex justify-center md:justify-center mb-4">
+                        <img src="assets/images/books/chrysostomos_b-n.png" alt="Author" class="w-40 h-40 rounded-full object-cover">
+                      </div>
+
+                      <!-- Second Row (Paragraphs) -->
+                      <div class="space-y-4">
+                        <p class="text-center font-bold mx-4 md:mx-0">{{ 'EDITORIAL_CONTENT_P1' | translate }}</p>
+                        <p class="text-center text-lg font-serif uppercase mx-4 md:mx-0">{{ 'EDITORIAL_CONTENT_P2' | translate }}</p>
+                        <p class="text-center font-serif mx-4 md:mx-0">{{ 'EDITORIAL_CONTENT_P3' | translate }}</p>
+                        <p class="text-justify mx-4 md:mx-0">{{ 'EDITORIAL_CONTENT_P4' | translate }}</p>
+                      </div>
+                    </div>
+                  </div>
 
             </div>
         </div>
