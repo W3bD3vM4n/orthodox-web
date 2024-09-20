@@ -41,7 +41,6 @@ import { AutonomyComponent } from './sections/autonomy/autonomy.component';
 import { ProclamationComponent } from './sections/proclamation/proclamation.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
 import { ArticlesComponent } from './sections/articles/articles.component';
-import { NewsComponent } from './sections/news/news.component';
 import { EventsComponent } from './sections/events/events.component';
 import { StoreComponent } from './sections/store/store.component';
 import { GodComponent } from './sections/god/god.component';
@@ -84,7 +83,6 @@ import { EditorialComponent } from './sections/editorial/editorial.component';
     ProclamationComponent,
     DiscoverComponent,
     ArticlesComponent,
-    NewsComponent,
     EventsComponent,
     StoreComponent,
     GodComponent,

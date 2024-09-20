@@ -9,7 +9,6 @@ import { ElevationComponent } from './sections/elevation/elevation.component';
 import { AutonomyComponent } from './sections/autonomy/autonomy.component';
 import { ProclamationComponent } from './sections/proclamation/proclamation.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
-import { NewsComponent } from './sections/news/news.component';
 import { SchedulerComponent } from './sections/scheduler/scheduler.component';
 import { GodComponent } from './sections/god/god.component';
 import { ChurchComponent } from './sections/church/church.component';
@@ -39,7 +38,11 @@ const routes: Routes = [
   { path: 'autonomy', component: AutonomyComponent },
   { path: 'proclamation', component: ProclamationComponent },
   { path: 'discover', component: DiscoverComponent },
-  { path: 'news', component: NewsComponent },
+  { path: '', redirectTo: '/news', pathMatch: 'full' },
+  {
+    path: 'news',
+    loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
+  },
   { path: 'scheduler', component: SchedulerComponent },
   { path: 'god', component: GodComponent },
   { path: 'church', component: ChurchComponent },
