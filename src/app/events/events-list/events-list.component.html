@@ -8,23 +8,23 @@
 
                 <!-- Fila 1 -->
                 <div>
-                    <h2 class="text-3xl font-bold text-center my-6">Ultimos Sermones</h2>
+                    <h2 class="text-3xl font-bold text-center my-6">Ultimos Eventos</h2>
                     <ul>
-                        <li *ngFor="let sermons of sermonsList" (click)="openSermons(sermons.id)" class="border-b border-gray-300 cursor-pointer mb-4">
+                        <li *ngFor="let events of eventsList" (click)="openEvents(events.id)" class="border-b border-gray-300 cursor-pointer mb-4">
 
                             <!-- Fecha -->
                             <div class="text-sm text-gray-500 mb-2">
-                                {{ sermons.date }}
+                                {{ events.date }}
                             </div>
 
                             <!-- Titulo -->
                             <div class="text-lg font-semibold font-serif txt-eerie-black-300 hover:underline">
-                                {{ sermons.title }}
+                                {{ events.title }}
                             </div>
 
                             <!-- Contenido -->
                             <p class="text-sm text-gray-600 mt-2 text-justify mb-4">
-                                {{ getSummary(sermons.content) }}
+                                {{ getSummary(events.content) }}
                             </p>
 
                         </li>

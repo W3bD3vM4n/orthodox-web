@@ -23,4 +23,5 @@ export class SermonsDetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.sermonsArticle = this.sermonsService.getSermonsById(id);
   }
+
 }

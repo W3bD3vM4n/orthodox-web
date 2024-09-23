@@ -23,4 +23,5 @@ export class NewsDetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.newsArticle = this.newsService.getNewsById(id);
   }
+
 }

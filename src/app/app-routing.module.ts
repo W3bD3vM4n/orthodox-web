@@ -49,6 +49,11 @@ const routes: Routes = [
     loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
   },
   { path: 'scheduler', component: SchedulerComponent },
+  { path: '', redirectTo: '/events', pathMatch: 'full' },
+  {
+    path: 'events',
+    loadChildren: () => import('./events/events.module').then(m => m.EventsModule),
+  },
   { path: 'god', component: GodComponent },
   { path: 'church', component: ChurchComponent },
   { path: 'tradition', component: TraditionComponent },

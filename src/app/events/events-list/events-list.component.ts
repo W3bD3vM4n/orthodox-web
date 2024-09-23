@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NewsService } from '../news.service';
-import { News } from '../news.model';
+import { EventsService } from "../events.service";
+import { Events } from "../events.model";
 
 @Component({
-  selector: 'app-news-list',
-  templateUrl: './news-list.component.html',
-  styleUrl: './news-list.component.css'
+  selector: 'app-events-list',
+  templateUrl: './events-list.component.html',
+  styleUrl: './events-list.component.css'
 })
-export class NewsListComponent implements OnInit {
+export class EventsListComponent implements OnInit {
 
-  newsList: News[] = [];
+  eventsList: Events[] = [];
 
-  constructor(private router: Router, private newsService: NewsService) {}
+  constructor(private router: Router, private eventsService: EventsService) {}
 
   ngOnInit() {
-    this.newsList = this.newsService.getNewsList();
+    this.eventsList = this.eventsService.getEventsList();
   }
 
   getSummary(content: string): string {
@@ -38,8 +38,8 @@ export class NewsListComponent implements OnInit {
     return summary;
   }
 
-  openNews(id: number) {
-    this.router.navigate(['/news', id]);
+  openEvents(id: number) {
+    this.router.navigate(['/events', id]);
   }
 
 }

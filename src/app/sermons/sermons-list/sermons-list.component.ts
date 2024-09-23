@@ -41,4 +41,5 @@ export class SermonsListComponent implements OnInit {
   openSermons(id: number) {
     this.router.navigate(['/sermons', id]);
   }
+
 }

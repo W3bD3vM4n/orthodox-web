@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { SermonsService } from "../sermons/sermons.service";
+import { Sermons } from "../sermons/sermons.model";
+
 import { NewsService } from '../news/news.service';
 import { News } from '../news/news.model';
 
-import { SermonsService } from "../sermons/sermons.service";
-import { Sermons } from "../sermons/sermons.model";
+import { EventsService } from "../events/events.service";
+import { Events } from "../events/events.model";
 
 @Component({
   selector: 'app-home',
@@ -15,16 +18,20 @@ import { Sermons } from "../sermons/sermons.model";
 export class HomeComponent implements OnInit {
 
   sermonsList: Sermons[] = [];
-  maxSermonsItems: number = 2; // Limita el número de sermones mostradas
+  maxSermonsItems: number = 2; // Limita el número de sermones mostrados
 
   newsList: News[] = [];
   maxNewsItems: number = 2; // Limita el número de noticias mostradas
 
-  constructor(private router: Router, private sermonsService: SermonsService, private newsService: NewsService) {}
+  eventsList: Events[] = [];
+  maxEventsItems: number = 2; // Limita el número de eventos mostrados
+
+  constructor(private router: Router, private sermonsService: SermonsService, private newsService: NewsService, private eventsService: EventsService) {}
 
   ngOnInit() {
     this.sermonsList = this.sermonsService.getSermonsList();
     this.newsList = this.newsService.getNewsList();
+    this.eventsList = this.eventsService.getEventsList();
   }
 
   getSummary(content: string): string {
@@ -54,4 +61,9 @@ export class HomeComponent implements OnInit {
   openNews(id: number) {
     this.router.navigate(['/news', id]);
   }
+
+  openEvents(id: number) {
+    this.router.navigate(['/events', id]);
+  }
+
 }

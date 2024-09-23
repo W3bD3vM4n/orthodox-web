@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { SermonsListComponent } from "./sermons-list/sermons-list.component";
 import { SermonsDetailComponent } from "./sermons-detail/sermons-detail.component";
 
