@@ -8,10 +8,22 @@
 
                 <!-- Fila 1 -->
                 <div>
-                    <h2>News Article Detail</h2>
-                    <p *ngIf="newsArticle">
-                        {{ newsArticle.title }}
-                    </p>
+                    <!-- Titulo -->
+                    <div *ngIf="newsArticle">
+
+                        <!-- Fecha -->
+                        <div class="text-sm text-gray-500 mb-2">
+                            {{ newsArticle.date }}
+                        </div>
+
+                        <div class="text-2xl font-bold font-serif txt-eerie-black-300">{{ newsArticle.title }}</div>
+
+                        <!-- Contenido -->
+                        <p class="mt-2 text-justify mb-4">
+                            {{ newsArticle.content }}
+                        </p>
+
+                    </div>
                 </div>
 
             </div>

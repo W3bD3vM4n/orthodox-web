@@ -9,24 +9,24 @@
                 <!-- Fila 1 -->
                 <div>
                     <h2 class="text-3xl font-bold text-center my-6">Ultimas Noticias</h2>
-                    <ul class="max-w-3xl mx-auto">
-                        <li *ngFor="let news of newsList" (click)="openNews(news.id)"
-                            class="border-b border-gray-300 p-4 cursor-pointer mb-4">
-
-                            <!-- Titulo -->
-                            <div class="text-lg font-semibold text-blue-600">
-                                {{ news.title }}
-                            </div>
+                    <ul>
+                        <li *ngFor="let news of newsList" (click)="openNews(news.id)" class="border-b border-gray-300 cursor-pointer mb-4">
 
                             <!-- Fecha -->
                             <div class="text-sm text-gray-500 mb-2">
                                 {{ news.date }}
                             </div>
 
+                            <!-- Titulo -->
+                            <div class="text-lg font-semibold font-serif txt-eerie-black-300 hover:underline">
+                                {{ news.title }}
+                            </div>
+
                             <!-- Contenido -->
                             <p class="text-sm text-gray-600 mt-2 text-justify mb-4">
                                 {{ getSummary(news.content) }}
                             </p>
+
                         </li>
                     </ul>
                 </div>

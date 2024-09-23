@@ -2,36 +2,60 @@
     <!-- Grid layout -->
     <div class="grid gap-4">
         <!-- 1 row, 1 column -->
-        <div class="bg-gray-200 p-4 flex items-center justify-center">
+        <div class="bg-gray-200 p-4 flex items-center justify-center min-h-96 max-h-96">
             <!-- Descubre el Cristianismo Ortodoxo -->
             <a href="/discover" class="flex items-center justify-center text-white hover:text-blue-500">Descubre</a>
         </div>
 
         <!-- 2 rows, 2 columns -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-gray-300 p-4 flex items-center justify-center">Artículos</div>
-            <div class="bg-gray-300 p-4 flex items-center justify-center">Podcast</div>
-            <div class="bg-gray-300 p-4 flex items-center justify-center">
-                <a href="/news" class="flex items-center justify-center text-white hover:text-blue-500">Noticias</a>
+            <div class="bg-gray-300 p-4 flex items-center justify-center min-h-48 max-h-48">Artículos</div>
+            <div class="bg-gray-300 p-4 flex items-center justify-center min-h-48 max-h-48">Podcast</div>
+            <div class="bg-cadet-gray-100 p-4 flex min-h-48 max-h-48">
+
+                <div class="w-full mx-2">
+                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">Noticias</h2>
+                    <ul>
+                        <li *ngFor="let news of newsList.slice(0, maxNewsItems)" (click)="openNews(news.id)"
+                            class="border-b border-gray-300 cursor-pointer mb-2">
+
+                            <!-- Fecha -->
+                            <div class="text-xs text-gray-500 mb-2">
+                                {{ news.date }}
+                            </div>
+
+                            <!-- Titulo -->
+                            <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
+                                {{ news.title }}
+                            </div>
+
+                        </li>
+                    </ul>
+
+                    <a href="/news" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">Ver más >></a>
+                </div>
+
             </div>
-            <div class="bg-gray-300 p-4 flex items-center justify-center">Videos</div>
+            <div class="bg-gray-300 p-4 flex items-center justify-center min-h-48 max-h-48">Videos</div>
         </div>
 
         <!-- 1 row, 1 column -->
-        <div class="bg-gray-200 p-4 flex items-center justify-center">
+        <div class="bg-gray-200 p-4 flex items-center justify-center min-h-48 max-h-48">
             Pensamiento del Día
         </div>
 
         <!-- 1 row, 2 columns -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a href="/scheduler" class="bg-gray-300 p-4 flex items-center justify-center text-white hover:text-blue-500">Calendario</a>
-            <div class="bg-gray-300 p-4 flex items-center justify-center">Anuncios</div>
+            <div class="bg-gray-300 p-4 flex items-center justify-center min-h-48 max-h-48">
+                <a href="/scheduler" class="flex items-center justify-center text-white hover:text-blue-500">Calendario</a>
+            </div>
+            <div class="bg-gray-300 p-4 flex items-center justify-center min-h-48 max-h-48">Anuncios</div>
         </div>
 
         <!-- 2 rows, 1 column -->
         <div class="grid grid-rows-2 gap-4">
-            <div class="bg-gray-200 p-4 flex items-center justify-center">Galeria de Fotos</div>
-            <div class="bg-gray-200 p-4 flex items-center justify-center">Tienda de la Iglesia</div>
+            <div class="bg-gray-200 p-4 flex items-center justify-center min-h-48 max-h-48">Galeria de Fotos</div>
+            <div class="bg-gray-200 p-4 flex items-center justify-center min-h-48 max-h-48">Tienda de la Iglesia</div>
         </div>
     </div>
 
