@@ -1,30 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { NewsService } from '../news/news.service';
-import { News } from '../news/news.model';
-
-import { SermonsService } from "../sermons/sermons.service";
-import { Sermons } from "../sermons/sermons.model";
+import { SermonsService } from "../sermons.service";
+import { Sermons } from "../sermons.model";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  selector: 'app-sermons-list',
+  templateUrl: './sermons-list.component.html',
+  styleUrl: './sermons-list.component.css'
 })
-export class HomeComponent implements OnInit {
+export class SermonsListComponent implements OnInit {
 
   sermonsList: Sermons[] = [];
-  maxSermonsItems: number = 2; // Limita el número de sermones mostradas
 
-  newsList: News[] = [];
-  maxNewsItems: number = 2; // Limita el número de noticias mostradas
-
-  constructor(private router: Router, private sermonsService: SermonsService, private newsService: NewsService) {}
+  constructor(private router: Router, private sermonsService: SermonsService) {}
 
   ngOnInit() {
     this.sermonsList = this.sermonsService.getSermonsList();
-    this.newsList = this.newsService.getNewsList();
   }
 
   getSummary(content: string): string {
@@ -49,9 +40,5 @@ export class HomeComponent implements OnInit {
 
   openSermons(id: number) {
     this.router.navigate(['/sermons', id]);
-  }
-
-  openNews(id: number) {
-    this.router.navigate(['/news', id]);
   }
 }

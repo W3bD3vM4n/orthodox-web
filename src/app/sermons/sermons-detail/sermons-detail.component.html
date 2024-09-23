@@ -1,0 +1,43 @@
+<div class="flex-1 p-4">
+    <!-- Grid layout -->
+    <div class="grid gap-4">
+
+        <div class="bg-white p-4">
+            <!-- Margenes responsive -->
+            <div class="space-y-4 my-8 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
+
+                <!-- Fila 1 -->
+                <div>
+
+                    <nav class="breadcrumb">
+                        <ul class="flex space-x-2">
+                          <li *ngFor="let breadcrumb of breadcrumbs; let last = last">
+                            <a [routerLink]="breadcrumb.url" class="text-sm no-underline txt-eerie-black-300 hover:underline"
+                               [ngClass]="{ 'text-gray-500': last }">{{ breadcrumb.label }}</a>
+                            <span *ngIf="!last" class="ml-2">/</span>
+                          </li>
+                        </ul>
+                      </nav><br>
+
+                    <!-- Titulo -->
+                    <div *ngIf="sermonsArticle">
+
+                        <!-- Fecha -->
+                        <div class="text-sm text-gray-500 mb-2">
+                            {{ sermonsArticle.date }}
+                        </div>
+
+                        <div class="text-2xl font-bold font-serif txt-eerie-black-300">{{ sermonsArticle.title }}</div>
+
+                        <!-- Contenido -->
+                        <p class="mt-2 text-justify mb-4">
+                            {{ sermonsArticle.content }}
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

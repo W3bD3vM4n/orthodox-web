@@ -38,6 +38,11 @@ const routes: Routes = [
   { path: 'autonomy', component: AutonomyComponent },
   { path: 'proclamation', component: ProclamationComponent },
   { path: 'discover', component: DiscoverComponent },
+  { path: '', redirectTo: '/sermons', pathMatch: 'full' },
+  {
+    path: 'sermons',
+    loadChildren: () => import('./sermons/sermons.module').then(m => m.SermonsModule),
+  },
   { path: '', redirectTo: '/news', pathMatch: 'full' },
   {
     path: 'news',
