@@ -8,6 +8,17 @@
 
                 <!-- Fila 1 -->
                 <div>
+
+                    <nav class="breadcrumb">
+                        <ul class="flex space-x-2">
+                          <li *ngFor="let breadcrumb of breadcrumbs; let last = last">
+                            <a [routerLink]="breadcrumb.url" class="text-sm no-underline txt-eerie-black-300 hover:underline"
+                               [ngClass]="{ 'text-gray-500': last }">{{ breadcrumb.label }}</a>
+                            <span *ngIf="!last" class="ml-2">/</span>
+                          </li>
+                        </ul>
+                      </nav><br>
+
                     <!-- Titulo -->
                     <div *ngIf="newsArticle">
 

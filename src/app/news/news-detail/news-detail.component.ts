@@ -10,6 +10,11 @@ import { News } from '../news.model';
 })
 export class NewsDetailComponent implements OnInit {
 
+  breadcrumbs = [
+    { label: 'Home', url: '/' },
+    { label: 'News', url: '/news' },
+  ];
+
   newsArticle: News | undefined;;
 
   constructor(private route: ActivatedRoute, private newsService: NewsService) {}
