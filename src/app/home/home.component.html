@@ -2,9 +2,17 @@
     <!-- Grid layout -->
     <div class="grid gap-4">
         <!-- 1 row, 1 column -->
-        <div class="bg-[#F2E5AE] p-4 flex items-center justify-center min-h-96 max-h-96">
-            <!-- Descubre el Cristianismo Ortodoxo -->
-            <a href="/discover" class="flex items-center justify-center txt-yale-blue-100 hover:text-[#1E1E1E]">Descubre</a>
+        <div class="relative bg-[#F2E5AE] bg-[url('assets/images/home/christ-cover.png')] bg-cover bg-center p-4 min-h-96 max-h-96">
+            <!-- Descubre -->
+            <div class="absolute text-center bottom-4 left-4 w-96">
+                <div class="font-semibold uppercase">
+                    <p class="text-3xl text-[#023373]">{{ 'DISCOVER_TITLE' | translate }}</p>
+                    <p class="text-5xl text-white">{{ 'DISCOVER_SUBTITLE' | translate }}</p>
+                </div><br>
+
+                <!-- Botón -->
+                <a href="/discover" class="inline-flex items-center justify-center border-2 border-[#023373] rounded bg-transparent py-1 px-3 text-sm font-medium txt-yale-blue-100 hover:underline uppercase">{{ 'DISCOVER_BUTTON' | translate }}</a>
+            </div>
         </div>
 
         <!-- 2 rows, 2 columns -->
@@ -12,7 +20,7 @@
 
             <div class="bg-[#EECC8E] p-4 flex min-h-48 max-h-48">
                 <div class="w-full mx-2">
-                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">Sermones</h2>
+                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'SERMONS_TITLE' | translate }}</h2>
                     <ul>
                         <li *ngFor="let sermons of sermonsList.slice(0, maxSermonsItems)" (click)="openSermons(sermons.id)"
                             class="border-b border-gray-300 cursor-pointer mb-2">
@@ -30,7 +38,7 @@
                         </li>
                     </ul>
 
-                    <a href="/sermons" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">Ver más >></a>
+                    <a href="/sermons" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">{{ 'SERMONS_BUTTON' | translate }} >></a>
                 </div>
             </div>
 
@@ -38,7 +46,7 @@
 
             <div class="bg-cadet-gray-100 p-4 flex min-h-48 max-h-48">
                 <div class="w-full mx-2">
-                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">Noticias</h2>
+                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'NEWS_TITLE' | translate }}</h2>
                     <ul>
                         <li *ngFor="let news of newsList.slice(0, maxNewsItems)" (click)="openNews(news.id)"
                             class="border-b border-gray-300 cursor-pointer mb-2">
@@ -56,7 +64,7 @@
                         </li>
                     </ul>
 
-                    <a href="/news" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">Ver más >></a>
+                    <a href="/news" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">{{ 'NEWS_BUTTON' | translate }} >></a>
                 </div>
             </div>
 
@@ -78,7 +86,7 @@
 
             <div class="bg-cadet-gray-100 p-4 flex min-h-48 max-h-48">
                 <div class="w-full mx-2">
-                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">Eventos</h2>
+                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'EVENTS_TITLE' | translate }}</h2>
                     <ul>
                         <li *ngFor="let events of eventsList.slice(0, maxEventsItems)" (click)="openEvents(events.id)"
                             class="border-b border-gray-300 cursor-pointer mb-2">
@@ -96,7 +104,7 @@
                         </li>
                     </ul>
 
-                    <a href="/events" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">Ver más >></a>
+                    <a href="/events" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
                 </div>
             </div>
 
@@ -107,8 +115,17 @@
 
             <div class="bg-lapis-lazuli-700 p-4 flex items-center justify-center min-h-48 max-h-48">Galeria de Fotos</div>
 
-            <div class="bg-black text-white p-4 flex items-center justify-center min-h-48 max-h-48">Tienda de la Iglesia</div>
-
+            <a href="#" class="block">
+                <div
+                    class="relative bg-black bg-[url('assets/images/home/store-cover.png')] bg-cover md:bg-center bg-right p-4 min-h-48 max-h-48">
+                    <!-- Tienda -->
+                    <div class="font-semibold text-white md:text-left md:absolute md:right-72 md:bottom-10 md:w-72 w-full absolute right-0 bottom-10 text-center">
+                        <p class="text-3xl uppercase">{{ 'STORE_TITLE' | translate }}</p>
+                        <p class="text-3xl uppercase mb-2">{{ 'STORE_SUBTITLE' | translate }}</p>
+                        <p class="text-sm">{{ 'STORE_DESCRIPTION' | translate }}</p>
+                    </div>
+                </div>
+            </a>
         </div>
 
     </div>
