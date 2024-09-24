@@ -80,9 +80,18 @@
         <!-- 1 row, 2 columns -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-            <div class="bg-lapis-lazuli-100 p-4 flex items-center justify-center min-h-48 max-h-48">
-                <a href="/scheduler" class="flex items-center justify-center text-white hover:text-blue-500">Calendario</a>
-            </div>
+            <a href="/scheduler" class="block">
+                <div class="relative bg-lapis-lazuli-100 p-4 flex items-center justify-center min-h-48 max-h-48">
+                  <!-- Background image covering the top half -->
+                  <div class="absolute inset-0 top-0 h-1/2 md:bg-[url('assets/images/home/calendar-cover-2.png')] md:bg-no-repeat md:bg-contain bg-[url('assets/images/home/calendar-cover-1.png')] bg-cover bg-center"></div>
+
+                  <!-- Text content in the bottom half -->
+                  <div class="absolute bottom-3 flex flex-col items-center justify-center text-center px-4">
+                    <p class="text-white text-xl font-bold uppercase">{{ 'CALENDAR_TITLE' | translate }}</p>
+                    <p class="text-white text-sm w-40">{{ 'CALENDAR_DESCRIPTION' | translate | capitalize }}</p>
+                  </div>
+                </div>
+            </a>
 
             <div class="bg-cadet-gray-100 p-4 flex min-h-48 max-h-48">
                 <div class="w-full mx-2">
