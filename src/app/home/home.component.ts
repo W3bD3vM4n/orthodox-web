@@ -10,6 +10,9 @@ import { News } from '../news/news.model';
 import { EventsService } from "../events/events.service";
 import { Events } from "../events/events.model";
 
+import { Quotes } from "../home/quotes/quotes.model";
+import { QuotesService } from "../home/quotes/quotes.service";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -26,12 +29,18 @@ export class HomeComponent implements OnInit {
   eventsList: Events[] = [];
   maxEventsItems: number = 2; // Limita el número de eventos mostrados
 
-  constructor(private router: Router, private sermonsService: SermonsService, private newsService: NewsService, private eventsService: EventsService) {}
+  quotes: Quotes[] = [];
+  dailyQuote: Quotes | null = null;
 
-  ngOnInit() {
+  constructor(private router: Router, private sermonsService: SermonsService, private newsService: NewsService, private eventsService: EventsService, private quotesService: QuotesService) {}
+
+  ngOnInit(): void {
     this.sermonsList = this.sermonsService.getSermonsList();
     this.newsList = this.newsService.getNewsList();
     this.eventsList = this.eventsService.getEventsList();
+
+    this.quotes = this.quotesService.getQuotes();
+    this.dailyQuote = this.getRandomQuote();
   }
 
   getSummary(content: string): string {
@@ -64,6 +73,14 @@ export class HomeComponent implements OnInit {
 
   openEvents(id: number) {
     this.router.navigate(['/events', id]);
+  }
+
+  // Obtiene una citación al azar dependiendo el día
+  private getRandomQuote(): Quotes {
+    const today = new Date();
+    const seed = today.getFullYear() * 1000 + today.getMonth() * 31 + today.getDate();
+    const index = seed % this.quotes.length;
+    return this.quotes[index];
   }
 
 }
