@@ -42,6 +42,7 @@ import { ProclamationComponent } from './sections/proclamation/proclamation.comp
 import { DiscoverComponent } from './sections/discover/discover.component';
 import { ArticlesComponent } from './sections/articles/articles.component';
 import { EventsComponent } from './sections/events/events.component';
+import { GalleryComponent } from './sections/gallery/gallery.component';
 import { StoreComponent } from './sections/store/store.component';
 import { GodComponent } from './sections/god/god.component';
 import { ChurchComponent } from './sections/church/church.component';
@@ -84,6 +85,7 @@ import { EditorialComponent } from './sections/editorial/editorial.component';
     DiscoverComponent,
     ArticlesComponent,
     EventsComponent,
+    GalleryComponent,
     StoreComponent,
     GodComponent,
     ChurchComponent,

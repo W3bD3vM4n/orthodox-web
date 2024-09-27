@@ -10,6 +10,8 @@ import { AutonomyComponent } from './sections/autonomy/autonomy.component';
 import { ProclamationComponent } from './sections/proclamation/proclamation.component';
 import { DiscoverComponent } from './sections/discover/discover.component';
 import { SchedulerComponent } from './sections/scheduler/scheduler.component';
+import { GalleryComponent } from './sections/gallery/gallery.component';
+import { StoreComponent } from './sections/store/store.component';
 import { GodComponent } from './sections/god/god.component';
 import { ChurchComponent } from './sections/church/church.component';
 import { TraditionComponent } from './sections/tradition/tradition.component';
@@ -49,6 +51,8 @@ const routes: Routes = [
     loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
   },
   { path: 'scheduler', component: SchedulerComponent },
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'store', component: StoreComponent },
   { path: '', redirectTo: '/events', pathMatch: 'full' },
   {
     path: 'events',

@@ -80,7 +80,7 @@
                 <p class="md:text-base text-sm md:mb-4">“{{ dailyQuote?.quote }}”<span> ~{{ dailyQuote?.author }}</span></p>
               </div>
 
-            <!-- Bottom half with background image -->
+            <!-- Mitad inferior: imagen -->
             <div class="h-12 bg-[url('assets/images/home/cross-ornament.png')] bg-no-repeat bg-bottom bg-[length:6rem] mx-4"></div>
         </div>
 
@@ -127,11 +127,19 @@
         </div>
 
         <!-- 2 rows, 1 column -->
-        <div class="grid grid-rows-2 gap-4">
+        <div class="grid grid-rows-[18rem_12rem] gap-4">
 
-            <div class="bg-lapis-lazuli-700 p-4 flex items-center justify-center min-h-48 max-h-48">Galeria de Fotos</div>
+            <div class="bg-lapis-lazuli-700 p-4 flex flex-col min-h-72 max-h-72">
+                <div class="flex-grow-[3] p-4 flex justify-center items-center">
+                    <!-- Codigo galeria aqui -->
+                     Galería
+                </div>
+                <div class="h-[1rem] p-4">
+                    <a href="/gallery" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
+                </div>
+            </div>
 
-            <a href="#" class="block">
+            <a href="/store" class="block">
                 <div
                     class="relative bg-black bg-[url('assets/images/home/store-cover.png')] bg-cover md:bg-center bg-right p-4 min-h-48 max-h-48">
                     <!-- Tienda -->

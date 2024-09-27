@@ -1,0 +1,28 @@
+<div class="flex-1 p-4">
+    <!-- Grid layout -->
+    <div class="grid gap-4">
+
+        <div class="bg-white p-4">
+            <!-- Margenes responsive -->
+            <div class="space-y-4 my-8 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
+
+                <!-- Fila 1 -->
+                <div>
+                    <h2 class="text-2-5xl font-normal font-serif txt-lapis-lazuli-700">{{ 'GALLERY_TITLE' | translate }}</h2>
+                    <div class="border-t-2 border-gray-300 mt-1 mb-4"></div>
+                    <!-- galeria de imagenes -->
+                    <div class="mt-8">
+                        <div class="flex flex-wrap items-center justify-center">
+                            <img class="w-36 h-28 object-cover m-2.5"
+                                *ngFor="let item of items; index as i"
+                                [lightbox]="i"
+                                [src]="item.data?.thumb || 'assets/images/default_image.png'">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
