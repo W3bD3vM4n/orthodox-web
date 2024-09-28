@@ -4,14 +4,12 @@ import { Router } from '@angular/router';
 import { SermonsService } from "../sermons/sermons.service";
 import { Sermons } from "../sermons/sermons.model";
 
-import { NewsService } from '../news/news.service';
-import { News } from '../news/news.model';
-
 import { EventsService } from "../events/events.service";
 import { Events } from "../events/events.model";
 
 import { Quotes } from "../home/quotes/quotes.model";
 import { QuotesService } from "../home/quotes/quotes.service";
+import { GalleryModule, GalleryItem, ImageItem } from 'ng-gallery';
 
 @Component({
   selector: 'app-home',
@@ -23,24 +21,24 @@ export class HomeComponent implements OnInit {
   sermonsList: Sermons[] = [];
   maxSermonsItems: number = 2; // Limita el número de sermones mostrados
 
-  newsList: News[] = [];
-  maxNewsItems: number = 2; // Limita el número de noticias mostradas
-
   eventsList: Events[] = [];
   maxEventsItems: number = 2; // Limita el número de eventos mostrados
 
   quotes: Quotes[] = [];
   dailyQuote: Quotes | null = null;
 
-  constructor(private router: Router, private sermonsService: SermonsService, private newsService: NewsService, private eventsService: EventsService, private quotesService: QuotesService) {}
+  images: GalleryItem[] = [];
+
+  constructor(private router: Router, private sermonsService: SermonsService, private eventsService: EventsService, private quotesService: QuotesService) {}
 
   ngOnInit(): void {
     this.sermonsList = this.sermonsService.getSermonsList();
-    this.newsList = this.newsService.getNewsList();
     this.eventsList = this.eventsService.getEventsList();
 
     this.quotes = this.quotesService.getQuotes();
     this.dailyQuote = this.getRandomQuote();
+
+    this.loadGalleryItems();
   }
 
   getSummary(content: string): string {
@@ -81,6 +79,40 @@ export class HomeComponent implements OnInit {
     const seed = today.getFullYear() * 1000 + today.getMonth() * 31 + today.getDate();
     const index = seed % this.quotes.length;
     return this.quotes[index];
+  }
+
+  loadGalleryItems(): void {
+    this.images = [
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2023-05-04_f0-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2023-05-04_f0-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2023-09-19_f0-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2023-09-19_f0-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-01-11_f2-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-01-11_f2-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-01-11_f3-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-01-11_f3-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-01-27_f1-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-01-27_f1-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-07-10_f0-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-07-10_f0-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-09-23_f3-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-09-23_f3-main2.jpg'
+      }),
+      // ... more items
+    ];
   }
 
 }

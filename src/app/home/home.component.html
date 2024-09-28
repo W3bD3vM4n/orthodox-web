@@ -2,35 +2,35 @@
     <!-- Grid layout -->
     <div class="grid gap-4">
         <!-- 1 row, 1 column -->
-        <div class="relative bg-[#F2E5AE] bg-[url('assets/images/home/christ-cover.png')] bg-cover bg-center p-4 min-h-96 max-h-96">
-            <!-- Descubre -->
+        <div class="relative bg-[#F2E5AE] bg-[url('assets/images/home/christ-cover.png')] bg-cover bg-center p-4 min-h-96 max-h-96 md:w-auto w-[448px]">
+
+            <!-- DESCUBRE -->
             <div class="absolute text-center bottom-4 left-4 w-96">
                 <div class="font-semibold uppercase">
                     <p class="text-3xl text-[#023373]">{{ 'DISCOVER_TITLE' | translate }}</p>
                     <p class="text-5xl text-white">{{ 'DISCOVER_SUBTITLE' | translate }}</p>
                 </div><br>
 
-                <!-- Botón -->
                 <a href="/discover" class="inline-flex items-center justify-center border-2 border-[#023373] rounded bg-transparent py-1 px-3 text-sm font-medium txt-yale-blue-100 hover:underline uppercase">{{ 'DISCOVER_BUTTON' | translate }}</a>
             </div>
+
         </div>
 
         <!-- 2 rows, 2 columns -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-            <div class="bg-[#EECC8E] p-4 flex min-h-48 max-h-48">
+            <!-- SERMONES -->
+            <div class="bg-[#EECC8E] p-4 flex min-h-48 max-h-48 md:w-auto w-[448px]">
                 <div class="w-full mx-2">
                     <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'SERMONS_TITLE' | translate }}</h2>
                     <ul>
                         <li *ngFor="let sermons of sermonsList.slice(0, maxSermonsItems)" (click)="openSermons(sermons.id)"
                             class="border-b border-gray-300 cursor-pointer mb-2">
 
-                            <!-- Fecha -->
                             <div class="text-xs text-gray-500 mb-2">
                                 {{ sermons.date }}
                             </div>
 
-                            <!-- Titulo -->
                             <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
                                 {{ sermons.title }}
                             </div>
@@ -42,77 +42,21 @@
                 </div>
             </div>
 
-            <div class="bg-black text-white p-4 flex items-center justify-center min-h-48 max-h-48">Videos</div>
+            <!-- VIDEOS -->
+            <div class="bg-black text-white p-4 flex items-center justify-center min-h-48 max-h-48 md:w-auto w-[448px]">Videos</div>
 
-            <div class="bg-cadet-gray-100 p-4 flex min-h-48 max-h-48">
-                <div class="w-full mx-2">
-                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'NEWS_TITLE' | translate }}</h2>
-                    <ul>
-                        <li *ngFor="let news of newsList.slice(0, maxNewsItems)" (click)="openNews(news.id)"
-                            class="border-b border-gray-300 cursor-pointer mb-2">
-
-                            <!-- Fecha -->
-                            <div class="text-xs text-gray-500 mb-2">
-                                {{ news.date }}
-                            </div>
-
-                            <!-- Titulo -->
-                            <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
-                                {{ news.title }}
-                            </div>
-
-                        </li>
-                    </ul>
-
-                    <a href="/news" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">{{ 'NEWS_BUTTON' | translate }} >></a>
-                </div>
-            </div>
-
-            <div class="bg-[#312B33] text-white p-4 flex items-center justify-center min-h-48 max-h-48">Podcast</div>
-
-        </div>
-
-        <!-- 1 row, 1 column -->
-        <div class="text-white relative bg-glaucous-100 p-4 min-h-48">
-            <!-- Mitad superior: Texto -->
-            <div class="flex flex-col justify-center items-center md:mx-32 mx-4 text-center">
-                <p class="md:text-xl text-base font-semibold uppercase md:my-4 my-2">{{ 'QUOTE_TITLE' | translate }}</p>
-                <p class="md:text-base text-sm md:mb-4">“{{ dailyQuote?.quote }}”<span> ~{{ dailyQuote?.author }}</span></p>
-              </div>
-
-            <!-- Mitad inferior: imagen -->
-            <div class="h-12 bg-[url('assets/images/home/cross-ornament.png')] bg-no-repeat bg-bottom bg-[length:6rem] mx-4"></div>
-        </div>
-
-        <!-- 1 row, 2 columns -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-            <a href="/scheduler" class="block">
-                <div class="relative bg-lapis-lazuli-100 p-4 flex items-center justify-center min-h-48 max-h-48">
-                  <!-- Mitad superior: Imagen de fondo -->
-                  <div class="absolute inset-0 top-0 h-1/2 md:bg-[url('assets/images/home/calendar-cover-2.png')] md:bg-no-repeat md:bg-contain bg-[url('assets/images/home/calendar-cover-1.png')] bg-cover bg-center"></div>
-
-                  <!-- Mitad inferior: Texto -->
-                  <div class="absolute bottom-3 flex flex-col items-center justify-center text-center px-4">
-                    <p class="text-white text-xl font-bold uppercase">{{ 'CALENDAR_TITLE' | translate }}</p>
-                    <p class="text-white text-sm w-40">{{ 'CALENDAR_DESCRIPTION' | translate | capitalize }}</p>
-                  </div>
-                </div>
-            </a>
-
-            <div class="bg-cadet-gray-100 p-4 flex min-h-48 max-h-48">
+            <!-- EVENTOS -->
+            <div class="bg-cadet-gray-100 p-4 flex min-h-48 max-h-48 md:w-auto w-[448px]">
                 <div class="w-full mx-2">
                     <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'EVENTS_TITLE' | translate }}</h2>
                     <ul>
                         <li *ngFor="let events of eventsList.slice(0, maxEventsItems)" (click)="openEvents(events.id)"
                             class="border-b border-gray-300 cursor-pointer mb-2">
 
-                            <!-- Fecha -->
                             <div class="text-xs text-gray-500 mb-2">
                                 {{ events.date }}
                             </div>
 
-                            <!-- Titulo -->
                             <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
                                 {{ events.title }}
                             </div>
@@ -124,25 +68,61 @@
                 </div>
             </div>
 
+            <!-- PODCAST -->
+            <div class="bg-[#312B33] text-white p-4 flex items-center justify-center min-h-48 max-h-48 md:w-auto w-[448px]">Podcast</div>
+
         </div>
 
-        <!-- 2 rows, 1 column -->
-        <div class="grid grid-rows-[18rem_12rem] gap-4">
+        <!-- 1 row, 1 column -->
+        <div class="text-white relative bg-glaucous-100 p-4 min-h-48 md:w-auto w-[448px]">
 
-            <div class="bg-lapis-lazuli-700 p-4 flex flex-col min-h-72 max-h-72">
+            <!-- PENSAMIENTO DEL DÍA -->
+            <div class="flex flex-col justify-center items-center md:mx-32 mx-4 text-center">
+                <p class="md:text-xl text-base font-semibold uppercase md:my-4 my-2">{{ 'QUOTE_TITLE' | translate }}</p>
+                <p class="md:text-base text-sm md:mb-4">“{{ dailyQuote?.quote }}”<span> ~{{ dailyQuote?.author }}</span></p>
+              </div>
+
+            <div class="h-12 bg-[url('assets/images/home/cross-ornament.png')] bg-no-repeat bg-bottom bg-[length:6rem] mx-4"></div>
+
+        </div>
+
+        <!-- 1 row, 2 columns -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <!-- CALENDARIO -->
+            <a href="/scheduler" class="block">
+                <div class="relative bg-lapis-lazuli-100 p-4 flex items-center justify-center min-h-72 max-h-72">
+
+                  <div class="absolute inset-0 md:top-2 top-6 md:h-2/3 h-1/2 md:bg-[url('assets/images/home/calendar-cover-1.png')] md:bg-no-repeat md:bg-contain bg-[url('assets/images/home/calendar-cover-0.png')] bg-cover bg-center"></div>
+
+                  <div class="absolute bottom-7 flex flex-col items-center justify-center text-center px-4">
+                    <p class="text-white text-xl font-bold uppercase">{{ 'CALENDAR_TITLE' | translate }}</p>
+                    <p class="text-white text-sm w-40">{{ 'CALENDAR_DESCRIPTION' | translate | capitalize }}</p>
+                  </div>
+                </div>
+            </a>
+
+            <!-- GALERIA -->
+            <div class="bg-black p-4 flex flex-col min-h-72 max-h-72">
                 <div class="flex-grow-[3] p-4 flex justify-center items-center">
                     <!-- Codigo galeria aqui -->
-                     Galería
+                    <gallery [items]="images" thumbPosition="left" [counter]="false" [dots]="true" [thumbWidth]="80" [thumbHeight]="40" class="w-[30rem] h-[194px]"></gallery>
                 </div>
                 <div class="h-[1rem] p-4">
-                    <a href="/gallery" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
+                    <a href="/gallery" class="text-sm flex items-center justify-center txt-lapis-lazuli-700 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
                 </div>
             </div>
 
+        </div>
+
+        <!-- 2 rows, 1 column -->
+        <div class="grid grid-rows-[12rem] gap-4">
+
+            <!-- TIENDA -->
             <a href="/store" class="block">
                 <div
-                    class="relative bg-black bg-[url('assets/images/home/store-cover.png')] bg-cover md:bg-center bg-right p-4 min-h-48 max-h-48">
-                    <!-- Tienda -->
+                    class="relative bg-black bg-[url('assets/images/home/store-cover.png')] bg-cover md:bg-center bg-right p-4 min-h-48 max-h-48 md:w-auto w-[448px]">
+
                     <div class="font-semibold text-white md:text-left md:absolute md:right-72 md:bottom-10 md:w-72 w-full absolute right-0 bottom-10 text-center">
                         <p class="text-3xl uppercase">{{ 'STORE_TITLE' | translate }}</p>
                         <p class="text-3xl uppercase mb-2">{{ 'STORE_SUBTITLE' | translate }}</p>
@@ -150,6 +130,7 @@
                     </div>
                 </div>
             </a>
+
         </div>
 
     </div>
