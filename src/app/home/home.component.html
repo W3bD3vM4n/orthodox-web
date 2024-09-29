@@ -46,10 +46,9 @@
             <div class="bg-black text-white p-4 flex items-center justify-center min-h-72 max-h-72 md:w-auto w-[448px]">
                 <div *ngIf="safeLiveVideoUrl">
                     <iframe
-                      width="480"
-                      height="194"
                       [src]="safeLiveVideoUrl"
                       title="YouTube live video player"
+                      class="md:w-[586px] md:h-[288px] w-[448px] h-[288px]"
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen>
@@ -58,7 +57,7 @@
             </div>
 
             <!-- EVENTOS -->
-            <div class="bg-cadet-gray-100 p-4 flex min-h-48 max-h-48 md:w-auto w-[448px]">
+            <div class="bg-cadet-gray-100 p-4 flex min-h-72 max-h-72 md:w-auto w-[448px]">
                 <div class="w-full mx-2">
                     <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'EVENTS_TITLE' | translate }}</h2>
                     <ul>
@@ -81,7 +80,7 @@
             </div>
 
             <!-- PODCAST -->
-            <div class="bg-[#312B33] text-white p-4 flex items-center justify-center min-h-48 max-h-48 md:w-auto w-[448px]">Podcast</div>
+            <div class="bg-[#312B33] text-white p-4 flex items-center justify-center min-h-72 max-h-72 md:w-auto w-[448px]">Podcast</div>
 
         </div>
 
@@ -118,7 +117,7 @@
             <div class="bg-black p-4 flex flex-col min-h-72 max-h-72">
                 <div class="flex-grow-[3] p-4 flex justify-center items-center">
                     <!-- Codigo galeria aqui -->
-                    <gallery [items]="images" thumbPosition="left" [counter]="false" [dots]="true" [thumbWidth]="80" [thumbHeight]="40" class="w-[30rem] h-[194px]"></gallery>
+                    <gallery [items]="images" thumbPosition="left" [counter]="false" [dots]="true" [thumbWidth]="80" [thumbHeight]="40" class="w-[480px] h-[194px]"></gallery>
                 </div>
                 <div class="h-[1rem] p-4">
                     <a href="/gallery" class="text-sm flex items-center justify-center txt-lapis-lazuli-700 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
