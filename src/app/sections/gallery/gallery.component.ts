@@ -27,6 +27,18 @@ export class GalleryComponent implements OnInit {
   // Datos de imagenes #1
   private data = [
     {
+      srcUrl: 'assets/images/gallery/2024-01-11_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-11_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-11_f2-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-11_f2-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-11_f3-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-11_f3-gallery2.jpg'
+    },
+    {
       srcUrl: 'assets/images/gallery/2024-01-11_f4-gallery2.jpg',
       previewUrl: 'assets/images/gallery/2024-01-11_f4-gallery2.jpg'
     },
@@ -45,6 +57,95 @@ export class GalleryComponent implements OnInit {
     {
       srcUrl: 'assets/images/gallery/2024-01-11_f8-gallery2.jpg',
       previewUrl: 'assets/images/gallery/2024-01-11_f8-gallery2.jpg'
-    }
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-12_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-12_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-12_f2-gallery.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-12_f2-gallery.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-14_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-14_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-14_f2-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-14_f2-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-19_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-19_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-19_f2-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-19_f2-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-25_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-25_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-01-27_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-01-27_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-02-01_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-02-01_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-03-07_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-03-07_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-04-09_f1-gallery.jpg',
+      previewUrl: 'assets/images/gallery/2024-04-09_f1-gallery.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-05-13_f2-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-05-13_f2-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-05-30_f0-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-05-30_f0-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-07-10_f0-gallery2.jpeg',
+      previewUrl: 'assets/images/gallery/2024-07-10_f0-gallery2.jpeg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-08-27_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-08-27_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-08-27_f4-gallery.jpg',
+      previewUrl: 'assets/images/gallery/2024-08-27_f4-gallery.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-08-27_f5-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-08-27_f5-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-08-27_f6-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-08-27_f6-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-08-27_f7-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-08-27_f7-gallery2.jpg'
+    },
+
+    {
+      srcUrl: 'assets/images/gallery/2024-09-22_f0-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-09-22_f0-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-09-23_f1-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-09-23_f1-gallery2.jpg'
+    },
+    {
+      srcUrl: 'assets/images/gallery/2024-09-23_f3-gallery2.jpg',
+      previewUrl: 'assets/images/gallery/2024-09-23_f3-gallery2.jpg'
+    },
   ];
 }
