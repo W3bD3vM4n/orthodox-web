@@ -4,12 +4,15 @@ import { Router } from '@angular/router';
 import { SermonsService } from "../sermons/sermons.service";
 import { Sermons } from "../sermons/sermons.model";
 
+import { YoutubeService } from "./youtube/youtube.service";
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 import { EventsService } from "../events/events.service";
 import { Events } from "../events/events.model";
 
 import { Quotes } from "../home/quotes/quotes.model";
 import { QuotesService } from "../home/quotes/quotes.service";
-import { GalleryModule, GalleryItem, ImageItem } from 'ng-gallery';
+import { GalleryItem, ImageItem } from 'ng-gallery';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +24,11 @@ export class HomeComponent implements OnInit {
   sermonsList: Sermons[] = [];
   maxSermonsItems: number = 2; // Limita el número de sermones mostrados
 
+  liveVideoId: string | null = null;
+  safeLiveVideoUrl: SafeResourceUrl | null = null;
+  channelId:string = 'UCxge6zEbxqRqpYq_RqTSLXQ';
+  livePlaylistId:string = 'UU' + this.channelId.substring(2);
+
   eventsList: Events[] = [];
   maxEventsItems: number = 2; // Limita el número de eventos mostrados
 
@@ -29,10 +37,11 @@ export class HomeComponent implements OnInit {
 
   images: GalleryItem[] = [];
 
-  constructor(private router: Router, private sermonsService: SermonsService, private eventsService: EventsService, private quotesService: QuotesService) {}
+  constructor(private router: Router, private sermonsService: SermonsService, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private eventsService: EventsService, private quotesService: QuotesService) {}
 
   ngOnInit(): void {
     this.sermonsList = this.sermonsService.getSermonsList();
+    this.fetchLiveVideoId();
     this.eventsList = this.eventsService.getEventsList();
 
     this.quotes = this.quotesService.getQuotes();
@@ -65,8 +74,39 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/sermons', id]);
   }
 
-  openNews(id: number) {
-    this.router.navigate(['/news', id]);
+  // Obtiene el ID del video usando el servicio de YouTube
+  fetchLiveVideoId(): void {
+    this.youtubeService.getLiveVideoId(this.channelId).subscribe((data: any) => {
+      if (data.items && data.items.length) {
+        // Video "Live" encontrado
+        this.liveVideoId = data.items[0].id.videoId;
+        // Crea un URL seguro para el video live
+        this.safeLiveVideoUrl = this.sanitizeUrl(this.liveVideoId);
+      } else {
+        // Video "Live" no encontrado
+        this.fetchLatestVideoFromLivePlaylist();
+      }
+    });
+  }
+
+  // Obtiene el ultimo video de la playlist "Live"
+  fetchLatestVideoFromLivePlaylist(): void {
+    this.youtubeService.getLatestVideoFromPlaylist(this.livePlaylistId).subscribe((data: any) => {
+      if (data.items && data.items.length) {
+        this.liveVideoId = data.items[0].snippet.resourceId.videoId;
+        // Crea un URL seguro para el video
+        this.safeLiveVideoUrl = this.sanitizeUrl(this.liveVideoId);
+      } else {
+        console.log('No videos found in the live playlist.');
+      }
+    });
+  }
+
+  // Limpia el URL del video
+  private sanitizeUrl(videoId: string | null): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(
+      `https://www.youtube.com/embed/${videoId}`
+    );
   }
 
   openEvents(id: number) {
@@ -81,6 +121,7 @@ export class HomeComponent implements OnInit {
     return this.quotes[index];
   }
 
+  // Fotos de muestra de la galeria
   loadGalleryItems(): void {
     this.images = [
       new ImageItem({
