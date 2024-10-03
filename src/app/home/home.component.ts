@@ -128,19 +128,25 @@ export class HomeComponent implements OnInit {
     try {
       const rssFeed: string = await firstValueFrom(this.http.get(this.feedUrl, { responseType: 'text' }));
       const result = await parseStringPromise(rssFeed);
-      const episodes = this.extractEpisodes(result.rss.channel[0].item);
-      this.initializeAPlayer(episodes);
+
+      // Extract global cover image from the channel
+      const globalCoverUrl = result.rss.channel[0]['itunes:image'] ? result.rss.channel[0]['itunes:image'][0].$.href : 'assets/images/home/logo-podcast.png';
+
+      // Extract episodes, passing the global cover image URL
+      const episodes = this.extractEpisodes(result.rss.channel[0].item, globalCoverUrl);
+    this.initializeAPlayer(episodes);
     } catch (error) {
       console.error('Error fetching podcast playlist:', error);
     }
   }
 
-  private extractEpisodes(items: any[]): any[] {
+  // Extract episode details from the RSS items
+  private extractEpisodes(items: any[], globalCoverUrl: string): any[] {
     return items.map(item => ({
-      name: item.title[0],
+      name: item.title ? item.title[0] : 'Unknown Title',
       artist: item['itunes:author'] ? item['itunes:author'][0] : 'Unknown Artist',
-      url: item.enclosure[0].$.url,
-      cover: item['itunes:image'] ? item['itunes:image'][0].$.href : 'default-cover.jpg'
+      url: item.enclosure && item.enclosure[0].$ && item.enclosure[0].$.url ? item.enclosure[0].$.url : '',
+      cover: globalCoverUrl // Use the global cover image for each episode
     }));
   }
 
