@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 import { SermonsService } from "../sermons/sermons.service";
 import { Sermons } from "../sermons/sermons.model";
@@ -9,6 +11,10 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { EventsService } from "../events/events.service";
 import { Events } from "../events/events.model";
+
+import APlayer from 'aplayer';
+import { parseStringPromise } from 'xml2js';
+import { firstValueFrom } from 'rxjs';
 
 import { Quotes } from "../home/quotes/quotes.model";
 import { QuotesService } from "../home/quotes/quotes.service";
@@ -32,17 +38,21 @@ export class HomeComponent implements OnInit {
   eventsList: Events[] = [];
   maxEventsItems: number = 2; // Limita el número de eventos mostrados
 
+  private feedUrl = 'https://feed.podbean.com/lightinsoul87/feed.xml';
+
   quotes: Quotes[] = [];
   dailyQuote: Quotes | null = null;
 
   images: GalleryItem[] = [];
 
-  constructor(private router: Router, private sermonsService: SermonsService, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private eventsService: EventsService, private quotesService: QuotesService) {}
+  constructor(private router: Router, private sermonsService: SermonsService, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private eventsService: EventsService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object, private quotesService: QuotesService) {}
 
   ngOnInit(): void {
     this.sermonsList = this.sermonsService.getSermonsList();
     this.fetchLiveVideoId();
     this.eventsList = this.eventsService.getEventsList();
+
+    this.fetchAndInitializePlayer();
 
     this.quotes = this.quotesService.getQuotes();
     this.dailyQuote = this.getRandomQuote();
@@ -111,6 +121,40 @@ export class HomeComponent implements OnInit {
 
   openEvents(id: number) {
     this.router.navigate(['/events', id]);
+  }
+
+  // Inicializa el reproductor
+  private async fetchAndInitializePlayer() {
+    try {
+      const rssFeed: string = await firstValueFrom(this.http.get(this.feedUrl, { responseType: 'text' }));
+      const result = await parseStringPromise(rssFeed);
+      const episodes = this.extractEpisodes(result.rss.channel[0].item);
+      this.initializeAPlayer(episodes);
+    } catch (error) {
+      console.error('Error fetching podcast playlist:', error);
+    }
+  }
+
+  private extractEpisodes(items: any[]): any[] {
+    return items.map(item => ({
+      name: item.title[0],
+      artist: item['itunes:author'] ? item['itunes:author'][0] : 'Unknown Artist',
+      url: item.enclosure[0].$.url,
+      cover: item['itunes:image'] ? item['itunes:image'][0].$.href : 'default-cover.jpg'
+    }));
+  }
+
+  private async initializeAPlayer(episodes: any[]) {
+    if (isPlatformBrowser(this.platformId)) { // Check if running in the browser
+      const APlayer = (await import('aplayer')).default; // Dynamically import APlayer
+      const player = new APlayer({
+        container: this.elRef.nativeElement.querySelector('#aplayer'),
+        autoplay: false,
+        loop: 'all', // Loops through all tracks in the playlist
+        listFolded: false, // Keeps playlist folded initially
+        audio: episodes // Pass the dynamically generated episodes
+      });
+    }
   }
 
   // Obtiene una citación al azar dependiendo el día

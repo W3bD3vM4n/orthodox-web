@@ -1,0 +1,36 @@
+.aplayer-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto; /* Center and add margin */
+    height: 288px; /* Set the height */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add some shadow */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+.aplayer-list {
+    max-height: 288px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.aplayer-list::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.aplayer-icon-back,
+.aplayer-icon-forward {
+  width: 30px; /* Set a width that fits your layout */
+  height: 30px; /* Set a height that fits your layout */
+  color: #000; /* Change to the desired color */
+}
+
+.aplayer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .aplayer-container {
+      width: 100%;
+      max-width: 100%;
+    }
+}
