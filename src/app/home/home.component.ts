@@ -142,12 +142,18 @@ export class HomeComponent implements OnInit {
 
   // Extract episode details from the RSS items
   private extractEpisodes(items: any[], globalCoverUrl: string): any[] {
-    return items.map(item => ({
+    const episodes = items.map(item => ({
       name: item.title ? item.title[0] : 'Unknown Title',
       artist: item['itunes:author'] ? item['itunes:author'][0] : 'Unknown Artist',
       url: item.enclosure && item.enclosure[0].$ && item.enclosure[0].$.url ? item.enclosure[0].$.url : '',
-      cover: globalCoverUrl // Use the global cover image for each episode
+      cover: globalCoverUrl, // Use the global cover image for each episode
+      pubDate: item.pubDate ? new Date(item.pubDate[0]) : new Date(0)
     }));
+
+    // Sort episodes by publication date in ascending order (oldest first)
+    episodes.sort((a, b) => a.pubDate.getTime() - b.pubDate.getTime());
+
+    return episodes;
   }
 
   private async initializeAPlayer(episodes: any[]) {
