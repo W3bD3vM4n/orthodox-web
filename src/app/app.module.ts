@@ -63,7 +63,14 @@ import { UnityComponent } from './sections/unity/unity.component';
 import { MisionVisionComponent } from './sections/mision-vision/mision-vision.component';
 import { GalleryModule, GalleryItem, ImageItem } from 'ng-gallery';
 import { LightboxModule, LIGHTBOX_CONFIG } from 'ng-gallery/lightbox';
+import { BibleStudyComponent } from './sections/bible-study/bible-study.component';
 import { EditorialComponent } from './sections/editorial/editorial.component';
+import { IconographyComponent } from './sections/iconography/iconography.component';
+import { HealthTherapiesComponent } from './sections/health-therapies/health-therapies.component';
+import { UnderConstructionComponent } from './sections/under-construction/under-construction.component';
+import { MonasteryHistoryComponent } from './sections/monastery-history/monastery-history.component';
+import { MonasteryBlueprintsComponent } from './sections/monastery-blueprints/monastery-blueprints.component';
+import { MonasteryEcologyComponent } from './sections/monastery-ecology/monastery-ecology.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +111,14 @@ import { EditorialComponent } from './sections/editorial/editorial.component';
     AutocephalyComponent,
     UnityComponent,
     MisionVisionComponent,
-    EditorialComponent
+    BibleStudyComponent,
+    EditorialComponent,
+    IconographyComponent,
+    HealthTherapiesComponent,
+    UnderConstructionComponent,
+    MonasteryHistoryComponent,
+    MonasteryBlueprintsComponent,
+    MonasteryEcologyComponent,
   ],
   imports: [
     BrowserModule,

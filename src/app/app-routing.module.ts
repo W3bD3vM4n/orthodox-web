@@ -29,7 +29,13 @@ import { OrthodoxyComponent } from './sections/orthodoxy/orthodoxy.component';
 import { AutocephalyComponent } from './sections/autocephaly/autocephaly.component';
 import { UnityComponent } from './sections/unity/unity.component';
 import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
+import { BibleStudyComponent } from './sections/bible-study/bible-study.component';
 import { EditorialComponent } from './sections/editorial/editorial.component';
+import { IconographyComponent } from './sections/iconography/iconography.component';
+import { HealthTherapiesComponent } from './sections/health-therapies/health-therapies.component';
+import { MonasteryHistoryComponent } from './sections/monastery-history/monastery-history.component';
+import { MonasteryBlueprintsComponent } from './sections/monastery-blueprints/monastery-blueprints.component';
+import { MonasteryEcologyComponent } from './sections/monastery-ecology/monastery-ecology.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -69,8 +75,14 @@ const routes: Routes = [
   { path: 'orthodoxy', component: OrthodoxyComponent },
   { path: 'autocephaly', component: AutocephalyComponent },
   { path: 'unity', component: UnityComponent },
+  { path: 'history', component: MonasteryHistoryComponent },
+  { path: 'blueprints', component: MonasteryBlueprintsComponent },
+  { path: 'ecology', component: MonasteryEcologyComponent },
   { path: 'mision-vision', component: MisionVisionComponent },
+  { path: 'bible-study', component: BibleStudyComponent },
   { path: 'editorial', component: EditorialComponent },
+  { path: 'iconography', component: IconographyComponent },
+  { path: 'health-therapies', component: HealthTherapiesComponent },
   // Add more routes as needed
 ];
 
