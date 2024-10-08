@@ -28,14 +28,22 @@ import { CreedComponent } from './sections/creed/creed.component';
 import { OrthodoxyComponent } from './sections/orthodoxy/orthodoxy.component';
 import { AutocephalyComponent } from './sections/autocephaly/autocephaly.component';
 import { UnityComponent } from './sections/unity/unity.component';
-import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
+import { MonasteryHistoryComponent } from './sections/monastery-history/monastery-history.component';
+import { MonasteryBlueprintsComponent } from './sections/monastery-blueprints/monastery-blueprints.component';
+import { MonasteryEcologyComponent } from './sections/monastery-ecology/monastery-ecology.component';
+import { QuestionOriginComponent } from './sections/question-origin/question-origin.component';
+import { QuestionInterpretationComponent } from './sections/question-interpretation/question-interpretation.component';
+import { QuestionAdorationComponent } from './sections/question-adoration/question-adoration.component';
+import { QuestionVenerationComponent } from './sections/question-veneration/question-veneration.component';
+import { QuestionIntercessionComponent } from './sections/question-intercession/question-intercession.component';
+import { QuestionRelicsComponent } from './sections/question-relics/question-relics.component';
+import { QuestionIconsComponent } from './sections/question-icons/question-icons.component';
+import { QuestionJoinComponent } from './sections/question-join/question-join.component';
 import { BibleStudyComponent } from './sections/bible-study/bible-study.component';
 import { EditorialComponent } from './sections/editorial/editorial.component';
 import { IconographyComponent } from './sections/iconography/iconography.component';
 import { HealthTherapiesComponent } from './sections/health-therapies/health-therapies.component';
-import { MonasteryHistoryComponent } from './sections/monastery-history/monastery-history.component';
-import { MonasteryBlueprintsComponent } from './sections/monastery-blueprints/monastery-blueprints.component';
-import { MonasteryEcologyComponent } from './sections/monastery-ecology/monastery-ecology.component';
+import { MisionVisionComponent } from "./sections/mision-vision/mision-vision.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -78,11 +86,19 @@ const routes: Routes = [
   { path: 'history', component: MonasteryHistoryComponent },
   { path: 'blueprints', component: MonasteryBlueprintsComponent },
   { path: 'ecology', component: MonasteryEcologyComponent },
-  { path: 'mision-vision', component: MisionVisionComponent },
+  { path: 'question-origin', component: QuestionOriginComponent },
+  { path: 'question-interpretation', component: QuestionInterpretationComponent },
+  { path: 'question-adoration', component: QuestionAdorationComponent },
+  { path: 'question-veneration', component: QuestionVenerationComponent },
+  { path: 'question-intercession', component: QuestionIntercessionComponent },
+  { path: 'question-relics', component: QuestionRelicsComponent },
+  { path: 'question-icons', component: QuestionIconsComponent },
+  { path: 'question-join', component: QuestionJoinComponent },
   { path: 'bible-study', component: BibleStudyComponent },
   { path: 'editorial', component: EditorialComponent },
   { path: 'iconography', component: IconographyComponent },
   { path: 'health-therapies', component: HealthTherapiesComponent },
+  { path: 'mision-vision', component: MisionVisionComponent },
   // Add more routes as needed
 ];
 
