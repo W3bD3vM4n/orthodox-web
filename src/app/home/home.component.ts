@@ -3,22 +3,22 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
-import { SermonsService } from "../sermons/sermons.service";
-import { Sermons } from "../sermons/sermons.model";
+import { EventsService } from "../events/events.service";
+import { Events } from "../events/events.model";
+import { MemorialsService } from "../memorials/memorials.service";
+import { Memorials } from "../memorials/memorials.model";
 
 import { YoutubeService } from "./youtube/youtube.service";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
-import { EventsService } from "../events/events.service";
-import { Events } from "../events/events.model";
+import { Quotes } from "../home/quotes/quotes.model";
+import { QuotesService } from "../home/quotes/quotes.service";
+import { GalleryItem, ImageItem } from 'ng-gallery';
 
 import APlayer from 'aplayer';
 import { parseStringPromise } from 'xml2js';
 import { firstValueFrom } from 'rxjs';
 
-import { Quotes } from "../home/quotes/quotes.model";
-import { QuotesService } from "../home/quotes/quotes.service";
-import { GalleryItem, ImageItem } from 'ng-gallery';
 
 @Component({
   selector: 'app-home',
@@ -27,39 +27,42 @@ import { GalleryItem, ImageItem } from 'ng-gallery';
 })
 export class HomeComponent implements OnInit {
 
-  sermonsList: Sermons[] = [];
-  maxSermonsItems: number = 2; // Limita el número de sermones mostrados
+  eventsList: Events[] = [];
+  maxEventsItems: number = 2; // Limita el número de eventos mostrados
+  memorialsList: Memorials[] = [];
+  maxMemorialsItems: number = 1; // Limita el número de memoriales mostrados
 
   liveVideoId: string | null = null;
   safeLiveVideoUrl: SafeResourceUrl | null = null;
   channelId:string = 'UCxge6zEbxqRqpYq_RqTSLXQ';
   livePlaylistId:string = 'UU' + this.channelId.substring(2);
 
-  eventsList: Events[] = [];
-  maxEventsItems: number = 2; // Limita el número de eventos mostrados
-
-  private feedUrl = 'https://feed.podbean.com/lightinsoul87/feed.xml';
-
   quotes: Quotes[] = [];
   dailyQuote: Quotes | null = null;
 
   images: GalleryItem[] = [];
 
-  constructor(private router: Router, private sermonsService: SermonsService, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private eventsService: EventsService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object, private quotesService: QuotesService) {}
+  private feedUrl = 'https://feed.podbean.com/lightinsoul87/feed.xml';
+
+
+  constructor(private router: Router, private eventsService: EventsService, private memorialsService: MemorialsService, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private quotesService: QuotesService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    this.sermonsList = this.sermonsService.getSermonsList();
-    this.fetchLiveVideoId();
     this.eventsList = this.eventsService.getEventsList();
+    this.memorialsList = this.memorialsService.getMemorialsList();
 
-    this.fetchAndInitializePlayer();
+    this.fetchLiveVideoId();
 
     this.quotes = this.quotesService.getQuotes();
     this.dailyQuote = this.getRandomQuote();
 
     this.loadGalleryItems();
+
+    this.fetchAndInitializePlayer();
   }
 
+
+  // EVENTOS - MEMORIALES
   getSummary(content: string): string {
     // Verifica que el contenido no sobrepase a 200 palabras
     let summary = content.slice(0, 200);
@@ -80,11 +83,17 @@ export class HomeComponent implements OnInit {
     return summary;
   }
 
-  openSermons(id: number) {
-    this.router.navigate(['/sermons', id]);
+  openEvents(id: number) {
+    this.router.navigate(['/events', id]);
   }
 
-  // Obtiene el ID del video usando el servicio de YouTube
+  openMemorials(id: number) {
+    this.router.navigate(['/memorials', id]);
+  }
+
+
+  // YOUTUBE LIVE
+  // Obtiene el ID del video
   fetchLiveVideoId(): void {
     this.youtubeService.getLiveVideoId(this.channelId).subscribe((data: any) => {
       if (data.items && data.items.length) {
@@ -119,10 +128,55 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  openEvents(id: number) {
-    this.router.navigate(['/events', id]);
+
+  // PENSAMIENTO DEL DÍA
+  // Obtiene una citación al azar dependiendo el día
+  private getRandomQuote(): Quotes {
+    const today = new Date();
+    const seed = today.getFullYear() * 1000 + today.getMonth() * 31 + today.getDate();
+    const index = seed % this.quotes.length;
+    return this.quotes[index];
   }
 
+
+  // GALERIA
+  // Fotos de muestra
+  loadGalleryItems(): void {
+    this.images = [
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2023-05-04_f0-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2023-05-04_f0-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2023-09-19_f0-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2023-09-19_f0-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-01-11_f2-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-01-11_f2-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-01-11_f3-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-01-11_f3-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-01-27_f1-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-01-27_f1-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-07-10_f0-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-07-10_f0-main2.jpg'
+      }),
+      new ImageItem({
+        src: 'assets/images/home/gallery-thumbnail/2024-09-23_f3-main2.jpg',
+        thumb: 'assets/images/home/gallery-thumbnail/2024-09-23_f3-main2.jpg'
+      }),
+      // ... more items
+    ];
+  }
+
+
+  // RADIO 24/7
   // Inicializa el reproductor
   private async fetchAndInitializePlayer() {
     try {
@@ -169,49 +223,6 @@ export class HomeComponent implements OnInit {
         audio: episodes // Pass the dynamically generated episodes
       });
     }
-  }
-
-  // Obtiene una citación al azar dependiendo el día
-  private getRandomQuote(): Quotes {
-    const today = new Date();
-    const seed = today.getFullYear() * 1000 + today.getMonth() * 31 + today.getDate();
-    const index = seed % this.quotes.length;
-    return this.quotes[index];
-  }
-
-  // Fotos de muestra de la galeria
-  loadGalleryItems(): void {
-    this.images = [
-      new ImageItem({
-        src: 'assets/images/home/gallery-thumbnail/2023-05-04_f0-main2.jpg',
-        thumb: 'assets/images/home/gallery-thumbnail/2023-05-04_f0-main2.jpg'
-      }),
-      new ImageItem({
-        src: 'assets/images/home/gallery-thumbnail/2023-09-19_f0-main2.jpg',
-        thumb: 'assets/images/home/gallery-thumbnail/2023-09-19_f0-main2.jpg'
-      }),
-      new ImageItem({
-        src: 'assets/images/home/gallery-thumbnail/2024-01-11_f2-main2.jpg',
-        thumb: 'assets/images/home/gallery-thumbnail/2024-01-11_f2-main2.jpg'
-      }),
-      new ImageItem({
-        src: 'assets/images/home/gallery-thumbnail/2024-01-11_f3-main2.jpg',
-        thumb: 'assets/images/home/gallery-thumbnail/2024-01-11_f3-main2.jpg'
-      }),
-      new ImageItem({
-        src: 'assets/images/home/gallery-thumbnail/2024-01-27_f1-main2.jpg',
-        thumb: 'assets/images/home/gallery-thumbnail/2024-01-27_f1-main2.jpg'
-      }),
-      new ImageItem({
-        src: 'assets/images/home/gallery-thumbnail/2024-07-10_f0-main2.jpg',
-        thumb: 'assets/images/home/gallery-thumbnail/2024-07-10_f0-main2.jpg'
-      }),
-      new ImageItem({
-        src: 'assets/images/home/gallery-thumbnail/2024-09-23_f3-main2.jpg',
-        thumb: 'assets/images/home/gallery-thumbnail/2024-09-23_f3-main2.jpg'
-      }),
-      // ... more items
-    ];
   }
 
 }

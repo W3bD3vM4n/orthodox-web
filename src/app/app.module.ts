@@ -79,8 +79,6 @@ import { MisionVisionComponent } from './sections/mision-vision/mision-vision.co
 import { UnderConstructionComponent } from './sections/under-construction/under-construction.component';
 import { GalleryModule, GalleryItem, ImageItem } from 'ng-gallery';
 import { LightboxModule, LIGHTBOX_CONFIG } from 'ng-gallery/lightbox';
-import { MemorialsDetailComponent } from './memorials/memorials-detail/memorials-detail.component';
-import { MemorialsListComponent } from './memorials/memorials-list/memorials-list.component';
 
 @NgModule({
   declarations: [
@@ -137,8 +135,6 @@ import { MemorialsListComponent } from './memorials/memorials-list/memorials-lis
     HealthTherapiesComponent,
     MisionVisionComponent,
     UnderConstructionComponent,
-    MemorialsDetailComponent,
-    MemorialsListComponent,
   ],
   imports: [
     BrowserModule,

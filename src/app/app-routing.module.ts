@@ -54,15 +54,15 @@ const routes: Routes = [
   { path: 'autonomy', component: AutonomyComponent },
   { path: 'proclamation', component: ProclamationComponent },
   { path: 'discover', component: DiscoverComponent },
-  { path: '', redirectTo: '/sermons', pathMatch: 'full' },
-  {
-    path: 'sermons',
-    loadChildren: () => import('./sermons/sermons.module').then(m => m.SermonsModule),
-  },
   { path: '', redirectTo: '/events', pathMatch: 'full' },
   {
     path: 'events',
     loadChildren: () => import('./events/events.module').then(m => m.EventsModule),
+  },
+  { path: '', redirectTo: '/memorials', pathMatch: 'full' },
+  {
+    path: 'memorials',
+    loadChildren: () => import('./memorials/memorials.module').then(m => m.MemorialsModule),
   },
   { path: 'scheduler', component: SchedulerComponent },
   { path: 'gallery', component: GalleryComponent },

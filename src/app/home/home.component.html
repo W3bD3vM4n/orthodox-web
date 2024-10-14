@@ -22,10 +22,10 @@
             <!-- EVENTOS -->
             <div class="bg-cadet-gray-100 p-4 flex min-h-72 max-h-72 md:w-auto w-[448px]">
                 <div class="w-full mx-2">
-                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'EVENTS_TITLE' | translate }}</h2>
+                    <h2 class="text-sm font-bold text-center txt-eerie-black-300 uppercase mb-2">{{ 'EVENTS_TITLE' | translate }}</h2>
                     <ul>
                         <li *ngFor="let events of eventsList.slice(0, maxEventsItems)" (click)="openEvents(events.id)"
-                            class="border-b border-gray-300 cursor-pointer mb-2">
+                            class="border-b border-gray-300 cursor-pointer mb-1">
 
                             <div class="text-xs text-gray-500 mb-2">
                                 {{ events.date }}
@@ -40,7 +40,21 @@
 
                     <a href="/events" class="text-sm txt-eerie-black-300 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
 
-                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'MEMORIAL_TITLE' | translate }}</h2>
+                    <h2 class="text-sm font-bold text-center txt-eerie-black-300 uppercase mb-2">{{ 'MEMORIAL_TITLE' | translate }}</h2>
+                    <ul>
+                        <li *ngFor="let memorials of memorialsList.slice(0, maxMemorialsItems)" (click)="openMemorials(memorials.id)"
+                            class="border-b border-gray-300 cursor-pointer mb-1">
+
+                            <div class="text-xs text-gray-500 mb-2">
+                                {{ memorials.date }}
+                            </div>
+
+                            <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
+                                {{ memorials.title }}
+                            </div>
+
+                        </li>
+                    </ul>
 
                     <a href="/memorials" class="text-sm txt-eerie-black-300 hover:text-white">{{ 'MEMORIAL_BUTTON' | translate }} >></a>
                 </div>
