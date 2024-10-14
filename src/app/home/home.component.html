@@ -19,43 +19,6 @@
         <!-- 2 rows, 2 columns -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-            <!-- SERMONES -->
-            <div class="bg-[#EECC8E] p-4 flex min-h-72 max-h-72 md:w-auto w-[448px]">
-                <div class="w-full mx-2">
-                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'SERMONS_TITLE' | translate }}</h2>
-                    <ul>
-                        <li *ngFor="let sermons of sermonsList.slice(0, maxSermonsItems)" (click)="openSermons(sermons.id)"
-                            class="border-b border-gray-300 cursor-pointer mb-2">
-
-                            <div class="text-xs text-gray-500 mb-2">
-                                {{ sermons.date }}
-                            </div>
-
-                            <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
-                                {{ sermons.title }}
-                            </div>
-
-                        </li>
-                    </ul>
-
-                    <a href="/sermons" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">{{ 'SERMONS_BUTTON' | translate }} >></a>
-                </div>
-            </div>
-
-            <!-- VIDEOS -->
-            <div class="bg-black text-white p-4 flex items-center justify-center min-h-72 max-h-72 md:w-auto w-[448px]">
-                <div *ngIf="safeLiveVideoUrl">
-                    <iframe
-                      [src]="safeLiveVideoUrl"
-                      title="YouTube live video player"
-                      class="md:w-[586px] md:h-[288px] w-[448px] h-[288px]"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-            </div>
-
             <!-- EVENTOS -->
             <div class="bg-cadet-gray-100 p-4 flex min-h-72 max-h-72 md:w-auto w-[448px]">
                 <div class="w-full mx-2">
@@ -75,13 +38,26 @@
                         </li>
                     </ul>
 
-                    <a href="/events" class="text-sm flex items-center justify-center txt-eerie-black-300 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
+                    <a href="/events" class="text-sm txt-eerie-black-300 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
+
+                    <h2 class="font-bold text-center txt-eerie-black-300 mb-4">{{ 'MEMORIAL_TITLE' | translate }}</h2>
+
+                    <a href="/memorials" class="text-sm txt-eerie-black-300 hover:text-white">{{ 'MEMORIAL_BUTTON' | translate }} >></a>
                 </div>
             </div>
 
-            <!-- PODCAST -->
-            <div class="bg-[#F6F6F6] p-4 flex items-center justify-center min-h-72 max-h-72 md:w-auto w-[448px]">
-                <div id="aplayer" class="aplayer-container aplayer-list aplayer-list-toggle"></div>
+            <!-- VIDEOS -->
+            <div class="bg-black text-white p-4 flex items-center justify-center min-h-72 max-h-72 md:w-auto w-[448px]">
+                <div *ngIf="safeLiveVideoUrl">
+                    <iframe
+                      [src]="safeLiveVideoUrl"
+                      title="YouTube live video player"
+                      class="md:w-[586px] md:h-[288px] w-[448px] h-[288px]"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
             </div>
 
         </div>
@@ -128,7 +104,7 @@
 
         </div>
 
-        <!-- 2 rows, 1 column -->
+        <!-- 1 rows, 1 column -->
         <div class="grid grid-rows-[12rem] gap-4">
 
             <!-- TIENDA -->
@@ -143,6 +119,10 @@
                     </div>
                 </div>
             </a>
+
+            <div class="bg-white p-4 flex items-center justify-center min-h-[64px] max-h-[64px] md:w-auto w-[448px]">
+                <div id="aplayer" class="aplayer-container aplayer-list aplayer-list-toggle"></div>
+            </div>
 
         </div>
 

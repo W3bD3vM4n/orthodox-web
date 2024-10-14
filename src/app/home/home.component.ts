@@ -163,7 +163,9 @@ export class HomeComponent implements OnInit {
         container: this.elRef.nativeElement.querySelector('#aplayer'),
         autoplay: false,
         loop: 'all', // Loops through all tracks in the playlist
-        listFolded: false, // Keeps playlist folded initially
+        listFolded: true, // Keeps playlist folded initially
+        order: 'random', // Play the tracks in random order
+        listMaxHeight: 0, // Hides the playlist list
         audio: episodes // Pass the dynamically generated episodes
       });
     }

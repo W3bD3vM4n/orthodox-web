@@ -15,7 +15,7 @@ export class SermonsDetailComponent implements OnInit {
     { label: 'Sermons', url: '/sermons' },
   ];
 
-  sermonsArticle: Sermons | undefined;;
+  sermonsArticle: Sermons | undefined;
 
   constructor(private route: ActivatedRoute, private sermonsService: SermonsService) {}
 
