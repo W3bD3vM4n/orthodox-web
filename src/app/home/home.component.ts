@@ -184,7 +184,7 @@ export class HomeComponent implements OnInit {
       const result = await parseStringPromise(rssFeed);
 
       // Extract global cover image from the channel
-      const globalCoverUrl = result.rss.channel[0]['itunes:image'] ? result.rss.channel[0]['itunes:image'][0].$.href : 'assets/images/home/logo-podcast.png';
+      const globalCoverUrl = result.rss.channel[0]['itunes:image'] ? result.rss.channel[0]['itunes:image'][0].$.href : 'assets/images/home/button-position3.png';
 
       // Extract episodes, passing the global cover image URL
       const episodes = this.extractEpisodes(result.rss.channel[0].item, globalCoverUrl);
