@@ -3,16 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
-import { EventsService } from "../events/events.service";
+// Importa los datos quemados
 import { Events } from "../events/events.model";
-import { MemorialsService } from "../memorials/memorials.service";
+import { EventsService } from "../events/events.service";
 import { Memorials } from "../memorials/memorials.model";
+import { MemorialsService } from "../memorials/memorials.service";
+
+import { Cartelera } from "../models/cartelera.interface";
+import { CarteleraService } from "../services/cartelera.service";
 
 import { YoutubeService } from "./youtube/youtube.service";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
-import { Quotes } from "../home/quotes/quotes.model";
-import { QuotesService } from "../home/quotes/quotes.service";
+import { PensamientoDia } from "../models/pensamiento-dia.interface";
+import { PensamientoDiaService } from "../services/pensamiento-dia.service";
+
 import { GalleryItem, ImageItem } from 'ng-gallery';
 
 import APlayer from 'aplayer';
@@ -37,15 +42,15 @@ export class HomeComponent implements OnInit {
   channelId:string = 'UCxge6zEbxqRqpYq_RqTSLXQ';
   livePlaylistId:string = 'UU' + this.channelId.substring(2);
 
-  quotes: Quotes[] = [];
-  dailyQuote: Quotes | null = null;
+  pensamientoDiaFromAPI: PensamientoDia[] = [];
+  pensamientoDia: PensamientoDia | null = null;
 
   images: GalleryItem[] = [];
 
   private feedUrl = 'https://feed.podbean.com/lightinsoul87/feed.xml';
 
 
-  constructor(private router: Router, private eventsService: EventsService, private memorialsService: MemorialsService, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private quotesService: QuotesService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private router: Router, private eventsService: EventsService, private memorialsService: MemorialsService, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private pensamientoDiaService: PensamientoDiaService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     this.eventsList = this.eventsService.getEventsList();
@@ -53,11 +58,14 @@ export class HomeComponent implements OnInit {
 
     this.fetchLiveVideoId();
 
-    this.quotes = this.quotesService.getQuotes();
-    this.dailyQuote = this.getRandomQuote();
+    this.pensamientoDiaService.fetchData().subscribe((data: PensamientoDia[]) => {
+      console.log('Data from API:', data);
+      this.pensamientoDiaFromAPI = data;
+
+      this.pensamientoDia = this.getRandomQuote();
+    })
 
     this.loadGalleryItems();
-
     this.fetchAndInitializePlayer();
   }
 
@@ -131,11 +139,13 @@ export class HomeComponent implements OnInit {
 
   // PENSAMIENTO DEL DÍA
   // Obtiene una citación al azar dependiendo el día
-  private getRandomQuote(): Quotes {
+  private getRandomQuote(): PensamientoDia | null {
+
     const today = new Date();
     const seed = today.getFullYear() * 1000 + today.getMonth() * 31 + today.getDate();
-    const index = seed % this.quotes.length;
-    return this.quotes[index];
+    const index = seed % this.pensamientoDiaFromAPI.length;
+
+    return this.pensamientoDiaFromAPI[index];
   }
 
 
@@ -171,7 +181,7 @@ export class HomeComponent implements OnInit {
         src: 'assets/images/home/gallery-thumbnail/2024-09-23_f3-main2.jpg',
         thumb: 'assets/images/home/gallery-thumbnail/2024-09-23_f3-main2.jpg'
       }),
-      // ... more items
+      // ... más items
     ];
   }
 
@@ -183,10 +193,10 @@ export class HomeComponent implements OnInit {
       const rssFeed: string = await firstValueFrom(this.http.get(this.feedUrl, { responseType: 'text' }));
       const result = await parseStringPromise(rssFeed);
 
-      // Extract global cover image from the channel
+      // Extrae la portada global del canal
       const globalCoverUrl = result.rss.channel[0]['itunes:image'] ? result.rss.channel[0]['itunes:image'][0].$.href : 'assets/images/home/button-position3.png';
 
-      // Extract episodes, passing the global cover image URL
+      // Extrae los episodios, pasando el URL de la portada global
       const episodes = this.extractEpisodes(result.rss.channel[0].item, globalCoverUrl);
     this.initializeAPlayer(episodes);
     } catch (error) {
@@ -194,33 +204,33 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  // Extract episode details from the RSS items
+  // Extrae detalles del episodio mediante RSS
   private extractEpisodes(items: any[], globalCoverUrl: string): any[] {
     const episodes = items.map(item => ({
       name: item.title ? item.title[0] : 'Unknown Title',
       artist: item['itunes:author'] ? item['itunes:author'][0] : 'Unknown Artist',
       url: item.enclosure && item.enclosure[0].$ && item.enclosure[0].$.url ? item.enclosure[0].$.url : '',
-      cover: globalCoverUrl, // Use the global cover image for each episode
+      cover: globalCoverUrl, // Utiliza la portada global para cada episodio
       pubDate: item.pubDate ? new Date(item.pubDate[0]) : new Date(0)
     }));
 
-    // Sort episodes by publication date in ascending order (oldest first)
+    // Ordena episodios por fecha de publicación (el más antiguo primero)
     episodes.sort((a, b) => a.pubDate.getTime() - b.pubDate.getTime());
 
     return episodes;
   }
 
   private async initializeAPlayer(episodes: any[]) {
-    if (isPlatformBrowser(this.platformId)) { // Check if running in the browser
-      const APlayer = (await import('aplayer')).default; // Dynamically import APlayer
+    if (isPlatformBrowser(this.platformId)) { // Comprueba si se ejecuta en el navegador
+      const APlayer = (await import('aplayer')).default; // Dinamicamente importa APlayer
       const player = new APlayer({
         container: this.elRef.nativeElement.querySelector('#aplayer'),
         autoplay: false,
-        loop: 'all', // Loops through all tracks in the playlist
-        listFolded: true, // Keeps playlist folded initially
-        order: 'random', // Play the tracks in random order
-        listMaxHeight: 0, // Hides the playlist list
-        audio: episodes // Pass the dynamically generated episodes
+        loop: 'all', // Recorre todas las pistas de la lista de reproducción
+        listFolded: true, // Mantiene la lista de reproducción plegada inicialmente
+        order: 'random', // Reproduce las pistas en orden aleatorio
+        listMaxHeight: 0, // Oculta la lista de reproducción
+        audio: episodes // Pasa los episodios generados dinámicamente
       });
     }
   }
