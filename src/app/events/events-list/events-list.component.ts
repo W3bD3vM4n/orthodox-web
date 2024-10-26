@@ -1,21 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EventsService } from "../events.service";
-import { Events } from "../events.model";
+import { DatePipe } from '@angular/common';
+
+import { Cartelera } from "../../models/cartelera.interface";
+import { CarteleraService } from "../../services/cartelera.service";
 
 @Component({
   selector: 'app-events-list',
   templateUrl: './events-list.component.html',
-  styleUrl: './events-list.component.css'
+  styleUrl: './events-list.component.css',
+  providers: [DatePipe] // Incluye el DatePipe como proveedor
 })
 export class EventsListComponent implements OnInit {
 
-  eventsList: Events[] = [];
+  carteleraList: Cartelera[] = [];
 
-  constructor(private router: Router, private eventsService: EventsService) {}
+  constructor(private router: Router, private carteleraService: CarteleraService, private datePipe: DatePipe) {}
 
   ngOnInit() {
-    this.eventsList = this.eventsService.getEventsList();
+    this.carteleraService.fetchData().subscribe((data: Cartelera[]) => {
+      // console.log('Cartelera from API:', data);
+      this.carteleraList = data
+        .filter(item => item.tipo === 'anuncio')
+        .sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
+    });
+  }
+
+  getFormattedDate(fecha: string): string {
+    return this.datePipe.transform(fecha, 'yyyy/MM/dd') || '';
   }
 
   getSummary(content: string): string {

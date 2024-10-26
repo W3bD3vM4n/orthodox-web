@@ -17,4 +17,8 @@ export class CarteleraService {
     return this.http.get<Cartelera[]>(this.apiUrl);
   }
 
+  // Para datos por ID
+  getCarteleraById(id: number): Observable<Cartelera> {
+    return this.http.get<Cartelera>(`${this.apiUrl}/${id}`);
+  }
 }

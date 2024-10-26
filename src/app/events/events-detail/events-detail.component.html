@@ -19,19 +19,19 @@
                         </ul>
                       </nav><br>
 
-                    <div *ngIf="eventsArticle">
+                    <div *ngIf="carteleraArticles">
 
                         <!-- Fecha -->
                         <div class="text-sm text-gray-500 mb-2">
-                            {{ eventsArticle.date }}
+                            {{ carteleraArticles.fecha }}
                         </div>
 
                         <!-- Titulo -->
-                        <div class="text-2xl font-bold font-serif txt-eerie-black-300">{{ eventsArticle.title }}</div>
+                        <div class="text-2xl font-bold font-serif txt-eerie-black-300">{{ carteleraArticles.titulo }}</div>
 
                         <!-- Contenido -->
                         <p class="mt-2 text-justify mb-4">
-                            {{ eventsArticle.content }}
+                            {{ carteleraArticles.contenido }}
                         </p>
 
                     </div>

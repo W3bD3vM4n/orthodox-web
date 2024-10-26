@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventsService } from "../events.service";
-import { Events } from "../events.model";
+
+import { Cartelera } from "../../models/cartelera.interface";
+import { CarteleraService } from "../../services/cartelera.service";
 
 @Component({
   selector: 'app-events-detail',
@@ -15,13 +16,17 @@ export class EventsDetailComponent implements OnInit {
     { label: 'Events', url: '/events' },
   ];
 
-  eventsArticle: Events | undefined;;
+  carteleraArticles: Cartelera | undefined;;
 
-  constructor(private route: ActivatedRoute, private eventsService: EventsService) {}
+  constructor(private route: ActivatedRoute, private carteleraService: CarteleraService) {}
 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.eventsArticle = this.eventsService.getEventsById(id);
+    this.carteleraService.getCarteleraById(id).subscribe((data: Cartelera) => {
+      if (data.tipo === 'anuncio') {
+        this.carteleraArticles = data;
+      }
+    });
   }
 
 }

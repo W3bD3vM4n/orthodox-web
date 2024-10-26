@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
     this.fetchLiveVideoId();
 
     this.pensamientoDiaService.fetchData().subscribe((data: PensamientoDia[]) => {
-      console.log('Data from API:', data);
+      // console.log('PensamientoDia from API:', data);
       this.pensamientoDiaFromAPI = data;
 
       this.pensamientoDia = this.getRandomQuote();
