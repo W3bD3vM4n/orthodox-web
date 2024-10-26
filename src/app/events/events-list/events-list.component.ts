@@ -27,6 +27,7 @@ export class EventsListComponent implements OnInit {
   }
 
   getFormattedDate(fecha: string): string {
+    // Da formato a la fecha de año/mes/dia
     return this.datePipe.transform(fecha, 'yyyy/MM/dd') || '';
   }
 

@@ -1,11 +1,10 @@
 import { Component, OnInit, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 
 // Importa los datos quemados
-import { Events } from "../events/events.model";
-import { EventsService } from "../events/events.service";
 import { Memorials } from "../memorials/memorials.model";
 import { MemorialsService } from "../memorials/memorials.service";
 
@@ -28,12 +27,14 @@ import { firstValueFrom } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  providers: [DatePipe] // Incluye el DatePipe como proveedor
 })
 export class HomeComponent implements OnInit {
 
-  eventsList: Events[] = [];
+  carteleraList: Cartelera[] = [];
   maxEventsItems: number = 2; // Limita el número de eventos mostrados
+
   memorialsList: Memorials[] = [];
   maxMemorialsItems: number = 1; // Limita el número de memoriales mostrados
 
@@ -50,10 +51,16 @@ export class HomeComponent implements OnInit {
   private feedUrl = 'https://feed.podbean.com/lightinsoul87/feed.xml';
 
 
-  constructor(private router: Router, private eventsService: EventsService, private memorialsService: MemorialsService, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private pensamientoDiaService: PensamientoDiaService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private router: Router, private carteleraService: CarteleraService, private memorialsService: MemorialsService, private datePipe: DatePipe, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private pensamientoDiaService: PensamientoDiaService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    this.eventsList = this.eventsService.getEventsList();
+    this.carteleraService.fetchData().subscribe((data: Cartelera[]) => {
+      // console.log('Cartelera from API:', data);
+      this.carteleraList = data
+        .filter(item => item.tipo === 'anuncio')
+        .sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
+    });
+
     this.memorialsList = this.memorialsService.getMemorialsList();
 
     this.fetchLiveVideoId();
@@ -71,6 +78,11 @@ export class HomeComponent implements OnInit {
 
 
   // EVENTOS - MEMORIALES
+  getFormattedDate(fecha: string): string {
+    // Da formato a la fecha de año/mes/dia
+    return this.datePipe.transform(fecha, 'yyyy/MM/dd') || '';
+  }
+
   getSummary(content: string): string {
     // Verifica que el contenido no sobrepase a 200 palabras
     let summary = content.slice(0, 200);

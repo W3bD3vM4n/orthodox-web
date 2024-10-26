@@ -24,15 +24,15 @@
                 <div class="w-full mx-2">
                     <h2 class="text-sm font-bold text-center txt-eerie-black-300 uppercase mb-2">{{ 'EVENTS_TITLE' | translate }}</h2>
                     <ul>
-                        <li *ngFor="let events of eventsList.slice(0, maxEventsItems)" (click)="openEvents(events.id)"
+                        <li *ngFor="let cartelera of carteleraList.slice(0, maxEventsItems)" (click)="openEvents(cartelera.id)"
                             class="border-b border-gray-300 cursor-pointer mb-1">
 
                             <div class="text-xs text-gray-500 mb-2">
-                                {{ events.date }}
+                                {{ getFormattedDate(cartelera.fecha) }}
                             </div>
 
                             <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
-                                {{ events.title }}
+                                {{ cartelera.titulo }}
                             </div>
 
                         </li>
