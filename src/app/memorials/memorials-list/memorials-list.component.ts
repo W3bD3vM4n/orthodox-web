@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
-// import { MemorialsService } from "../memorials.service";
-// import { Memorials } from "../memorials.model";
 
 import { Cartelera } from "../../models/cartelera.interface";
 import { CarteleraService } from "../../services/cartelera.service";
@@ -15,17 +13,11 @@ import { CarteleraService } from "../../services/cartelera.service";
 })
 export class MemorialsListComponent implements OnInit {
 
-  // memorialsList: Memorials[] = [];
-
-  // constructor(private router: Router, private memorialsService: MemorialsService) {}
-
   carteleraList: Cartelera[] = [];
 
   constructor(private router: Router, private carteleraService: CarteleraService, private datePipe: DatePipe) {}
 
   ngOnInit() {
-    // this.memorialsList = this.memorialsService.getMemorialsList();
-
     this.carteleraService.fetchData().subscribe((data: Cartelera[]) => {
       // console.log('Cartelera-Memorial from API:', data);
       this.carteleraList = data

@@ -4,10 +4,6 @@ import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 
-// Importa los datos quemados
-// import { Memorials } from "../memorials/memorials.model";
-// import { MemorialsService } from "../memorials/memorials.service";
-
 import { Cartelera } from "../models/cartelera.interface";
 import { CarteleraService } from "../services/cartelera.service";
 
@@ -64,8 +60,6 @@ export class HomeComponent implements OnInit {
         .filter(item => item.tipo === 'memorial')
         .sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
     });
-
-    // this.memorialsList = this.memorialsService.getMemorialsList();
 
     this.fetchLiveVideoId();
 

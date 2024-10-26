@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
-// import { MemorialsService } from "../memorials.service";
-// import { Memorials } from "../memorials.model";
 
 import { Cartelera } from "../../models/cartelera.interface";
 import { CarteleraService } from "../../services/cartelera.service";
@@ -20,18 +18,9 @@ export class MemorialsDetailComponent implements OnInit {
     { label: 'Memorials', url: '/memorials' },
   ];
 
-  // memorialsArticle: Memorials | undefined;
-
-  // constructor(private route: ActivatedRoute, private memorialsService: MemorialsService) {}
-
   carteleraArticles: Cartelera | undefined;;
 
   constructor(private route: ActivatedRoute, private carteleraService: CarteleraService, private datePipe: DatePipe) {}
-
-  // ngOnInit() {
-  //   const id = Number(this.route.snapshot.paramMap.get('id'));
-  //   this.memorialsArticle = this.memorialsService.getMemorialsById(id);
-  // }
 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
