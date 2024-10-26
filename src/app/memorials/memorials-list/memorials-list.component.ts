@@ -1,21 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MemorialsService } from "../memorials.service";
-import { Memorials } from "../memorials.model";
+import { DatePipe } from '@angular/common';
+// import { MemorialsService } from "../memorials.service";
+// import { Memorials } from "../memorials.model";
+
+import { Cartelera } from "../../models/cartelera.interface";
+import { CarteleraService } from "../../services/cartelera.service";
 
 @Component({
   selector: 'app-memorials-list',
   templateUrl: './memorials-list.component.html',
-  styleUrl: './memorials-list.component.css'
+  styleUrl: './memorials-list.component.css',
+  providers: [DatePipe] // Incluye el DatePipe como proveedor
 })
 export class MemorialsListComponent implements OnInit {
 
-  memorialsList: Memorials[] = [];
+  // memorialsList: Memorials[] = [];
 
-  constructor(private router: Router, private memorialsService: MemorialsService) {}
+  // constructor(private router: Router, private memorialsService: MemorialsService) {}
+
+  carteleraList: Cartelera[] = [];
+
+  constructor(private router: Router, private carteleraService: CarteleraService, private datePipe: DatePipe) {}
 
   ngOnInit() {
-    this.memorialsList = this.memorialsService.getMemorialsList();
+    // this.memorialsList = this.memorialsService.getMemorialsList();
+
+    this.carteleraService.fetchData().subscribe((data: Cartelera[]) => {
+      // console.log('Cartelera-Memorial from API:', data);
+      this.carteleraList = data
+        .filter(item => item.tipo === 'memorial')
+        .sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
+    });
+  }
+
+  getFormattedDate(fecha: string): string {
+    // Da formato a la fecha de año/mes/dia
+    return this.datePipe.transform(fecha, 'yyyy/MM/dd') || '';
   }
 
   getSummary(content: string): string {

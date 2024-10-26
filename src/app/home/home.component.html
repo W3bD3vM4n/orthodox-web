@@ -24,15 +24,15 @@
                 <div class="w-full mx-2">
                     <h2 class="text-sm font-bold text-center txt-eerie-black-300 uppercase mb-2">{{ 'EVENTS_TITLE' | translate }}</h2>
                     <ul>
-                        <li *ngFor="let cartelera of carteleraList.slice(0, maxEventsItems)" (click)="openEvents(cartelera.id)"
+                        <li *ngFor="let anuncio of anunciosList.slice(0, maxAnunciosItems)" (click)="openEvents(anuncio.id)"
                             class="border-b border-gray-300 cursor-pointer mb-1">
 
                             <div class="text-xs text-gray-500 mb-2">
-                                {{ getFormattedDate(cartelera.fecha) }}
+                                {{ getFormattedDate(anuncio.fecha) }}
                             </div>
 
                             <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
-                                {{ cartelera.titulo }}
+                                {{ anuncio.titulo }}
                             </div>
 
                         </li>
@@ -42,15 +42,15 @@
 
                     <h2 class="text-sm font-bold text-center txt-eerie-black-300 uppercase mb-2">{{ 'MEMORIAL_TITLE' | translate }}</h2>
                     <ul>
-                        <li *ngFor="let memorials of memorialsList.slice(0, maxMemorialsItems)" (click)="openMemorials(memorials.id)"
+                        <li *ngFor="let memorial of memorialsList.slice(0, maxMemorialsItems)" (click)="openMemorials(memorial.id)"
                             class="border-b border-gray-300 cursor-pointer mb-1">
 
                             <div class="text-xs text-gray-500 mb-2">
-                                {{ memorials.date }}
+                                {{ getFormattedDate(memorial.fecha) }}
                             </div>
 
                             <div class="text-sm font-semibold font-serif txt-lapis-lazuli-700">
-                                {{ memorials.title }}
+                                {{ memorial.titulo }}
                             </div>
 
                         </li>

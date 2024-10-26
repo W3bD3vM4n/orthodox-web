@@ -19,7 +19,7 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit() {
     this.carteleraService.fetchData().subscribe((data: Cartelera[]) => {
-      // console.log('Cartelera from API:', data);
+      // console.log('Cartelera-Anuncio from API:', data);
       this.carteleraList = data
         .filter(item => item.tipo === 'anuncio')
         .sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());

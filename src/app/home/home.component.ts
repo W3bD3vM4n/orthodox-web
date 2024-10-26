@@ -5,8 +5,8 @@ import { DatePipe } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 
 // Importa los datos quemados
-import { Memorials } from "../memorials/memorials.model";
-import { MemorialsService } from "../memorials/memorials.service";
+// import { Memorials } from "../memorials/memorials.model";
+// import { MemorialsService } from "../memorials/memorials.service";
 
 import { Cartelera } from "../models/cartelera.interface";
 import { CarteleraService } from "../services/cartelera.service";
@@ -32,10 +32,10 @@ import { firstValueFrom } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  carteleraList: Cartelera[] = [];
-  maxEventsItems: number = 2; // Limita el número de eventos mostrados
+  anunciosList: Cartelera[] = [];
+  maxAnunciosItems: number = 2; // Limita el número de eventos mostrados
 
-  memorialsList: Memorials[] = [];
+  memorialsList: Cartelera[] = [];
   maxMemorialsItems: number = 1; // Limita el número de memoriales mostrados
 
   liveVideoId: string | null = null;
@@ -51,17 +51,21 @@ export class HomeComponent implements OnInit {
   private feedUrl = 'https://feed.podbean.com/lightinsoul87/feed.xml';
 
 
-  constructor(private router: Router, private carteleraService: CarteleraService, private memorialsService: MemorialsService, private datePipe: DatePipe, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private pensamientoDiaService: PensamientoDiaService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private router: Router, private carteleraService: CarteleraService, private datePipe: DatePipe, private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private pensamientoDiaService: PensamientoDiaService, private http: HttpClient, private elRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     this.carteleraService.fetchData().subscribe((data: Cartelera[]) => {
       // console.log('Cartelera from API:', data);
-      this.carteleraList = data
+      this.anunciosList = data
         .filter(item => item.tipo === 'anuncio')
+        .sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
+
+      this.memorialsList = data
+        .filter(item => item.tipo === 'memorial')
         .sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
     });
 
-    this.memorialsList = this.memorialsService.getMemorialsList();
+    // this.memorialsList = this.memorialsService.getMemorialsList();
 
     this.fetchLiveVideoId();
 
