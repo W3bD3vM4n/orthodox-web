@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PensamientoDia } from '../models/pensamiento-dia.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PensamientoDiaService {
 
-  private apiUrl = 'https://localhost:7127/api/PensamientoDia';
+  private apiUrl = environment.urlPensamientoDia;
 
   constructor(private http: HttpClient) { }
 
