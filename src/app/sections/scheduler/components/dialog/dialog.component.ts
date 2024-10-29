@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { EmitType } from '@syncfusion/ej2-base';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
     selector: 'app-dialog',
@@ -67,7 +68,7 @@ export class DialogComponent implements OnInit {
     public getId(idCelda: number): void {
         if (idCelda !== null || undefined) {
             this.imageIconUrl = 'assets/images/months/' + idCelda + '.jpg';
-            this.apiGetIdUrl = 'https://localhost:7127/api/Evento/' + idCelda;
+            this.apiGetIdUrl = environment.urlEvento + '/' + idCelda;
 
             this.httpClient
             .get(this.apiGetIdUrl)

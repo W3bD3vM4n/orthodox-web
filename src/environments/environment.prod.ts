@@ -1,8 +1,8 @@
 export const environment = {
     // API URLs para Producción
     production: true,
-    urlCartelera: 'https://api.yourdomain.com/',
-    urlEvento: 'https://api.yourdomain.com',
-    urlPensamientoDia: 'https://api.yourdomain.com'
+    urlCartelera: 'http://api.ortodoxa.net/api/Cartelera',
+    urlEvento: 'http://api.ortodoxa.net/api/Evento',
+    urlPensamientoDia: 'http://api.ortodoxa.net/api/PensamientoDia'
     // más URLs
 };
