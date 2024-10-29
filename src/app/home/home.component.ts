@@ -113,17 +113,42 @@ export class HomeComponent implements OnInit {
   // YOUTUBE LIVE
   // Obtiene el ID del video
   fetchLiveVideoId(): void {
-    this.youtubeService.getLiveVideoId(this.channelId).subscribe((data: any) => {
-      if (data.items && data.items.length) {
-        // Video "Live" encontrado
-        this.liveVideoId = data.items[0].id.videoId;
-        // Crea un URL seguro para el video live
-        this.safeLiveVideoUrl = this.sanitizeUrl(this.liveVideoId);
-      } else {
-        // Video "Live" no encontrado
-        this.fetchLatestVideoFromLivePlaylist();
-      }
-    });
+    const lastFetchDate = new Date(localStorage.getItem('lastFetchDate') || 0);
+    const currentSunday = this.getPreviousSunday();
+    const storedVideoId = localStorage.getItem('liveVideoId');
+
+    if (storedVideoId && lastFetchDate.getTime() === currentSunday.getTime()) {
+      // Utiliza la identificación del video almacenado si es válida para la semana actual
+      this.liveVideoId = storedVideoId;
+      this.safeLiveVideoUrl = this.sanitizeUrl(this.liveVideoId);
+    } else {
+      // Obtiene nuevos datos de video live ya que los datos almacenados están desactualizados
+      this.youtubeService.getLiveVideoId(this.channelId).subscribe((data: any) => {
+        if (data.items && data.items.length) {
+          // Video "Live" encontrado
+          this.liveVideoId = data.items[0].id.videoId;
+          // Crea un URL seguro para el video live
+          this.safeLiveVideoUrl = this.sanitizeUrl(this.liveVideoId);
+
+          // Almacena la identificación del video y la fecha del domingo actual en localStorage
+          localStorage.setItem('liveVideoId', this.liveVideoId || '');
+          localStorage.setItem('lastFetchDate', currentSunday.toISOString());
+        } else {
+          // Video "Live" no encontrado
+          this.fetchLatestVideoFromLivePlaylist();
+        }
+      });
+    }
+  }
+
+  // Ayuda a obtener la fecha del domingo más reciente
+  private getPreviousSunday(): Date {
+    const now = new Date();
+    const dayOfWeek = now.getDay(); // 0 para domingo, 6 para sábado
+    const daysSinceSunday = dayOfWeek; // Diferencia de días desde hoy hasta el último domingo
+    const lastSunday = new Date(now.setDate(now.getDate() - daysSinceSunday));
+    lastSunday.setHours(0, 0, 0, 0); // Establece la hora a medianoche para mantener coherencia
+    return lastSunday;
   }
 
   // Obtiene el ultimo video de la playlist "Live"
