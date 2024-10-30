@@ -20,13 +20,16 @@
                 <div>
 
                     <div class="h-screen">
-                        <div class="grid grid-cols-2 gap-x-4 h-full p-4 pt-0">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 h-full p-4 pt-0">
+                            <!-- IMAGEN -->
                             <!-- columna 1, fila 1 -->
                             <div class="col-span-1 row-span-10 icon-border-ambar p-4">
-                                <img class="size-full" [src]="imageIconUrl" alt="Icono del día" />
+                                <img class="w-1/2 md:size-full mx-auto" [src]="imageIconUrl" alt="Icono del día" />
                             </div>
+
+                            <!-- TEXTO -->
                             <!-- columna 2, fila 1 -->
-                            <div class="col-span-1 p-4 pt-0">
+                            <div class="col-span-1 p-4 pt-0 mt-4 md:mt-0">
                                 <label for="diaCalendarioCivil" class="uppercase font-medium">día calendario civil:</label>
                                 <div class="pastel-ambar">
                                     <ejs-textbox id="diaCalendarioCivil" cssClass="e-outline" [(value)]="fechaCivil" [readonly]="soloLectura">
