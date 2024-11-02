@@ -68,7 +68,7 @@ export class DialogComponent implements OnInit {
     public getId(idCelda: number): void {
         if (idCelda !== null || undefined) {
             this.imageIconUrl = 'assets/images/months/' + idCelda + '.jpg';
-            this.apiGetIdUrl = environment.urlEvento + '/' + idCelda;
+            this.apiGetIdUrl = environment.baseUrl+ '/api/Evento/' + idCelda;
 
             this.httpClient
             .get(this.apiGetIdUrl)

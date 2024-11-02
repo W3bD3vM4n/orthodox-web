@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class CarteleraService {
 
-  private apiUrl = environment.urlCartelera;
+  private apiUrl = environment.baseUrl+"/api/Cartelera";
 
   constructor(private http: HttpClient) { }
 

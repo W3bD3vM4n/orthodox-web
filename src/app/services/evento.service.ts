@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class EventoService {
 
-  private apiUrl = environment.urlEvento;
+  private apiUrl = environment.baseUrl+'/api/Evento';
 
   constructor(private http: HttpClient) { }
 

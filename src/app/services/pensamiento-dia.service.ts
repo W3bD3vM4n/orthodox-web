@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class PensamientoDiaService {
 
-  private apiUrl = environment.urlPensamientoDia;
+  private apiUrl = environment.baseUrl+'/api/PensamientoDia';
 
   constructor(private http: HttpClient) { }
 
