@@ -16,6 +16,34 @@
 
         </div>
 
+        <!-- 1 row, 1 column -->
+        <div class="relative bg-[#2f0201] md:bg-[url('assets/images/home/current-event/luz-eterna-color_cover.png')] bg-[url('assets/images/home/current-event/luz-eterna-color_cover-small.png')] bg-cover bg-center p-4 min-h-96 max-h-96 md:w-auto w-[448px]">
+
+            <!-- EVENTO ACTUAL -->
+            <div class="absolute text-center md:bottom-4 bottom-1 left-9 w-96">
+                <!-- Texto visible solo en pantallas pequeñas -->
+                <div class="text-xl block md:hidden">
+                    <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_TITLE_ZERO' | translate }}</p>
+                    <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_DESCRIPTION_ZERO' | translate }}</p>
+                </div><br>
+                <!-- Texto visible en cualquier tamaño de pantalla -->
+                <div class="text-base md:text-xl">
+                    <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_TITLE_ONE' | translate }}</p>
+                    <p class="text-white">{{ 'CURRENT_DESCRIPTION_ONE' | translate }}</p>
+                </div><br>
+                <div class="text-base md:text-xl">
+                    <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_TITLE_TWO' | translate }}</p>
+                    <p class="text-white">{{ 'CURRENT_DESCRIPTION_TWO' | translate }}</p>
+                </div><br>
+                <div class="text-base md:text-xl">
+                    <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_TITLE_THREE' | translate }}</p>
+                    <p class="text-white">{{ 'CURRENT_DESCRIPTION_THREE' | translate }}</p>
+                    <p class="text-white">{{ 'CURRENT_DESCRIPTION_FOUR' | translate }}</p>
+                </div><br>
+            </div>
+
+        </div>
+
         <!-- 2 rows, 2 columns -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
