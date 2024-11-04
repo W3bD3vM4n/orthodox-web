@@ -1,0 +1,71 @@
+name: Deploy Angular App to FTP
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  APP_NAME: orthodox-web
+  FTP_SERVER: win9081.site4now.net
+  FTP_USERNAME: admin-huss
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular project
+        run: ng build --configuration=production
+
+      - name: Clear FTP directory except /api
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER <<EOF
+          mirror -R -x ^api/$ --delete --parallel=5 ./dist/${{ env.APP_NAME }}/browser /path/to/server
+          quit
+          EOF
+
+      - name: Copy Web.config
+        run: cp Web.config dist/angular-app/browser/Web.config
+
+      - name: Clear FTP directory except /api
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER <<EOF
+          cd /ortodox
+          # Elimina todos los archivos en /ortodox, excepto los dentro de la carpeta 'api'
+          find . -type f ! -path './api/*' -exec rm -f {} +
+          # Elimina todas las carpetas en /ortodox, excepto la carpeta 'api'
+          find . -type d ! -name '.' ! -name 'api' -exec rm -rf {} +
+          quit
+          EOF
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ env.FTP_SERVER }}
+          username: ${{ env.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist/${{ env.APP_NAME }}/browser
+          server-dir: /ortodox
+          exclude: |
+            api/**
+          method: "ftp"
