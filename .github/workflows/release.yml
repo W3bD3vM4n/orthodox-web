@@ -33,7 +33,7 @@ jobs:
         run: ng build --configuration=production
 
       - name: Copy Web.config
-        run: cp Web.config dist/angular-app/browser/Web.config
+        run: cp web.config dist/${{ env.APP_NAME }}/browser/web.config
 
       - name: Clear FTP directory except /api
         env:
