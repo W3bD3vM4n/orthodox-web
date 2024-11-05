@@ -1,14 +1,14 @@
-<div class="flex-1 p-4">
+<div class="flex-1 py-4">
     <!-- Grid layout -->
     <div class="grid gap-4">
         <!-- 1 row, 1 column -->
-        <div class="relative bg-[#F2E5AE] bg-[url('assets/images/home/christ-cover.png')] bg-cover bg-center p-4 min-h-96 max-h-96 md:w-auto w-[448px]">
+        <div class="relative bg-[#F2E5AE] bg-[url('assets/images/home/christ-cover.png')] bg-cover bg-center min-h-96 max-h-96 w-full">
 
             <!-- DESCUBRE -->
-            <div class="absolute text-center bottom-4 left-4 w-96">
+            <div class="absolute text-center bottom-4 md:left-9 left-4 w-full max-w-[328px]">
                 <div class="font-semibold uppercase">
-                    <p class="text-3xl text-[#023373]">{{ 'DISCOVER_TITLE' | translate }}</p>
-                    <p class="text-5xl text-white">{{ 'DISCOVER_SUBTITLE' | translate }}</p>
+                    <p class="md:text-3xl text-2xl text-[#023373]">{{ 'DISCOVER_TITLE' | translate }}</p>
+                    <p class="md:text-5xl text-4xl text-white">{{ 'DISCOVER_SUBTITLE' | translate }}</p>
                 </div><br>
 
                 <a href="/discover" class="inline-flex items-center justify-center border-2 border-[#023373] rounded bg-transparent py-1 px-3 text-sm font-medium txt-yale-blue-100 hover:underline uppercase">{{ 'DISCOVER_BUTTON' | translate }}</a>
@@ -17,25 +17,25 @@
         </div>
 
         <!-- 1 row, 1 column -->
-        <div class="relative bg-[#2f0201] md:bg-[url('assets/images/home/current-event/luz-eterna-color_cover.png')] bg-[url('assets/images/home/current-event/luz-eterna-color_cover-small.png')] bg-cover bg-center p-4 min-h-96 max-h-96 md:w-auto w-[448px]">
+        <div class="relative bg-[#2f0201] md:bg-[url('assets/images/home/current-event/luz-eterna-color_cover.png')] bg-[url('assets/images/home/current-event/luz-eterna-color_cover-small.png')] bg-cover bg-center min-h-96 max-h-96 w-full">
 
             <!-- EVENTO ACTUAL -->
-            <div class="absolute text-center md:bottom-4 bottom-1 left-9 w-96">
+            <div class="md:absolute absolute text-center md:bottom-0 bottom-4 md:left-9 left-4 max-w-[328px]">
                 <!-- Texto visible solo en pantallas pequeñas -->
-                <div class="text-xl block md:hidden">
+                <div class="text-lg block md:hidden">
                     <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_TITLE_ZERO' | translate }}</p>
                     <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_DESCRIPTION_ZERO' | translate }}</p>
                 </div><br>
                 <!-- Texto visible en cualquier tamaño de pantalla -->
-                <div class="text-base md:text-xl">
+                <div class="text-sm md:text-xl">
                     <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_TITLE_ONE' | translate }}</p>
                     <p class="text-white">{{ 'CURRENT_DESCRIPTION_ONE' | translate }}</p>
                 </div><br>
-                <div class="text-base md:text-xl">
+                <div class="text-sm md:text-xl">
                     <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_TITLE_TWO' | translate }}</p>
                     <p class="text-white">{{ 'CURRENT_DESCRIPTION_TWO' | translate }}</p>
                 </div><br>
-                <div class="text-base md:text-xl">
+                <div class="text-sm md:text-xl">
                     <p class="font-bold uppercase text-[#E4BF67]">{{ 'CURRENT_TITLE_THREE' | translate }}</p>
                     <p class="text-white">{{ 'CURRENT_DESCRIPTION_THREE' | translate }}</p>
                     <p class="text-white">{{ 'CURRENT_DESCRIPTION_FOUR' | translate }}</p>
@@ -48,7 +48,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
             <!-- EVENTOS -->
-            <div class="bg-cadet-gray-100 p-4 flex min-h-72 max-h-72 md:w-auto w-[448px]">
+            <div class="bg-cadet-gray-100 p-4 flex min-h-72 max-h-72 w-full">
                 <div class="w-full mx-2">
                     <h2 class="text-sm font-bold text-center txt-eerie-black-300 uppercase mb-2">{{ 'EVENTS_TITLE' | translate }}</h2>
                     <ul>
@@ -89,12 +89,12 @@
             </div>
 
             <!-- VIDEOS -->
-            <div class="bg-black text-white p-4 flex items-center justify-center min-h-72 max-h-72 md:w-auto w-[448px]">
+            <div class="bg-black text-white p-4 flex items-center justify-center min-h-72 max-h-72 w-full">
                 <div *ngIf="safeLiveVideoUrl">
                     <iframe
                       [src]="safeLiveVideoUrl"
                       title="YouTube live video player"
-                      class="md:w-[586px] md:h-[288px] w-[448px] h-[288px]"
+                      class="md:w-[586px] md:h-[288px] w-[360px] h-[288px]"
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen>
@@ -109,21 +109,21 @@
         <div class="bg-white">
             <!-- Cover -->
             <div
-                class="relative bg-white bg-[url('assets/images/home/radio-cover.png')] bg-cover md:bg-center bg-right min-h-48 max-h-48 md:w-auto w-[448px]">
+                class="relative bg-white bg-[url('assets/images/home/radio-cover.png')] bg-cover md:bg-center bg-right min-h-48 max-h-48 w-full">
                 <div
-                    class="font-semibold md:text-center md:absolute md:left-[450px] md:bottom-16 md:w-72 w-full absolute left-4 bottom-10 text-left">
+                    class="font-semibold md:text-center md:absolute md:left-[450px] md:bottom-16 md:w-72 w-full max-w-[328px] absolute left-4 bottom-10 text-left">
                     <p class="text-3xl uppercase text-[#FF6961]">{{ 'RADIO_TITLE' | translate }}</p>
                     <p class="text-base">{{ 'RADIO_DESCRIPTION' | translate }}</p>
                 </div>
             </div>
             <!-- Player -->
-            <div class="bg-white flex items-center justify-center min-h-[64px] max-h-[64px] md:w-auto w-[448px]">
+            <div class="bg-white flex items-center justify-center min-h-[64px] max-h-[64px] w-full">
                 <div id="aplayer" class="aplayer-container aplayer-list aplayer-list-toggle"></div>
             </div>
         </div>
 
         <!-- PENSAMIENTO DEL DÍA -->
-        <div class="text-white relative bg-glaucous-100 p-4 min-h-48 md:w-auto w-[448px]">
+        <div class="text-white relative bg-glaucous-100 p-4 min-h-48 w-full">
             <div class="flex flex-col justify-center items-center md:mx-32 mx-4 text-center">
                 <p class="md:text-xl text-base font-semibold uppercase md:my-4 my-2">{{ 'QUOTE_TITLE' | translate }}</p>
                 <p class="md:text-sm text-sm md:mb-4">“{{ pensamientoDia?.frase }}”<span> ~{{ pensamientoDia?.autor }}</span></p>
@@ -138,7 +138,7 @@
 
             <!-- CALENDARIO -->
             <a href="/scheduler" class="block">
-                <div class="relative bg-lapis-lazuli-100 p-4 flex items-center justify-center min-h-72 max-h-72">
+                <div class="relative bg-lapis-lazuli-100 p-4 flex items-center justify-center min-h-72 max-h-72 w-full">
 
                   <div class="absolute inset-0 md:top-2 top-6 md:h-2/3 h-1/2 md:bg-[url('assets/images/home/calendar-cover-1.png')] md:bg-no-repeat md:bg-contain bg-[url('assets/images/home/calendar-cover-0.png')] bg-cover bg-center"></div>
 
@@ -150,10 +150,10 @@
             </a>
 
             <!-- GALERIA -->
-            <div class="bg-black p-4 flex flex-col min-h-72 max-h-72">
+            <div class="bg-black p-4 flex flex-col min-h-72 max-h-72 w-full">
                 <div class="flex-grow-[3] p-4 flex justify-center items-center">
                     <!-- Codigo galeria aqui -->
-                    <gallery [items]="images" thumbPosition="left" [counter]="false" [dots]="true" [thumbWidth]="80" [thumbHeight]="40" class="w-[480px] h-[194px]"></gallery>
+                    <gallery [items]="images" thumbPosition="left" [counter]="false" [dots]="true" [thumbWidth]="80" [thumbHeight]="40" class="md:w-[480px] w-[360px] h-[194px]"></gallery>
                 </div>
                 <div class="h-[1rem] p-4">
                     <a href="/gallery" class="text-sm flex items-center justify-center txt-lapis-lazuli-700 hover:text-white">{{ 'EVENTS_BUTTON' | translate }} >></a>
@@ -168,7 +168,7 @@
             <!-- TIENDA -->
             <a href="/store" class="block">
                 <div
-                    class="relative bg-black bg-[url('assets/images/home/store-cover.png')] bg-cover md:bg-center bg-right p-4 min-h-48 max-h-48 md:w-auto w-[448px]">
+                    class="relative bg-black bg-[url('assets/images/home/store-cover.png')] bg-cover md:bg-center bg-right p-4 min-h-48 max-h-48 w-full">
 
                     <div class="font-semibold text-white md:text-left md:absolute md:right-72 md:bottom-10 md:w-72 w-full absolute right-0 bottom-10 text-center">
                         <p class="text-3xl uppercase">{{ 'STORE_TITLE' | translate }}</p>
